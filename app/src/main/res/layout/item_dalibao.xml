@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constrain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.flyco.roundview.RoundRelativeLayout
+        android:id="@+id/rl_item"
+        android:layout_width="302dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        app:rv_backgroundColor="@color/white"
+        app:rv_cornerRadius="5dp">
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            tools:background="@color/blue" />
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginVertical="14dp"
+            android:id="@+id/tv_text"
+            android:layout_width="226dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="24dp"
+            android:layout_toRightOf="@+id/iv_image"
+            android:ellipsize="end"
+            android:text="二甲医院免费体检11111111111"
+            android:textColor="#ff666666"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="28dp"
+            android:layout_marginRight="25dp"
+            android:text="使用次数3次"
+            android:textColor="#ffffffff"
+            android:textSize="12sp"
+            android:visibility="gone" />
+    </com.flyco.roundview.RoundRelativeLayout>
+</RelativeLayout>

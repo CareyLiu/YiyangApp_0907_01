@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:ems="1"
+    android:includeFontPadding="false"
+    android:text="命们"
+    android:textColor="#D7183D"
+    android:textSize="30pt"></TextView>

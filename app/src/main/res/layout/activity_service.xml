@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_with_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".features.viewpager.WithViewPagerActivity">
+
+        <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
+            android:id="@+id/bnve"
+            style="@style/bnve_white_bg"
+            android:layout_alignParentBottom="true"
+            app:itemIconTint="@drawable/selector_service_color"
+            app:itemTextColor="@drawable/selector_service_color"
+            app:menu="@menu/menu_service" />
+
+        <com.yiyang.cn.view.NoScrollViewPager
+            android:id="@+id/vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bnve" />
+    </RelativeLayout>
+</LinearLayout>

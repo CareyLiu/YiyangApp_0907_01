@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView
+                android:id="@+id/ming6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"></com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView>
+
+            <com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView
+                android:id="@+id/ming7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"></com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView>
+
+            <com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView
+                android:id="@+id/ming8"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"></com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView>
+
+            <com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView
+                android:id="@+id/ming9"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"></com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView
+                    android:id="@+id/ming5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"></com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView>
+
+                <com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView
+                    android:id="@+id/ming4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"></com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView>
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/fl_main"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2">
+
+                <ScrollView
+                    android:id="@+id/ll_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bazi_jiexi_tab">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="12pt">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="姓名："
+                                android:textColor="#000000"
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="20pt"
+                                android:includeFontPadding="false"
+                                android:text="姓名"
+                                android:textColor="#060094"
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="生肖："
+                                android:textColor="#000000"
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_shengxiao"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="肖"
+                                android:textColor="#6666CC"
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="年龄："
+                                android:textColor="#000000"
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_age"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="20pt"
+                                android:includeFontPadding="false"
+                                android:text="0岁"
+                                android:textColor="#187423 "
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_sex"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="阳男"
+                                android:textColor="#D7183D "
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="公历："
+                                android:textColor="#000000"
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_yangli"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="18dp"
+                                android:includeFontPadding="false"
+                                android:text="1996年6月6日 卯时"
+                                android:textColor="#000000 "
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="阴历："
+                                android:textColor="#000000"
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_yili"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="18dp"
+                                android:includeFontPadding="false"
+                                android:text="一九九六年六月六日 卯时"
+                                android:textColor="#000000"
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="生年："
+                                android:textColor="#000000"
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_shengnian"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="18dp"
+                                android:includeFontPadding="false"
+                                android:text="一九九六年六"
+                                android:textColor="#20B780"
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="命局："
+                                android:textColor="#000000"
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_mingju"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="18dp"
+                                android:includeFontPadding="false"
+                                android:text="一九九六年六"
+                                android:textColor="#FF0B14"
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="命主："
+                                android:textColor="#000000"
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_mingzhu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="20pt"
+                                android:includeFontPadding="false"
+                                android:text="0岁"
+                                android:textColor="#800A70"
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="身主："
+                                android:textColor="#000000"
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_shenzhu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="阳男"
+                                android:textColor="#D7183D "
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="子斗："
+                                android:textColor="#000000"
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_zidou"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="20pt"
+                                android:includeFontPadding="false"
+                                android:text="0岁"
+                                android:textColor="#187423 "
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="流斗："
+                                android:textColor="#000000"
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_liudou"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="流斗"
+                                android:textColor="#D7183D "
+                                android:textSize="30pt"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="345pt"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="35pt"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:includeFontPadding="false"
+                                    android:text="不论节气"
+                                    android:textColor="#D7183D"
+                                    android:textSize="25pt" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ems="1"
+                                        android:includeFontPadding="false"
+                                        android:text="年"
+                                        android:textColor="#000000"
+                                        android:textSize="30pt" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ems="1"
+                                        android:includeFontPadding="false"
+                                        android:text="月"
+                                        android:textColor="#000000"
+                                        android:textSize="30pt" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ems="1"
+                                        android:includeFontPadding="false"
+                                        android:text="日"
+                                        android:textColor="#000000"
+                                        android:textSize="30pt" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ems="1"
+                                        android:includeFontPadding="false"
+                                        android:text="时"
+                                        android:textColor="#000000"
+                                        android:textSize="30pt" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tv_bulun1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ems="1"
+                                        android:includeFontPadding="false"
+                                        android:text="丙葵"
+                                        android:textColor="#807070"
+                                        android:textSize="30pt" />
+
+                                    <TextView
+                                        android:id="@+id/tv_bulun2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ems="1"
+                                        android:includeFontPadding="false"
+                                        android:text="丙葵"
+                                        android:textColor="#807070"
+                                        android:textSize="30pt" />
+
+                                    <TextView
+                                        android:id="@+id/tv_bulun3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ems="1"
+                                        android:includeFontPadding="false"
+                                        android:text="丙葵"
+                                        android:textColor="#807070"
+                                        android:textSize="30pt" />
+
+                                    <TextView
+                                        android:id="@+id/tv_bulun4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ems="1"
+                                        android:includeFontPadding="false"
+                                        android:text="丙葵"
+                                        android:textColor="#807070"
+                                        android:textSize="30pt" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:includeFontPadding="false"
+                                    android:text="节气四柱"
+                                    android:textColor="#D7183D"
+                                    android:textSize="25pt" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ems="1"
+                                        android:includeFontPadding="false"
+                                        android:text="年"
+                                        android:textColor="#000000"
+                                        android:textSize="30pt" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ems="1"
+                                        android:includeFontPadding="false"
+                                        android:text="月"
+                                        android:textColor="#000000"
+                                        android:textSize="30pt" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ems="1"
+                                        android:includeFontPadding="false"
+                                        android:text="日"
+                                        android:textColor="#000000"
+                                        android:textSize="30pt" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ems="1"
+                                        android:includeFontPadding="false"
+                                        android:text="时"
+                                        android:textColor="#000000"
+                                        android:textSize="30pt" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tv_sizhu1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ems="1"
+                                        android:includeFontPadding="false"
+                                        android:text="丙葵"
+                                        android:textColor="#807070"
+                                        android:textSize="30pt" />
+
+                                    <TextView
+                                        android:id="@+id/tv_sizhu2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ems="1"
+                                        android:includeFontPadding="false"
+                                        android:text="丙葵"
+                                        android:textColor="#807070"
+                                        android:textSize="30pt" />
+
+                                    <TextView
+                                        android:id="@+id/tv_sizhu3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ems="1"
+                                        android:includeFontPadding="false"
+                                        android:text="丙葵"
+                                        android:textColor="#807070"
+                                        android:textSize="30pt" />
+
+                                    <TextView
+                                        android:id="@+id/tv_sizhu4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ems="1"
+                                        android:includeFontPadding="false"
+                                        android:text="丙葵"
+                                        android:textColor="#807070"
+                                        android:textSize="30pt" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+
+                <com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView
+                    android:id="@+id/ming_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"></com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView>
+
+                <ImageView
+                    android:id="@+id/iv_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView
+                    android:id="@+id/ming10"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"></com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView>
+
+                <com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView
+                    android:id="@+id/ming11"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"></com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView
+                android:id="@+id/ming3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"></com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView>
+
+            <com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView
+                android:id="@+id/ming2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"></com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView>
+
+            <com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView
+                android:id="@+id/ming1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"></com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView>
+
+            <com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView
+                android:id="@+id/ming12"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"></com.yiyang.cn.activity.wode_page.bazinew.view.BaziMingpanView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_jiexi"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="50dp"
+        android:background="@color/black"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+</FrameLayout>

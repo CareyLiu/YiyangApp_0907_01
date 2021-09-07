@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingHorizontal="31pt">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="192pt"
+                    android:layout_marginTop="24pt"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="31pt"
+                        android:includeFontPadding="true"
+                        android:text="LOGO"
+                        android:textColor="@color/color_3"
+                        android:textSize="31pt"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="31pt"
+                        android:layout_weight="1"
+                        android:includeFontPadding="true"
+                        android:text="请上传企业标志"
+                        android:textColor="@color/color_9"
+                        android:textSize="31pt" />
+
+                    <ImageView
+                        android:id="@+id/iv_logo_add"
+                        android:layout_width="104pt"
+                        android:layout_height="104pt"
+                        android:src="@mipmap/shoppicture_icon_add_gray" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:background="@color/line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="104pt"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="true"
+                        android:text="商家名称"
+                        android:textColor="@color/color_3"
+                        android:textSize="31pt"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/ed_name"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="right|center_vertical"
+                        android:hint="请输入商家名称"
+                        android:textColor="@color/color_9"
+                        android:textColorHint="@color/color_9"
+                        android:textSize="27pt" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:background="@color/line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_hangyefenlei"
+                    android:layout_width="match_parent"
+                    android:layout_height="104pt"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="true"
+                        android:text="行业分类"
+                        android:textColor="@color/color_3"
+                        android:textSize="31pt"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_hangyefenlei"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="right|center_vertical"
+                        android:hint="请选择"
+                        android:textColor="@color/color_9"
+                        android:textColorHint="@color/color_9"
+                        android:textSize="27pt" />
+
+                    <ImageView
+                        android:layout_width="31pt"
+                        android:layout_height="31pt"
+                        android:layout_marginLeft="16pt"
+                        android:src="@drawable/arrow_more" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:background="@color/line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_yingye_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="104pt"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="true"
+                        android:text="营业开店时间"
+                        android:textColor="@color/color_3"
+                        android:textSize="31pt"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_yingye_time"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="right|center_vertical"
+                        android:hint="请选择开店时间"
+                        android:textColor="@color/color_9"
+                        android:textColorHint="@color/color_9"
+                        android:textSize="27pt" />
+
+                    <ImageView
+                        android:layout_width="31pt"
+                        android:layout_height="31pt"
+                        android:layout_marginLeft="16pt"
+                        android:src="@drawable/arrow_more" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:background="@color/line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_yingye_time_bi"
+                    android:layout_width="match_parent"
+                    android:layout_height="104pt"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="true"
+                        android:text="营业闭店时间"
+                        android:textColor="@color/color_3"
+                        android:textSize="31pt"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_yingye_time_bi"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="right|center_vertical"
+                        android:hint="请选择闭店时间"
+                        android:textColor="@color/color_9"
+                        android:textColorHint="@color/color_9"
+                        android:textSize="27pt" />
+
+                    <ImageView
+                        android:layout_width="31pt"
+                        android:layout_height="31pt"
+                        android:layout_marginLeft="16pt"
+                        android:src="@drawable/arrow_more" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:background="@color/line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_adress"
+                    android:layout_width="match_parent"
+                    android:layout_height="104pt"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="true"
+                        android:text="详细地址"
+                        android:textColor="@color/color_3"
+                        android:textSize="31pt"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="right|center_vertical"
+                        android:hint="请选择详细地址"
+                        android:textColor="@color/color_9"
+                        android:textColorHint="@color/color_9"
+                        android:textSize="27pt" />
+
+                    <ImageView
+                        android:layout_width="31pt"
+                        android:layout_height="31pt"
+                        android:layout_marginLeft="16pt"
+                        android:src="@drawable/arrow_more" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:background="@color/line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_weixin"
+                    android:layout_width="match_parent"
+                    android:layout_height="104pt"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="true"
+                        android:text="老板微信"
+                        android:textColor="@color/color_3"
+                        android:textSize="31pt"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/ed_weixinhao"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="right|center_vertical"
+                        android:hint="请输入老板微信"
+                        android:textColor="@color/color_9"
+                        android:textColorHint="@color/color_9"
+                        android:textSize="27pt" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:background="@color/line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="104pt"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="true"
+                        android:text="联系电话"
+                        android:textColor="@color/color_3"
+                        android:textSize="31pt"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/ed_phone"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="right|center_vertical"
+                        android:hint="请输入联系电话"
+                        android:textColor="@color/color_9"
+                        android:textColorHint="@color/color_9"
+                        android:textSize="27pt" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:background="@color/line" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24pt"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingHorizontal="31pt">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="31pt"
+                    android:layout_marginBottom="31pt"
+                    android:includeFontPadding="false"
+                    android:text="店内设施"
+                    android:textColor="@color/color_3"
+                    android:textSize="31pt"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_shebei"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:background="@color/line" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="84pt"
+                    android:gravity="center_vertical"
+                    android:text="商家公告"
+                    android:textColor="@color/color_3"
+                    android:textSize="31pt"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/ll_shangjiagonggao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="27pt"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/ed_shangjiagonggao"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="商家公告(可选填)"
+                        android:textColor="@color/color_9"
+                        android:textColorHint="@color/color_9"
+                        android:textSize="27pt" />
+
+                    <ImageView
+                        android:layout_width="31pt"
+                        android:layout_height="31pt"
+                        android:layout_marginHorizontal="16pt"
+                        android:src="@drawable/arrow_more" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:background="@color/line" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="84pt"
+                    android:gravity="center_vertical"
+                    android:text="商家介绍"
+                    android:textColor="@color/color_3"
+                    android:textSize="31pt"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/ll_shangjiajieshao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="27pt"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/ed_shangjiajieshao"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="商家介绍(可选填)"
+                        android:textColor="@color/color_9"
+                        android:textColorHint="@color/color_9"
+                        android:textSize="27pt" />
+
+                    <ImageView
+                        android:layout_width="31pt"
+                        android:layout_height="31pt"
+                        android:layout_marginHorizontal="16pt"
+                        android:src="@drawable/arrow_more" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:background="@color/line" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24pt"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingHorizontal="31pt">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="84pt"
+                    android:layout_marginBottom="10pt"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="33pt"
+                        android:includeFontPadding="true"
+                        android:text="轮播图"
+                        android:textColor="@color/color_3"
+                        android:textSize="31pt"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="33pt"
+                        android:includeFontPadding="true"
+                        android:text="请上传横向图片"
+                        android:textColor="@color/color_3"
+                        android:textSize="27pt" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24pt"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingHorizontal="31pt">
+
+                <LinearLayout
+                    android:id="@+id/ll_zhekou"
+                    android:layout_width="match_parent"
+                    android:layout_height="104pt"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="true"
+                        android:text="折扣"
+                        android:textColor="@color/color_3"
+                        android:textSize="31pt"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/ed_zhekou"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="right|center_vertical"
+                        android:hint="无折扣(可选填)"
+                        android:textColor="@color/color_9"
+                        android:textColorHint="@color/color_9"
+                        android:textSize="27pt" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:background="@color/line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_qizhi_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="104pt"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="true"
+                        android:text="折扣开始日期"
+                        android:textColor="@color/color_3"
+                        android:textSize="31pt"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_stop_time"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="right|center_vertical"
+                        android:hint="请选择折扣开始时间"
+                        android:textColor="@color/color_9"
+                        android:textColorHint="@color/color_9"
+                        android:textSize="27pt" />
+
+                    <ImageView
+                        android:layout_width="31pt"
+                        android:layout_height="31pt"
+                        android:layout_marginLeft="16pt"
+                        android:src="@drawable/arrow_more" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:background="@color/line" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_qizhi_time_end"
+                    android:layout_width="match_parent"
+                    android:layout_height="104pt"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="true"
+                        android:text="折扣结束日期"
+                        android:textColor="@color/color_3"
+                        android:textSize="31pt"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_stop_time_end"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="right|center_vertical"
+                        android:hint="请选择折扣结束时间"
+                        android:textColor="@color/color_9"
+                        android:textColorHint="@color/color_9"
+                        android:textSize="27pt" />
+
+                    <ImageView
+                        android:layout_width="31pt"
+                        android:layout_height="31pt"
+                        android:layout_marginLeft="16pt"
+                        android:src="@drawable/arrow_more" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_ruzhu_time"
+                android:layout_width="match_parent"
+                android:layout_height="104pt"
+                android:layout_marginTop="24pt"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="31pt">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="true"
+                    android:text="入驻时间"
+                    android:textColor="@color/color_3"
+                    android:textSize="31pt"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_start_time"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="right|center_vertical"
+                    android:hint="请选择"
+                    android:textColor="@color/color_9"
+                    android:textColorHint="@color/color_9"
+                    android:textSize="27pt" />
+
+                <ImageView
+                    android:layout_width="31pt"
+                    android:layout_height="31pt"
+                    android:layout_marginLeft="16pt"
+                    android:src="@drawable/arrow_more" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="140pt"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="31pt">
+
+                <ImageView
+                    android:id="@+id/iv_xieyi"
+                    android:layout_width="38pt"
+                    android:layout_height="38pt"
+                    android:layout_marginRight="10pt"
+                    android:src="@mipmap/tuya_faxian_icon_selector_sel" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="我已阅读并同意"
+                    android:textColor="@color/color_9"
+                    android:textSize="27pt" />
+
+                <TextView
+                    android:id="@+id/tv_xieyi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="《商家发布须知》"
+                    android:textColor="@color/text_red"
+                    android:textSize="27pt" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/bt_save"
+                android:layout_width="match_parent"
+                android:layout_height="94pt"
+                android:layout_marginHorizontal="29pt"
+                android:layout_marginTop="29pt"
+                android:layout_marginBottom="31pt"
+                android:background="@drawable/bg_red_radius_15"
+                android:gravity="center"
+                android:text="保存信息"
+                android:textColor="@color/white"
+                android:textSize="31pt"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

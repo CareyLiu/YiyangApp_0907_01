@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="211pt"
+        android:background="@color/white"
+        android:paddingLeft="25pt"
+        android:paddingRight="21pt">
+
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="154pt"
+            android:layout_height="154pt"
+            android:layout_marginTop="23pt"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/bt_qianggou"
+            android:layout_width="92pt"
+            android:layout_height="46pt"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/a_xiupeichang_button"
+            android:gravity="center"
+            android:text="抢购"
+            android:textColor="@color/white"
+            android:textSize="23pt" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="29pt"
+            android:layout_marginHorizontal="26pt"
+            android:layout_marginTop="23pt"
+            android:layout_toLeftOf="@+id/bt_qianggou"
+            android:layout_toRightOf="@id/iv_img"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="mobil 美孚一号 小保养"
+            android:textColor="@color/black_333333"
+            android:textSize="28pt"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/ll_money"
+            android:layout_marginHorizontal="26pt"
+            android:layout_marginTop="63pt"
+            android:layout_marginBottom="15pt"
+            android:layout_toLeftOf="@+id/bt_qianggou"
+            android:layout_toRightOf="@id/iv_img"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:maxLines="2"
+            android:text="Mobil 美孚一号 x6L  号6LMobil 美孚一号 x6L  号6LMobil 美孚Mobil 美孚一号 x6L  号6LMobil 美孚一号 x6L  号6LMobil 美孚Mobil 美孚一号 x6L  号6LMobil 美孚一号 x6L  号6LMobil 美孚Mobil 美孚一号 x6L  号6LMobil 美孚一号 x6L  号6LMobil 美孚Mobil 美孚一号 x6L  号6LMobil 美孚一号 x6L  号6LMobil 美孚Mobil 美孚一号 x6L  号6LMobil 美孚一号 x6L  号6LMobil 美孚一"
+            android:textColor="@color/black_666666"
+            android:textSize="23pt" />
+
+        <LinearLayout
+            android:id="@+id/ll_money"
+            android:layout_width="wrap_content"
+            android:layout_height="31pt"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="26pt"
+            android:layout_marginBottom="35pt"
+            android:layout_toLeftOf="@+id/bt_qianggou"
+            android:layout_toRightOf="@id/iv_img"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16pt"
+                android:includeFontPadding="false"
+                android:text="¥100.00"
+                android:textColor="@color/text_red"
+                android:textSize="30pt"
+                android:textStyle="bold" />
+
+            <com.yiyang.cn.activity.xiupeichang.view.DrawLineTextView
+                android:id="@+id/tv_money_yuan"
+                android:layout_width="wrap_content"
+                android:layout_height="24pt"
+                android:layout_marginRight="16pt"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:text="¥100.00"
+                android:textColor="@color/gray_999999"
+                android:textSize="23pt" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/split" />
+    </RelativeLayout>
+</LinearLayout>

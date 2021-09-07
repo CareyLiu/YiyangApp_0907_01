@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayfff5f5f5"
+    android:orientation="vertical"
+    tools:context=".activity.tuangou.TuanGouShengChengDingDanActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.flyco.roundview.RoundRelativeLayout
+                android:id="@+id/rl_2"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_below="@+id/rl_1"
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginTop="10dp"
+                app:rv_backgroundColor="@color/white"
+                app:rv_cornerRadius="@dimen/dp_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="14dp"
+                    android:text="抵用券"
+                    android:textColor="#ff222222"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_zanwu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:text="暂无可用"
+                    android:textColor="#ff666666"
+                    android:textSize="13sp" />
+            </com.flyco.roundview.RoundRelativeLayout>
+
+            <com.flyco.roundview.RoundRelativeLayout
+                android:id="@+id/rl_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_2"
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginTop="10dp"
+                app:rv_backgroundColor="@color/white"
+                app:rv_cornerRadius="@dimen/dp_10">
+
+                <TextView
+                    android:id="@+id/tv_hongbaodikou_huashu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="17dp"
+                    android:text="红包抵扣"
+                    android:textColor="#ff222222"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/iv_choose"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_alignTop="@+id/tv_hongbaodikou_huashu"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="14dp"
+                    android:src="@mipmap/dingdan_icon_duihao"
+                    android:visibility="visible" />
+
+                <View
+                    android:id="@+id/view_line_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/tv_hongbaodikou_huashu"
+                    android:layout_marginTop="17dp"
+                    android:background="@color/grayfff5f5f5" />
+
+                <TextView
+                    android:id="@+id/tv_danqian_dikou"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view_line_1"
+                    android:layout_alignLeft="@+id/tv_hongbaodikou_huashu"
+                    android:layout_marginTop="17dp"
+                    android:text="当前可抵扣金额"
+                    android:textColor="#ff222222"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_dikoujine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/tv_danqian_dikou"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="14dp"
+                    android:layout_marginBottom="17dp"
+                    android:text="-50"
+                    android:textColor="#ffff2b00"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </com.flyco.roundview.RoundRelativeLayout>
+
+            <com.flyco.roundview.RoundRelativeLayout
+                android:id="@+id/rl_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_3"
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginTop="10dp"
+                app:rv_backgroundColor="@color/white"
+                app:rv_cornerRadius="@dimen/dp_10">
+
+                <TextView
+                    android:id="@+id/tv_shifujine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="17dp"
+                    android:text="实付金额"
+                    android:textColor="#ff222222"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/tv_shifujine"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="14dp"
+                    android:text="100"
+                    android:textColor="@color/text_red"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/view_line_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/tv_shifujine"
+                    android:layout_marginTop="17dp"
+                    android:background="@color/grayfff5f5f5" />
+
+                <TextView
+                    android:id="@+id/tv_shoujihao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view_line_2"
+                    android:layout_alignLeft="@+id/tv_shifujine"
+                    android:layout_marginTop="17dp"
+                    android:text="手机号"
+                    android:textColor="#ff222222"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_shoujihao_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/tv_shoujihao"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="14dp"
+                    android:layout_marginBottom="17dp"
+                    android:text="15946251111"
+                    android:textColor="#666666"
+                    android:textSize="14sp" />
+            </com.flyco.roundview.RoundRelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_below="@+id/rl_4" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <com.flyco.roundview.RoundTextView
+        android:id="@+id/rtv_jine"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="14dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="生成订单"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:rv_backgroundColor="@color/text_red"
+        app:rv_cornerRadius="@dimen/dp_10" />
+</RelativeLayout>

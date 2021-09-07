@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayfff5f5f5"
+    tools:context=".activity.dingdan.ShenQingTuiKuanActivity">
+
+
+    <com.flyco.roundview.RoundRelativeLayout
+        android:id="@+id/rrl_1"
+        android:layout_width="331dp"
+        android:layout_height="182dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rv_backgroundColor="@color/white"
+        app:rv_cornerRadius="5dp">
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="28dp"
+            android:src="@mipmap/tuikuan_icon_tuihuotuikuan" />
+
+        <TextView
+            android:id="@+id/tv_tuihuo_tuikuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:includeFontPadding="false"
+            android:text="我要退货退货"
+            android:textColor="#ff000000"
+            android:textSize="17sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_tuihuo_tuikuan"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:includeFontPadding="false"
+            android:text="已收到货，需要退还已收到的货物"
+            android:textColor="#ff656565"
+            android:textSize="13sp" />
+    </com.flyco.roundview.RoundRelativeLayout>
+
+    <com.flyco.roundview.RoundRelativeLayout
+
+        android:id="@+id/rrl_2"
+        android:layout_width="331dp"
+        android:layout_height="182dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rrl_1"
+        app:rv_backgroundColor="@color/white"
+        app:rv_cornerRadius="5dp">
+
+        <ImageView
+            android:id="@+id/iv_image1"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="28dp"
+            android:src="@mipmap/tuikuan_icon_tuikuan" />
+
+        <TextView
+
+            android:id="@+id/tv_tuihuo_tuikuan1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_image1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:includeFontPadding="false"
+            android:text="我要退款(无需退货)"
+            android:textColor="#ff000000"
+            android:textSize="17sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_tuihuo_tuikuan1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:includeFontPadding="false"
+            android:text="未收到货，或与商家协商之后申请"
+            android:textColor="#ff656565"
+            android:textSize="13sp" />
+    </com.flyco.roundview.RoundRelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

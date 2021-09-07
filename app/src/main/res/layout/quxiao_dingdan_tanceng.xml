@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+
+    <com.flyco.roundview.RoundLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:rv_backgroundColor="@color/white"
+        app:rv_cornerRadius_TL="10dp"
+        app:rv_cornerRadius_TR="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="取消订单"
+                android:textColor="#ff212121"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:src="@mipmap/tanceng_guanbi" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/grayfff5f5f5"
+            android:gravity="center_vertical"
+            android:paddingLeft="14dp"
+            android:text="请选择取消订单的原因"
+            android:textColor="@color/color_999999"
+            android:textSize="13sp" />
+
+
+        <RelativeLayout
+            android:id="@+id/rl_buxiangmaile"
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="14dp"
+                android:text="我不想买了"
+                android:textColor="#ff333333"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/iv_buxiangmaile"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="14dp"
+                android:src="@mipmap/quxiaodingdan_button_nor" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_chongxinpai"
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="14dp"
+                android:text="信息填写错误重新拍"
+                android:textColor="#ff333333"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/iv_chongxinpai"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="14dp"
+                android:src="@mipmap/quxiaodingdan_button_nor" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_quehuo"
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="14dp"
+                android:text="卖家缺货"
+                android:textColor="#ff333333"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/iv_maijiaquehuo"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="14dp"
+                android:src="@mipmap/quxiaodingdan_button_nor" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_mianjiaoyi"
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="14dp"
+                android:text="同城见面交易"
+                android:textColor="#ff333333"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/iv_mianjiaoyi"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="14dp"
+                android:src="@mipmap/quxiaodingdan_button_nor" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="#eeeeee" />
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="#eeeeee">
+
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_quedingquxiao"
+                    android:layout_width="163dp"
+                    android:layout_height="42dp"
+                    android:background="@drawable/button_white"
+                    android:gravity="center"
+                    android:text="确定取消"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_zanbuquxiao"
+                    android:layout_width="163dp"
+                    android:layout_height="42dp"
+                    android:background="@drawable/button_oranage"
+                    android:gravity="center"
+                    android:text="暂不取消"
+                    android:textColor="#ffffffff"
+                    android:textSize="15sp" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#eeeeee" />
+
+    </com.flyco.roundview.RoundLinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

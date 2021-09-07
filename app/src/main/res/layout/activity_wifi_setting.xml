@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.WifiSettingActivity">
+
+
+    <TextView
+        android:id="@+id/tv_kaiqi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="开启wifi"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="关闭wifi"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_kaiqi"
+        app:layout_constraintTop_toBottomOf="@+id/tv_kaiqi" />
+
+
+    <TextView
+        android:id="@+id/tv_wifi_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="wifi状态"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_close"
+        app:layout_constraintTop_toBottomOf="@+id/tv_close" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

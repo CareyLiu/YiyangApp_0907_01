@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/iv_bacground"
+            android:layout_width="match_parent"
+            android:layout_height="183dp"
+            android:src="@mipmap/beijingtu"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tv_ketixianjine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="20dp"
+            android:includeFontPadding="false"
+            android:text="可提现金额"
+            android:textColor="#ffffffff"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_ketixian_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:includeFontPadding="false"
+            android:text="￥00.00"
+            android:textColor="#ffffffff"
+            android:textSize="19sp"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_ketixianjine"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ketixianjine" />
+
+
+        <TextView
+            android:id="@+id/tv_kedikou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="19dp"
+            android:includeFontPadding="false"
+            android:text="￥00.00"
+            android:textColor="#ffffffff"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_ketixian_price" />
+
+
+        <TextView
+            android:id="@+id/tv_kedikou_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:includeFontPadding="false"
+            android:text="可抵扣金额"
+            android:textColor="#ffffffff"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_kedikou"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_kedikou" />
+
+
+        <TextView
+            android:id="@+id/tv_dongjiejine_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="85dp"
+            android:includeFontPadding="false"
+            android:text="￥00.00"
+            android:textColor="#ffffffff"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toRightOf="@+id/tv_kedikou"
+            app:layout_constraintTop_toTopOf="@+id/tv_kedikou" />
+
+        <TextView
+            android:id="@+id/tv_dongjiejine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="冻结金额"
+            android:textColor="#ffffffff"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_dongjiejine_price"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_dongjiejine_price" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_tixian"
+            android:layout_width="73dp"
+            android:layout_height="31dp"
+            android:background="@mipmap/lijizhifu"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="立即提现"
+                android:textColor="#fffd7937"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_mingxi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="12dp"
+        android:includeFontPadding="false"
+        android:text="明细"
+        android:textColor="#ff000000"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_back" />
+
+    <TextView
+        android:id="@+id/tv_zhichu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:includeFontPadding="false"
+        android:text="支出¥0.00 收入¥0.00"
+        android:textColor="#ff999999"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_mingxi"
+        app:layout_constraintTop_toBottomOf="@+id/tv_mingxi" />
+
+
+    <View
+        app:layout_constraintTop_toBottomOf="@+id/tv_zhichu"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

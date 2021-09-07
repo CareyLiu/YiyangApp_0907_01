@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="331pt"
+        android:layout_height="466pt"
+        android:layout_marginRight="18pt"
+        android:layout_marginBottom="24pt"
+        android:background="@drawable/bg_white_radius_8"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="331pt"
+            android:layout_height="331pt" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15pt"
+                android:layout_marginVertical="23pt"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:text="专业清洗地暖"
+                android:textColor="@color/color_3"
+                android:textSize="27pt"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingLeft="15pt">
+
+                <TextView
+                    android:id="@+id/tv_state"
+                    android:layout_width="100pt"
+                    android:layout_height="38pt"
+                    android:background="@drawable/bg_tongcheng_state_yfb"
+                    android:gravity="center"
+                    android:text="已发布"
+                    android:textColor="@color/tongcheng_yfb"
+                    android:textSize="23pt"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/bt_bianjie"
+                    android:layout_width="115pt"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingRight="15pt"
+                    android:text="编辑"
+                    android:textColor="@color/text_red"
+                    android:textSize="23pt"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

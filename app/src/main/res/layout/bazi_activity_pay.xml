@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    android:fitsSystemWindows="true"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_marginLeft="19dp"
+            android:layout_marginRight="20dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/about_pic_1" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="￥100元"
+                android:textColor="@color/bazi_main"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:includeFontPadding="false"
+                android:text="八紫流年盘包年会员"
+                android:textColor="#151515"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="18dp"
+        android:text="选择支付方式"
+        android:textColor="#151515"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:id="@+id/ll_select_wx"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:background="@color/white"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="18dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/zhifu_icon_weixin" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="微信支付"
+            android:textColor="#333333"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/iv_select_wx"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_marginRight="20dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/zhifu_icon_select_on" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <LinearLayout
+        android:id="@+id/ll_select_zfb"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:background="@color/white"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="18dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/zhifu_icon_zhifubao" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="支付宝支付"
+            android:textColor="#333333"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/iv_select_zfb"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_marginRight="20dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/zhifu_icon_select_off" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/bt_paipan"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bazi_button"
+        android:text="立即支付"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+</LinearLayout>

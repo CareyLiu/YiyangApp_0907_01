@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_bg_color"
+    android:fitsSystemWindows="true">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smartRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:srlTextSizeTime="10sp"
+            app:srlTextSizeTitle="12sp" />
+
+        <com.yiyang.cn.view.ObservableScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/ll_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/iv_weizhi"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="11dp"
+                        android:src="@mipmap/home_nav_icon_weizhi"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_logo"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/iv_logo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:includeFontPadding="false"
+                        android:text="哈尔滨"
+                        android:textColor="#ff333333"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_weizhi"
+                        app:layout_constraintLeft_toRightOf="@+id/iv_weizhi"
+                        app:layout_constraintTop_toTopOf="@+id/iv_weizhi" />
+
+                    <ImageView
+                        android:id="@+id/iv_saoma"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:src="@mipmap/jij_shouye_saoyisao"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_logo"
+                        app:layout_constraintRight_toLeftOf="@+id/iv_home_xiaoxi"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/iv_logo" />
+
+                    <ImageView
+                        android:id="@+id/iv_home_xiaoxi"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="14dp"
+                        android:src="@mipmap/yuyinzhushou_nav_icon_mai_bk"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_logo"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/iv_logo" />
+
+                    <TextView
+                        android:id="@+id/iv_logo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="智慧医氧"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <com.youth.banner.Banner
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="144dp"
+                    android:layout_marginTop="10dp"
+                    app:image_scale_type="fit_xy"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_1"
+                    tools:background="@color/blue" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="@color/grayfff5f5f5"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iv_zhikong"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="14dp"
+                        android:src="@mipmap/home_zhikong_title_zhikong"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:includeFontPadding="false"
+                        android:text="智控"
+                        android:textColor="#ff333333"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_zhikong"
+                        app:layout_constraintLeft_toRightOf="@+id/iv_zhikong"
+                        app:layout_constraintTop_toTopOf="@+id/iv_zhikong" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/zhikong_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_zhikong" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <RelativeLayout
+                    android:id="@+id/ll_shenghuo1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_chihe_wanle_list">
+
+                    <LinearLayout
+                        android:id="@+id/ll_shenghuo"
+                        android:layout_width="match_parent"
+                        android:layout_height="27dp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_marginLeft="14dp"
+                            android:src="@mipmap/home_shenghuo_title" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="生活"
+                            android:textColor="#ff333333"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rlv_shenghuo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ll_shenghuo" />
+                </RelativeLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_tuan"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@mipmap/home_zhikong_title_tuangou"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:includeFontPadding="false"
+                        android:text="团购"
+                        android:textColor="#ff333333"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_tuan"
+                        app:layout_constraintLeft_toRightOf="@+id/iv_tuan"
+                        app:layout_constraintTop_toTopOf="@id/iv_tuan" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_chihe_wanle_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_tuan" />
+
+                    <ImageView
+                        android:id="@+id/iv_dalibao"
+                        android:layout_width="match_parent"
+                        android:layout_height="85dp"
+                        app:layout_constraintTop_toBottomOf="@+id/rv_chihe_wanle_list"
+                        tools:background="@color/red" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/ll_shagnchengzhuanqu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_dalibao">
+
+                        <ImageView
+                            android:id="@+id/iv_shagnhcengzhuanqu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/jyj_shangcheng_zhuanqu"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:layout_width="336dp"
+                            android:layout_height="0.5dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="#FFFCC267"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="@+id/iv_shagnhcengzhuanqu"
+                            app:layout_constraintRight_toRightOf="@+id/iv_shagnhcengzhuanqu" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_tupianheji"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#FFFCC267"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_shagnchengzhuanqu">
+
+
+                        <ImageView
+                            android:id="@+id/iv_ziying"
+                            android:layout_width="168dp"
+                            android:layout_height="145dp"
+                            android:layout_weight="1">
+
+                        </ImageView>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_tupianheji2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#FFFCC267"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_tupianheji">
+
+
+                        <ImageView
+                            android:id="@+id/iv_remen"
+                            android:layout_width="168dp"
+                            android:layout_height="145dp"
+                            android:layout_weight="1">
+
+                        </ImageView>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_xiupeichang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_dalibao">
+
+                        <ImageView
+                            android:id="@+id/iv_xiupeichang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@mipmap/xiupeichagn_pic"
+                            android:visibility="gone" />
+
+                        <com.youth.banner.Banner
+                            android:id="@+id/banner_xiupeichang"
+                            android:layout_width="750pt"
+                            android:layout_height="200pt"
+                            app:image_scale_type="fit_xy"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            tools:background="@color/blue" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rl_zijian"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/rl_xiupeichang">
+
+                        <ImageView
+                            android:id="@+id/iv_zijian"
+                            android:layout_width="750pt"
+                            android:layout_height="200pt"
+                            android:layout_centerInParent="true"
+                            android:src="@mipmap/banner_zijianshop" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_taobao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/rl_zijian">
+
+                        <ImageView
+                            android:id="@+id/iv_tianmao_or_taobao"
+                            android:layout_width="750pt"
+                            android:layout_height="200pt"
+                            android:layout_centerInParent="true"
+                            android:src="@mipmap/banner_40wan" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/view_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="@color/grayfff5f5f5"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_tupianheji2" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <include
+                    android:id="@+id/middlePanel"
+                    layout="@layout/middle_item_layout">
+
+                </include>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rlv_ziying_or_remen"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rlv_remen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="9dp"
+                    android:paddingRight="9dp"
+                    android:visibility="gone" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_quanbu"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="61dp"
+                            android:layout_height="21dp"
+                            android:text="查看全部"
+                            android:textColor="#fffc0100"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+                            android:src="@mipmap/arrow_red" />
+
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+        </com.yiyang.cn.view.ObservableScrollView>
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlTextSizeTime="10sp"
+            app:srlTextSizeTitle="12sp" />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <include
+        android:id="@+id/topPanel"
+        layout="@layout/middle_item_layout"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="14dp"
+        android:layout_marginBottom="50dp"
+        android:visibility="gone">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_view"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="freec3_data.json"
+            app:lottie_loop="true"
+            app:lottie_speed="2.0" />
+
+        <ImageView
+            android:id="@+id/iv_gouwuche"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
+            android:layout_below="@+id/animation_view"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="8dp"
+            android:src="@mipmap/home_icon_gouwuche" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="14dp"
+        android:layout_marginBottom="50dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_yuyin"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="8dp"
+            android:src="@mipmap/shuinuan_guzhang" />
+    </RelativeLayout>
+</RelativeLayout>
+

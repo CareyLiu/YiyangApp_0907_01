@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/iv_pic"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@color/gay" />
+
+    <TextView
+        android:id="@+id/tv_goods_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iv_pic"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="40dp"
+        android:layout_toEndOf="@+id/iv_pic"
+        android:layout_toRightOf="@+id/iv_pic"
+        android:text="白色"
+        android:textColor="@color/car_text_black" />
+
+    <TextView
+        android:id="@+id/tv_shop_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_goods_name"
+        android:layout_alignStart="@+id/tv_goods_name"
+        android:layout_below="@+id/tv_goods_name"
+        android:layout_marginTop="26dp"
+        android:text="神灯科技旗舰店"
+        android:textColor="@color/chuck_status_requested" />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_pic"
+        android:layout_alignLeft="@+id/tv_shop_name"
+        android:layout_alignStart="@+id/tv_shop_name"
+        android:text="￥99.00"
+        android:textColor="@color/car_text_red" />
+
+    <TextView
+        android:id="@+id/tv_sold_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_price"
+        android:layout_marginLeft="10dp"
+        android:layout_toEndOf="@+id/tv_price"
+        android:layout_toRightOf="@+id/tv_price"
+        android:text="已售0件" />
+</RelativeLayout>

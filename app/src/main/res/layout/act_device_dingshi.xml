@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/ll_youshuju"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="92pt"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="31pt"
+                android:text="定时可能会存在30秒左右误差"
+                android:textColor="@color/color_9"
+                android:textSize="27pt" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="150pt" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_meishuju"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="115pt"
+            android:layout_height="115pt"
+            android:src="@mipmap/tuya_shouye_pic_none" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16pt"
+            android:includeFontPadding="false"
+            android:text="没有定时数据"
+            android:textColor="@color/color_9"
+            android:textSize="27pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/bt_add"
+            android:layout_width="238pt"
+            android:layout_height="92pt"
+            android:layout_marginTop="37pt"
+            android:layout_marginBottom="300pt"
+            android:background="@drawable/bt_radius54_s"
+            android:gravity="center"
+            android:text="添加"
+            android:textColor="@color/white"
+            android:textSize="31pt"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/bt_add_two"
+        android:layout_width="match_parent"
+        android:layout_height="90pt"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="29pt"
+        android:layout_marginBottom="30pt"
+        android:background="@drawable/bt_radius45_s"
+        android:gravity="center"
+        android:text="添加定时"
+        android:textColor="@color/white"
+        android:textSize="33pt"
+        android:textStyle="bold"
+        android:visibility="gone" />
+</FrameLayout>

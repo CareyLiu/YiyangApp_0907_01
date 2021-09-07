@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/ll_main_tianjia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="#eeeeee"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+
+        <TextView
+            android:id="@+id/tv_huashu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/iv_image"
+            android:text="添加成功的装置:"
+            android:textColor="#000000" />
+
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/rlv_shebeilist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_huashu"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:visibility="visible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_below="@+id/rlv_shebeilist" />
+
+        <com.flyco.roundview.RoundRelativeLayout
+            android:id="@+id/rl_tuichu"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
+            app:rv_backgroundColor="@color/white"
+            app:rv_cornerRadius="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="退出"
+                android:textColor="@color/blue_ff3a85f8" />
+        </com.flyco.roundview.RoundRelativeLayout>
+    </RelativeLayout>
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="307dp"
+        android:layout_height="134dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="lottie.json"
+        app:lottie_loop="true" />
+
+    <TextView
+        android:id="@+id/tv_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/animation_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="正在发现可用设备"
+        android:textColor="#ff333333"
+        android:textSize="16sp" />
+</RelativeLayout>

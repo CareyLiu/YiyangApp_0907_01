@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/iv_baijian"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:layout_margin="14dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/fengshuibaijian_bangding" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="86dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingRight="15dp">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="9dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:text="和田玉羊脂级白玉平安无事牌吊坠男女玉吊坠玉佩玉牌子玉坠"
+                android:textColor="#000000"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_bangding"
+                android:layout_width="58dp"
+                android:layout_height="26dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bazi_fsbj_bang"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="去绑定"
+                android:textColor="@color/bazi_main"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_tag"
+        android:layout_width="100pt"
+        android:layout_height="38pt"
+        android:layout_marginVertical="7pt"
+        android:layout_marginRight="20pt"
+        android:background="@drawable/bg_tongcheng_home_item_type"
+        android:gravity="center"
+        android:text="电脑维修"
+        android:textColor="@color/color_9"
+        android:textSize="21pt"
+        android:textStyle="bold" />
+</LinearLayout>

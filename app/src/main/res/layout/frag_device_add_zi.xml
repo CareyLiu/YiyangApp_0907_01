@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app">
+
+    <RelativeLayout
+        android:id="@+id/rl_sousuo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_shebei"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="98pt" />
+
+        <RelativeLayout
+            android:id="@+id/rl_shuoming"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="501pt"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="38pt"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="相应权限开启时，可自动发现蓝牙/Wi-Fi/网关/有线设备等设备"
+                android:textColor="@color/color_9"
+                android:textSize="27pt" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="154pt"
+                android:includeFontPadding="false"
+                android:text="请确保设备处于配网状态 >"
+                android:textColor="@color/color_main"
+                android:textSize="27pt" />
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="468pt"
+            android:layout_height="468pt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="313pt"
+            android:src="@mipmap/tuya_add_pic_circle" />
+
+        <TextView
+            android:id="@+id/bt_xiugai"
+            android:layout_width="359pt"
+            android:layout_height="96pt"
+            android:layout_below="@+id/iv_search"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="121pt"
+            android:background="@drawable/bg_wihte_line_main_radius45"
+            android:gravity="center"
+            android:text="修改配置Wi-Fi"
+            android:textColor="@color/color_main"
+            android:textSize="33pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/bt_chongxinsousuo"
+            android:layout_width="359pt"
+            android:layout_height="96pt"
+            android:layout_below="@+id/bt_xiugai"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20pt"
+            android:background="@drawable/bt_radius45_s"
+            android:gravity="center"
+            android:text="重新搜索"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            android:textSize="33pt"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/rl_faxian"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/iv_search"
+            android:layout_marginTop="138pt"
+            android:layout_marginBottom="50pt"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:includeFontPadding="false"
+                android:text="发现可用设备"
+                android:textColor="@color/color_3"
+                android:textSize="31pt"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bt_xiayibu"
+                android:layout_width="662pt"
+                android:layout_height="90pt"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/bt_radius45_s"
+                android:gravity="center"
+                android:text="下一步"
+                android:textColor="@color/white"
+                android:textSize="33pt"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/ll_peizhi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="61pt"
+            android:includeFontPadding="false"
+            android:text="启用权限以为搜索设备"
+            android:textColor="@color/color_3"
+            android:textSize="31pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="460pt"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="161pt"
+            android:includeFontPadding="false"
+            android:text="启用蓝牙才能搜索到附近蓝牙设备，如不确定设备类型，建议全部开启权限"
+            android:textColor="@color/color_9"
+            android:textSize="27pt" />
+
+        <LinearLayout
+            android:id="@+id/ll_wifi"
+            android:layout_width="499pt"
+            android:layout_height="138pt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="351pt"
+            android:background="@drawable/bg_white_radius_69"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="启用WI-Fi"
+                android:textColor="@color/color_3"
+                android:textSize="33pt"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/iv_wifi"
+                android:layout_width="46pt"
+                android:layout_height="46pt"
+                android:layout_marginLeft="123pt"
+                android:src="@mipmap/tuya_zidong_icon_duihao"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_lanya"
+            android:layout_width="499pt"
+            android:layout_height="138pt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="525pt"
+            android:background="@drawable/bg_white_radius_69"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="启用蓝牙"
+                android:textColor="@color/color_3"
+                android:textSize="33pt"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:id="@+id/iv_lanya"
+                android:layout_width="46pt"
+                android:layout_height="46pt"
+                android:layout_marginLeft="136pt"
+                android:src="@mipmap/tuya_zidong_icon_duihao"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/bt_search_device"
+            android:layout_width="662pt"
+            android:layout_height="90pt"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50pt"
+            android:background="@drawable/bt_radius45_s"
+            android:gravity="center"
+            android:text="开始搜索"
+            android:textColor="@color/white"
+            android:textSize="33pt"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</FrameLayout>

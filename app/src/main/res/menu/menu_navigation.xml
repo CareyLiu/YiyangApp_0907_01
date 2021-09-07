@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/i_home"
+        android:checked="true"
+        android:icon="@drawable/selector_home"
+        android:title="首页" />
+
+    <item
+        android:id="@+id/i_zhinengjiaju"
+        android:icon="@drawable/selector_car_online"
+        android:title="智能家居" />
+
+    <item
+        android:id="@+id/i_car_online"
+        android:icon="@drawable/selector_play"
+        android:title="设备" />
+    <item
+        android:id="@+id/i_message"
+        android:icon="@drawable/selector_message"
+        android:title="@string/message" />
+    <item
+        android:id="@+id/i_mine"
+        android:icon="@drawable/selector_mine"
+        android:title="@string/mine" />
+</menu>

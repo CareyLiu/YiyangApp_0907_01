@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_goods"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp_10"
+    android:layout_marginRight="@dimen/dp_10"
+    android:background="@color/white"
+    android:gravity="center_vertical">
+
+    <CheckBox
+        android:id="@+id/cb_goods"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/selector_shop_cart"
+        android:button="@null" />
+
+    <ImageView
+        android:id="@+id/iv_goods"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:srcCompat="@color/chuck_status_requested" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_package"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="套餐1" />
+
+        <TextView
+            android:id="@+id/tv_goods_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="横版数码按键开关" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="￥24.00"
+                android:textColor="@color/app_bg" />
+
+            <ImageView
+                android:id="@+id/iv_cut"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:padding="@dimen/dp_10"
+                android:src="@drawable/gouwuche_jian" />
+
+            <EditText
+                android:id="@+id/et_count"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:background="@drawable/gouwuche_button_bg_2"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="1"
+                android:textSize="10sp"
+                android:textColor="@color/black" />
+
+            <ImageView
+                android:id="@+id/iv_add"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginRight="15dp"
+                android:padding="@dimen/dp_10"
+                android:src="@drawable/gouwuche_jia" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_express_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="邮寄：￥10.00" />
+
+    </LinearLayout>
+
+</LinearLayout>

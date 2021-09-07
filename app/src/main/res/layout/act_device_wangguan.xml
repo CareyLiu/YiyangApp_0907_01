@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="538pt"
+                android:background="@color/black">
+
+                <TextView
+                    android:id="@+id/tv_device_zaixian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="31pt"
+                    android:layout_marginBottom="38pt"
+                    android:includeFontPadding="false"
+                    android:text="在线设备：0个"
+                    android:textColor="@color/white"
+                    android:textSize="31pt"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_device_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="31pt"
+                    android:layout_marginBottom="108pt"
+                    android:ellipsize="end"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:text="网关"
+                    android:textColor="@color/white"
+                    android:textSize="58pt"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="38pt"
+                android:layout_marginBottom="7pt"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:paddingLeft="31pt"
+                android:text="已添加的设备"
+                android:textColor="@color/color_9"
+                android:textSize="31pt" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_device_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="118pt" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/bt_add_device"
+        android:layout_width="match_parent"
+        android:layout_height="90pt"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="29pt"
+        android:layout_marginBottom="20pt"
+        android:background="@drawable/bg_white_radius_45"
+        android:gravity="center"
+        android:text="添加子设备"
+        android:textColor="@color/color_main"
+        android:textSize="33pt"
+        android:textStyle="bold" />
+</FrameLayout>

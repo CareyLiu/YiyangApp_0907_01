@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:orientation="vertical"
+    tools:context=".activity.zckt.AirConditionerActivity">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/srL_smart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/trans"
+            app:srlTextSizeTime="10sp"
+                app:srlTextSizeTitle="12sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="90dp"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="173dp"
+                        android:background="@color/white">
+
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@mipmap/chuagnlian_beijing">
+
+                        </ImageView>
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/animation_view"
+                            android:layout_width="123dp"
+                            android:layout_height="123dp"
+                            android:layout_centerInParent="true"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:lottie_autoPlay="false"
+                            app:lottie_loop="false" />
+
+                        <ImageView
+                            android:visibility="gone"
+                            android:id="@+id/iv_zanting_tupian"
+                            android:layout_width="123dp"
+                            android:layout_height="123dp"
+                            android:layout_centerInParent="true"
+                            android:src="@mipmap/chuanglian_pic_chuanglian_close" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:id="@+id/ll_online_state"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="14dp"
+                                android:layout_marginRight="14dp"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:background="@drawable/bg_zhineng_device_online" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:includeFontPadding="false"
+                                    android:text="设备在线"
+                                    android:textColor="#666666"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp">
+
+                        <RelativeLayout
+                            android:id="@+id/rl_kaichuang"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <RelativeLayout
+                                android:id="@+id/rrl_kaichuang"
+                                android:layout_width="101dp"
+                                android:layout_height="69dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/chuanglian_no_sel">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <ImageView
+                                        android:id="@+id/iv_kaichuang"
+                                        android:layout_width="23dp"
+                                        android:layout_height="23dp"
+
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/tv_kaichuanglian"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="9dp"
+                                        android:includeFontPadding="false"
+                                        android:text="开窗帘"
+                                        android:textColor="#ff333333"
+                                        android:textSize="13sp"
+                                        app:layout_constraintLeft_toLeftOf="@+id/iv_kaichuang"
+                                        app:layout_constraintRight_toRightOf="@+id/iv_kaichuang"
+                                        app:layout_constraintTop_toBottomOf="@+id/iv_kaichuang" />
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            </RelativeLayout>
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/rl_zanting"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <RelativeLayout
+                                android:id="@+id/rrl_zanting"
+                                android:layout_width="101dp"
+                                android:layout_height="69dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/chuanglian_no_sel">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <ImageView
+                                        android:id="@+id/iv_zanting"
+                                        android:layout_width="23dp"
+                                        android:layout_height="23dp"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/tv_zanting"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="9dp"
+                                        android:includeFontPadding="false"
+                                        android:text="暂停"
+                                        android:textColor="#ff333333"
+                                        android:textSize="13sp"
+                                        app:layout_constraintLeft_toLeftOf="@+id/iv_zanting"
+                                        app:layout_constraintRight_toRightOf="@+id/iv_zanting"
+                                        app:layout_constraintTop_toBottomOf="@+id/iv_zanting" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </RelativeLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_guanchuang"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <RelativeLayout
+                                android:id="@+id/rrl_guanchuang"
+                                android:layout_width="101dp"
+                                android:layout_height="69dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/chuanglian_no_sel">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+
+                                    <ImageView
+                                        android:id="@+id/iv_guanchuang"
+                                        android:layout_width="23dp"
+                                        android:layout_height="23dp"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/tv_guanchuanglian"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="9dp"
+                                        android:includeFontPadding="false"
+                                        android:text="关窗帘"
+                                        android:textColor="#ff333333"
+                                        android:textSize="13sp"
+                                        app:layout_constraintLeft_toLeftOf="@+id/iv_guanchuang"
+                                        app:layout_constraintRight_toRightOf="@+id/iv_guanchuang"
+                                        app:layout_constraintTop_toBottomOf="@+id/iv_guanchuang" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </RelativeLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/tv_family_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="14dp"
+                            android:text="家庭"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_family"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginRight="14dp"
+                            android:layout_toEndOf="@+id/tv_family_title"
+                            android:layout_toRightOf="@+id/tv_family_title"
+                            android:gravity="right"
+                            android:singleLine="true"
+                            android:textColor="#999999"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_room"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/tv_room_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="14dp"
+                            android:text="房间"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_room"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_toStartOf="@+id/img_room_into"
+                            android:layout_toLeftOf="@+id/img_room_into"
+                            android:layout_toEndOf="@+id/tv_room_title"
+                            android:layout_toRightOf="@+id/tv_room_title"
+                            android:gravity="right"
+                            android:singleLine="true"
+                            android:textColor="#999999"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/img_room_into"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="14dp"
+                            android:src="@mipmap/push_gray_999" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_device_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/tv_device_name_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="14dp"
+                            android:text="名称"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_device_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_toStartOf="@+id/img_device_into"
+                            android:layout_toLeftOf="@+id/img_device_into"
+                            android:layout_toEndOf="@+id/tv_device_name_title"
+                            android:layout_toRightOf="@+id/tv_device_name_title"
+                            android:gravity="right"
+                            android:singleLine="true"
+                            android:textColor="#999999"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/img_device_into"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="14dp"
+                            android:src="@mipmap/push_gray_999" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/tv_device_type_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="14dp"
+                            android:text="类型"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_device_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginRight="14dp"
+                            android:layout_toEndOf="@+id/tv_device_type_title"
+                            android:layout_toRightOf="@+id/tv_device_type_title"
+                            android:gravity="right"
+                            android:singleLine="true"
+                            android:textColor="#999999"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_caozuotishiyin"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/tv_caozuotishiyin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="14dp"
+                            android:text="操作提示音"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <Switch
+                            android:id="@+id/sbtn_caozuotishiyin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginRight="14dp" />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/rl_device_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tv_device_state_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="14dp"
+                            android:text="设备状态"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_device_state"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginRight="14dp"
+                            android:layout_toEndOf="@+id/tv_device_state_title"
+                            android:layout_toRightOf="@+id/tv_device_state_title"
+                            android:gravity="right"
+                            android:singleLine="true"
+                            android:text="正常"
+                            android:textColor="#09CB80"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rl_auto_switch"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/white"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tv_auto_switch_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="14dp"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <com.suke.widget.SwitchButton
+                            android:id="@+id/auto_switch_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginRight="14dp"
+                            app:sb_checked="false"
+                            app:sb_checked_color="#1677FF"
+                            app:sb_show_indicator="false" />
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginRight="14dp">
+
+                        <ImageView
+                            android:id="@+id/iv_tishi"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentTop="true"
+                            android:src="@mipmap/img_device_detail_tishi" />
+
+                        <TextView
+                            android:id="@+id/tv_noti"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="8dp"
+                            android:layout_toEndOf="@+id/iv_tishi"
+                            android:layout_toRightOf="@+id/iv_tishi"
+                            android:includeFontPadding="false"
+                            android:text="控制设备时，可通过设备的【位置】或【别名】进行控制,如
+有相同【位置】和【别名】的设备存在时，将会同步操作"
+                            android:textColor="#999999"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+            <TextView
+                android:id="@+id/tv_room_delete"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:layout_marginBottom="38dp"
+                android:background="@drawable/btn_zhineng_family_add_share"
+                android:gravity="center"
+                android:text="删除"
+                android:textColor="#F83A47"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</RelativeLayout>

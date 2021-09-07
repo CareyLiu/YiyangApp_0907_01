@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constrain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@color/blue" />
+
+    <TextView
+
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:text="寻味烤肉"
+        android:textColor="#ff111111"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/iv_image"
+        app:layout_constraintTop_toTopOf="@+id/iv_image" />
+
+    <TextView
+        android:ellipsize="end"
+        android:id="@+id/tv_shuoming"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:lines="2"
+        android:text="精品肥牛，新西兰羊排，澳洲肥牛..."
+        android:textColor="#ff666666"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="￥258.00"
+        android:textColor="#ff57c3b3"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_image"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_shuoming"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shuoming" />
+
+    <TextView
+        android:id="@+id/tv_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="13dp"
+        android:text="16.9km"
+        android:textColor="#ff666666"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_shuoming"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_shuoming" />
+
+    <TextView
+        android:id="@+id/tv_yishou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="已售：10"
+        android:textColor="#ff666666"
+        android:textSize="12sp"
+        app:layout_constraintRight_toRightOf="@+id/tv_distance"
+        app:layout_constraintTop_toBottomOf="@+id/tv_distance" />
+</androidx.constraintlayout.widget.ConstraintLayout>

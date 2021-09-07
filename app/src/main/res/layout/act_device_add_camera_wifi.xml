@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_sousuo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_shebei"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="98pt" />
+
+        <RelativeLayout
+            android:id="@+id/rl_shuoming"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="501pt"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="38pt"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="相应权限开启时，可自动发现蓝牙/Wi-Fi/网关/有线设备等设备"
+                android:textColor="@color/color_9"
+                android:textSize="27pt" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="154pt"
+                android:includeFontPadding="false"
+                android:text="请确保设备处于配网状态 >"
+                android:textColor="@color/color_main"
+                android:textSize="27pt" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="468pt"
+            android:layout_height="468pt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="313pt"
+            android:src="@mipmap/tuya_add_pic_circle" />
+
+        <TextView
+            android:id="@+id/bt_chongxinsousuo"
+            android:layout_width="359pt"
+            android:layout_height="96pt"
+            android:layout_marginTop="121pt"
+            android:layout_below="@+id/iv_search"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bt_radius45_s"
+            android:gravity="center"
+            android:text="重新搜索"
+            android:textColor="@color/white"
+            android:textSize="33pt"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</LinearLayout>

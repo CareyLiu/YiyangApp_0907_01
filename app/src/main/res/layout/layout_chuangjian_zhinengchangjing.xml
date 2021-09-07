@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayfff5f5f5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grayfff5f5f5"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp">
+
+            <ImageView
+                android:id="@+id/iv_chuangjianchangjing_fisrtimage"
+                android:layout_width="206dp"
+                android:layout_height="17dp"
+                android:src="@mipmap/addchangjing_pic_arrow"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="60dp"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:includeFontPadding="false"
+                android:text="设置条件"
+                android:textColor="#ff333333"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:includeFontPadding="false"
+                android:text="设置任务"
+                android:textColor="#ff333333"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="26dp"
+            android:text="一键执行(手动触发)"
+            android:textColor="#ff333333"
+            android:textSize="15sp" />
+
+
+        <com.flyco.roundview.RoundRelativeLayout
+            android:id="@+id/rl_yijianzhixing"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="19dp"
+            app:rv_backgroundColor="@color/white"
+            app:rv_cornerRadius="8dp">
+
+            <ImageView
+                android:id="@+id/iv_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="19dp"
+                android:src="@mipmap/addchangjing_icon_yijianzhixing" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="19dp"
+                android:layout_toRightOf="@+id/iv_image"
+                android:text="一建执行"
+                android:textColor="#ff333333"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:src="@mipmap/push_gray_999" />
+
+        </com.flyco.roundview.RoundRelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="19dp"
+            android:includeFontPadding="false"
+            android:text="设备联动(需要条件才能触发)"
+            android:textColor="#ff333333"
+            android:textSize="15sp" />
+
+        <com.flyco.roundview.RoundRelativeLayout
+            android:id="@+id/rl_qixiangbianhua"
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="19dp"
+            app:rv_backgroundColor="@color/white"
+            app:rv_cornerRadius_TL="8dp"
+            app:rv_cornerRadius_TR="8dp">
+
+            <ImageView
+                android:id="@+id/iv_image_1"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="19dp"
+                android:src="@mipmap/addchangjing_icon_qixiang" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="19dp"
+                android:layout_toRightOf="@+id/iv_image_1"
+                android:includeFontPadding="false"
+                android:text="气象变化时"
+                android:textColor="#ff333333"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:src="@mipmap/push_gray_999"></ImageView>
+        </com.flyco.roundview.RoundRelativeLayout>
+
+        <com.flyco.roundview.RoundRelativeLayout
+            android:id="@+id/rl_weizhibianhua"
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            android:layout_marginHorizontal="24dp"
+            app:rv_backgroundColor="@color/white">
+
+            <ImageView
+                android:id="@+id/iv_image_2"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="19dp"
+                android:src="@mipmap/addchangjing_icon_weizhibianhua" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="19dp"
+                android:layout_toRightOf="@+id/iv_image_2"
+                android:includeFontPadding="false"
+                android:text="位置变化时"
+                android:textColor="#ff333333"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:src="@mipmap/push_gray_999"></ImageView>
+        </com.flyco.roundview.RoundRelativeLayout>
+
+        <com.flyco.roundview.RoundRelativeLayout
+            android:id="@+id/rl_dingshi"
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            android:layout_marginHorizontal="24dp"
+            app:rv_backgroundColor="@color/white">
+
+            <ImageView
+                android:id="@+id/iv_image_3"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="19dp"
+                android:src="@mipmap/addchangjing_icon_time" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="19dp"
+                android:layout_toRightOf="@+id/iv_image_3"
+                android:includeFontPadding="false"
+                android:text="定时"
+                android:textColor="#ff333333"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:src="@mipmap/push_gray_999"></ImageView>
+        </com.flyco.roundview.RoundRelativeLayout>
+
+        <com.flyco.roundview.RoundRelativeLayout
+            android:id="@+id/rl_shebeizhuangtaibianhua"
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            android:layout_marginHorizontal="24dp"
+            app:rv_backgroundColor="@color/white"
+            app:rv_cornerRadius_BL="8dp"
+            app:rv_cornerRadius_BR="8dp">
+
+            <ImageView
+                android:id="@+id/iv_image_4"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="19dp"
+                android:src="@mipmap/addchangjing_icon_zhuangtaibianhua" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="19dp"
+                android:layout_toRightOf="@+id/iv_image_4"
+                android:includeFontPadding="false"
+                android:text="设备状态变化"
+                android:textColor="#ff333333"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:src="@mipmap/push_gray_999"></ImageView>
+        </com.flyco.roundview.RoundRelativeLayout>
+
+
+    </LinearLayout>
+</ScrollView>
+

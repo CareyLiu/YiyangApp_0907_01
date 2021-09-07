@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false"
+    >
+    <item android:drawable="@drawable/mf_icon_anim1" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim2" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim3" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim4" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim5" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim6" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim7" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim8" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim9" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim10" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim11" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim12" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim13" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim14" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim15" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim16" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim17" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim18" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim19" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim20" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim21" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim22" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim23" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim24" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim25" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim26" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim27" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim28" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim29" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim30" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim31" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim32" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim33" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim34" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim34" android:duration="50"></item>
+    <item android:drawable="@drawable/mf_icon_anim36" android:duration="50"></item>
+</animation-list>

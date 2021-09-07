@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_back"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/back_black" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true">
+
+            <RelativeLayout
+                android:id="@+id/rl_shoudong"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="46pt">
+
+                <TextView
+                    android:id="@+id/tv_shoudong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:includeFontPadding="false"
+                    android:text="手动添加"
+                    android:textColor="@color/color_3"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/line_shoudong"
+                    android:layout_width="69pt"
+                    android:layout_height="9pt"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/bt_radius24_s" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_zidong"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_zidong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:includeFontPadding="false"
+                    android:text="自动添加"
+                    android:textColor="@color/color_9"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/line_zidong"
+                    android:layout_width="69pt"
+                    android:layout_height="9pt"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/bt_radius24_s"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line" />
+
+    <com.yiyang.cn.activity.tuya_device.add.adapter.MyViewPager
+        android:id="@+id/vpg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>

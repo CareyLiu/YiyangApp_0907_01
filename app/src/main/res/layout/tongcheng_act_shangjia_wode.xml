@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smartRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:srlTextSizeTime="10sp"
+            app:srlTextSizeTitle="12sp" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_shenhe_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="104pt"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="31pt">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="审核状态"
+                        android:textColor="@color/color_1"
+                        android:textSize="31pt"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/iv_shenhe_state"
+                        android:layout_width="46pt"
+                        android:layout_height="46pt"
+                        android:layout_marginRight="15pt" />
+
+                    <TextView
+                        android:id="@+id/tv_shenhe_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="审核状态"
+                        android:textColor="@color/color_1"
+                        android:textSize="31pt"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <com.youth.banner.Banner
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="720pt"
+                    android:background="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="30pt"
+                    android:paddingTop="31pt">
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="23pt"
+                        android:includeFontPadding="false"
+                        android:text="店铺名称"
+                        android:textColor="@color/color_1"
+                        android:textSize="31pt"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="23pt"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="31pt"
+                            android:layout_height="31pt"
+                            android:layout_marginRight="12pt"
+                            android:src="@mipmap/gongjiang_pic_weizhi" />
+
+                        <TextView
+                            android:id="@+id/tv_juli_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="0.0km 黑龙江省哈尔滨市南岗区"
+                            android:textColor="@color/text_color3"
+                            android:textSize="27pt" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="31pt"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="31pt"
+                            android:layout_height="31pt"
+                            android:layout_marginRight="12pt"
+                            android:src="@mipmap/icon_58_dianhua_small" />
+
+                        <TextView
+                            android:id="@+id/tv_name_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="30pt"
+                            android:includeFontPadding="false"
+                            android:text="某先生 15112345678"
+                            android:textColor="@color/text_color3"
+                            android:textSize="27pt" />
+
+
+                        <ImageView
+                            android:layout_width="31pt"
+                            android:layout_height="31pt"
+                            android:layout_marginRight="12pt"
+                            android:src="@mipmap/icon_58_yingye_time" />
+
+                        <TextView
+                            android:id="@+id/tv_yingye_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="08:00-17:00"
+                            android:textColor="@color/text_color3"
+                            android:textSize="27pt" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="84pt"
+                    android:layout_marginTop="23pt"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="31pt"
+                    android:text="店内设施"
+                    android:textColor="@color/color_3"
+                    android:textSize="31pt"
+                    android:textStyle="bold" />
+
+                <com.yiyang.cn.view.AutoNextLineLinearlayout
+                    android:id="@+id/ll_dianneisheshi_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingLeft="31pt" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="84pt"
+                    android:layout_marginTop="23pt"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="31pt"
+                    android:text="商家公告"
+                    android:textColor="@color/color_3"
+                    android:textSize="31pt"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_gonggao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:hint="暂无商家公告"
+                    android:includeFontPadding="false"
+                    android:paddingHorizontal="31pt"
+                    android:paddingBottom="31pt"
+                    android:textColor="@color/color_9"
+                    android:textColorHint="@color/color_9"
+                    android:textSize="27pt" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="84pt"
+                    android:layout_marginTop="23pt"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="31pt"
+                    android:text="商家介绍"
+                    android:textColor="@color/color_3"
+                    android:textSize="31pt"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_jieshao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:hint="暂无商家介绍"
+                    android:includeFontPadding="false"
+                    android:paddingHorizontal="31pt"
+                    android:paddingBottom="31pt"
+                    android:textColor="@color/color_9"
+                    android:textColorHint="@color/color_9"
+                    android:textSize="27pt" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="84pt"
+                    android:layout_marginTop="23pt"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="31pt"
+                    android:text="商家折扣"
+                    android:textColor="@color/color_3"
+                    android:textSize="31pt"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_zhekou"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40pt"
+                    android:background="@color/white"
+                    android:hint="暂无折扣活动"
+                    android:includeFontPadding="false"
+                    android:paddingHorizontal="31pt"
+                    android:paddingBottom="31pt"
+                    android:textColor="@color/color_9"
+                    android:textColorHint="@color/color_9"
+                    android:textSize="27pt" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlTextSizeTime="10sp"
+            app:srlTextSizeTitle="12sp" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</FrameLayout>

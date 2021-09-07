@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grayfff5f5f5"
+
+    android:orientation="vertical">
+
+    <com.flyco.roundview.RoundRelativeLayout
+        android:id="@+id/rl_zhinengtubiao"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        app:rv_backgroundColor="@color/white"
+        app:rv_cornerRadius="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:includeFontPadding="false"
+            android:text="图标"
+            android:textColor="#ff333333"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp">
+
+        </ImageView>
+    </com.flyco.roundview.RoundRelativeLayout>
+
+
+</LinearLayout>

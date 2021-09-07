@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.flyco.roundview.RoundRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="115dp"
+    android:layout_marginHorizontal="15dp"
+    android:layout_marginTop="10dp"
+    app:rv_backgroundColor="@color/white"
+    app:rv_cornerRadius="10dp">
+
+    <ImageView
+android:layout_marginLeft="15dp"
+        android:id="@+id/iv_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_centerVertical="true"
+        tools:background="@color/gray" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iv_image"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/iv_image"
+        android:includeFontPadding="false"
+        android:text="智能家居套装"
+        android:textColor="#ff000000"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_jiage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_title"
+        android:layout_alignBottom="@+id/iv_image"
+        android:layout_marginBottom="5dp"
+        android:includeFontPadding="false"
+        android:text="￥988.00~1588.00"
+        android:textColor="#ffff002f"
+        android:textSize="13sp" />
+
+</com.flyco.roundview.RoundRelativeLayout>

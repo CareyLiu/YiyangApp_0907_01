@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="id_circle_menu_item_image" type="id"/>
+    <item name="id_circle_menu_item_text" type="id"/>
+    <item name="id_circle_menu_item_center" type="id"/>
+
+    <item name="BaseQuickAdapter_viewholder_support" type="id"/>
+    <item name="BaseQuickAdapter_swiping_support" type="id"/>
+    <item name="BaseQuickAdapter_dragging_support" type="id"/>
+    <item name="BaseQuickAdapter_databinding_support" type="id"/>
+
+    <!-- 沉浸式使用view的id -->
+    <item name="basic_view" type="id" />
+    <!-- 设置toolbar使用view的id -->
+    <item name="basic_toolbar" type="id" />
+
+    <item name="swipe_target" type="id" />
+    <item name="swipe_refresh_header" type="id" />
+    <item name="swipe_load_more_footer" type="id" />
+</resources>

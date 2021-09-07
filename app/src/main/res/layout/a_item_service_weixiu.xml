@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="34dp"
+        android:paddingRight="50dp">
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:layout_marginRight="10dp" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="驾车:从当前位置到哈尔滨大隆华夏轮胎商行"
+            android:textColor="@color/black_666666"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_juli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="6.9KM"
+            android:textColor="@color/black_666666"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_select"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="20dp"
+            android:src="@mipmap/weixuanze" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="410pt">
+
+        <com.tuya.smart.camera.middleware.widget.TuyaCameraView
+            android:id="@+id/camera_video_view"
+            android:layout_width="match_parent"
+            android:layout_height="410pt"
+            android:background="@color/black" />
+
+
+        <ImageView
+            android:id="@+id/iv_switch_shengyin"
+            android:layout_width="54pt"
+            android:layout_height="54pt"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="23pt"
+            android:layout_marginBottom="36pt"
+            android:src="@mipmap/tuya_shexiangtou_icon_jingyin" />
+
+        <ImageView
+            android:id="@+id/iv_switch_quanping"
+            android:layout_width="54pt"
+            android:layout_height="54pt"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="23pt"
+            android:layout_marginBottom="36pt"
+            android:src="@mipmap/tuya_shexiangtou_icon_quanping" />
+    </RelativeLayout>
+
+    <com.tuya.smart.android.camera.timeline.TuyaTimelineView
+        android:id="@+id/tuya_time_line"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:bottomTextMargin="5dp"
+        app:bubbleColor="@color/white"
+        app:bubbleTextColor="@color/black"
+        app:landscapeBgColor="@color/black"
+        app:linesColor="@color/white"
+        app:portraitBgColor="@color/black"
+        app:timeScaleColor="@color/white"
+        app:topTextMargin="10dp"></com.tuya.smart.android.camera.timeline.TuyaTimelineView>
+
+</LinearLayout>

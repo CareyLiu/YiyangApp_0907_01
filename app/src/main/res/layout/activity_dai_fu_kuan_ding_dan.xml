@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.dingdan.DaiFuKuanDingDanActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/conlayout_1"
+                android:layout_width="match_parent"
+                android:layout_height="96dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_dingdan_zhuangtai"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="34dp"
+                    android:layout_marginTop="34dp"
+                    android:textColor="#ffffffff"
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="等待买家付款" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_erweima"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:visibility="gone">
+
+
+
+
+                <TextView
+                    android:id="@+id/tv_yanzhengma"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginTop="43dp"
+                    android:includeFontPadding="false"
+                    android:textColor="#ff000000"
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="验证码：89895656" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:includeFontPadding="false"
+                    android:text="点击查看到店二维码大图"
+                    android:textColor="#ff969696"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_yanzhengma"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_yanzhengma" />
+
+
+                <ImageView
+                    android:id="@+id/iv_yanzhengma"
+                    android:layout_width="97dp"
+                    android:layout_height="97dp"
+                    android:layout_marginRight="26dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:background="@color/blue" />
+
+                <View
+                    android:visibility="gone"
+                    android:id="@+id/view_mengban"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:background="#73ffffff"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/iv_yiwancheng"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_marginLeft="34dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@mipmap/yiwangcheng"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <View
+
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:background="#cccccc"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constrain2"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                app:layout_constraintTop_toBottomOf="@+id/conlayout_1">
+
+                <ImageView
+                    android:id="@+id/iv_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11dp"
+                    android:src="@mipmap/daifuk_address"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="224dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11dp"
+                    android:includeFontPadding="false"
+                    android:textColor="#ff666666"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/iv_address"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="哈尔滨市南岗区电缆街2019号" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="14dp"
+                    android:src="@mipmap/push_gray_999"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/view_1"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="@color/grayf3f3f3"
+                app:layout_constraintTop_toBottomOf="@+id/constrain2" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constrain3"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                app:layout_constraintTop_toBottomOf="@+id/view_1">
+
+                <ImageView
+                    android:id="@+id/iv_image"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginLeft="14dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:background="@color/grayf3f3f3" />
+
+                <TextView
+                    android:id="@+id/tv_shop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:textColor="#ff111111"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_image"
+                    app:layout_constraintLeft_toRightOf="@+id/iv_image"
+                    app:layout_constraintTop_toTopOf="@id/iv_image"
+                    tools:text="潮流e裤" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_shop"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constrain4"
+                android:layout_width="match_parent"
+                android:layout_height="103dp"
+                android:background="@color/grayfff5f5f5"
+                app:layout_constraintTop_toBottomOf="@+id/constrain3">
+
+                <ImageView
+                    android:id="@+id/iv_product"
+
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_marginLeft="14dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="241dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:includeFontPadding="false"
+                    android:maxLines="2"
+                    android:text="手机吃鸡手柄吃鸡神器游戏手柄荒野行动绝地求生刺激战场王者荣耀"
+                    android:textColor="#ff111111"
+                    android:textSize="13sp"
+                    app:layout_constraintLeft_toRightOf="@+id/iv_product"
+                    app:layout_constraintTop_toTopOf="@+id/iv_product" />
+
+
+                <TextView
+                    android:id="@+id/tv_kuanshi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:includeFontPadding="false"
+                    android:text="款式：S-01游戏手柄"
+                    android:textColor="#ff161616"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_title"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+
+                <TextView
+
+                    android:id="@+id/tv_danjia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="￥5"
+                    android:textColor="#ff111111"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_product"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_title" />
+
+                <TextView
+                    android:id="@+id/tv_paycount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="14dp"
+                    android:text="X2"
+                    android:textColor="#ff111111"
+                    android:textSize="13sp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_danjia" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constrain5"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/constrain4">
+
+                <TextView
+                    android:id="@+id/tv_shifujine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="14dp"
+                    android:includeFontPadding="false"
+                    android:textColor="#ff111111"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="实付:￥5" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/view_2"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/grayfff5f5f5"
+                app:layout_constraintTop_toBottomOf="@+id/constrain5" />
+
+            <LinearLayout
+                android:id="@+id/ll_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/view_2">
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/ll_info" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_daifukuan"
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="17dp"
+        android:background="@color/white"
+        android:visibility="gone">
+
+
+        <TextView
+            android:id="@+id/tv_go_pay"
+            android:layout_width="72dp"
+            android:layout_height="29dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/background_orange"
+            android:gravity="center"
+            android:text="去支付"
+            android:textColor="#ffffffff"
+            android:textSize="13sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_quxiaodingdan"
+            android:layout_width="72dp"
+            android:layout_height="29dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/gray_background_line"
+            android:gravity="center"
+            android:text="取消订单"
+            android:textColor="#ff111111"
+            android:textSize="13sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tv_go_pay"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_daifahuo"
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="17dp"
+        android:background="@color/white"
+        android:visibility="gone">
+
+
+        <TextView
+            android:id="@+id/tv_daifahuo_shenqingtuikuan"
+            android:layout_width="72dp"
+            android:layout_height="29dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/gray_background_line"
+            android:gravity="center"
+            android:text="申请退款"
+            android:textColor="#ff111111"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+
+            android:id="@+id/tv_daifahuo_cuifahuo"
+            android:layout_width="72dp"
+            android:layout_height="29dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/gray_background_line"
+            android:gravity="center"
+            android:text="催发货"
+            android:textColor="#ff111111"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tv_daifahuo_shenqingtuikuan"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_daiingjia"
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="17dp"
+        android:background="@color/white"
+        android:visibility="gone">
+
+
+        <TextView
+            android:id="@+id/tvdaipingjia"
+            android:layout_width="72dp"
+            android:layout_height="29dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/gray_background_line"
+            android:gravity="center"
+            android:text="去评价"
+            android:textColor="#ff111111"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+
+            android:id="@+id/tv_shangchudingdan"
+            android:layout_width="72dp"
+            android:layout_height="29dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/gray_background_line"
+            android:gravity="center"
+            android:text="删除订单"
+            android:textColor="#ff111111"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tvdaipingjia"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>

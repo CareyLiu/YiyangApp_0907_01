@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".activity.tuangou.TuanGouShangPinDetailsActivity">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="10dp"
+                android:text="麦比克火锅"
+                android:textColor="#ff666666"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_meishiming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="美食三"
+                android:textColor="#ff0b0b0b"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+            <TextView
+                android:id="@+id/tv_jieshao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="随时退 | 免预约 | 过期自动退"
+                android:textColor="#ff666666"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_meishiming"
+                app:layout_constraintTop_toBottomOf="@+id/tv_meishiming" />
+
+            <TextView
+                android:id="@+id/tv_xiaoliang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="13dp"
+                android:text="半年销量0"
+                android:textColor="#ff666666"
+                android:textSize="12sp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_jieshao" />
+
+            <ImageView
+                android:id="@+id/iv_image"
+                android:layout_width="match_parent"
+                android:layout_height="255dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="9dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_jieshao"
+                tools:background="@color/blue" />
+
+            <TextView
+                android:id="@+id/tv_meishiming1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="套餐详情"
+                android:textColor="#ff0b0b0b"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/iv_image" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_taocan_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_meishiming1"
+                app:layout_constraintTop_toBottomOf="@+id/tv_meishiming1">
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_wenxin_tishi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="24dp"
+                android:text="温馨提示"
+                android:textColor="#ff0b0b0b"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@+id/ll_taocan_details"
+                app:layout_constraintTop_toBottomOf="@+id/ll_taocan_details" />
+
+
+            <LinearLayout
+
+                android:id="@+id/ll_wenxin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/tv_wenxin_tishi" />
+
+
+            <TextView
+                android:id="@+id/tv_dianjia_jiashao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="14dp"
+                android:text="店家介绍"
+                android:textColor="#ff0b0b0b"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@+id/ll_wenxin"
+                app:layout_constraintTop_toBottomOf="@+id/ll_wenxin" />
+
+
+            <ImageView
+android:scaleType="centerCrop"
+                android:id="@+id/iv_shop_image"
+                android:layout_width="77dp"
+                android:layout_height="77dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_dianjia_jiashao"
+                app:layout_constraintTop_toBottomOf="@+id/tv_dianjia_jiashao" />
+
+            <TextView
+                android:id="@+id/tv_dianjia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="麦比克火锅"
+                android:textColor="#ff111111"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toRightOf="@+id/iv_shop_image"
+                app:layout_constraintTop_toTopOf="@+id/iv_shop_image" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+
+                android:id="@+id/star"
+                style="@style/storeRatingBarOranger"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="3dp"
+                android:numStars="5"
+                android:paddingTop="6dp"
+                android:stepSize="0.5"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_dianjia"
+                app:layout_constraintTop_toBottomOf="@+id/tv_dianjia" />
+
+            <TextView
+                android:id="@+id/tv_shop_addr"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="电缆街42号"
+                android:textColor="#ff666666"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="@+id/star"
+                app:layout_constraintTop_toBottomOf="@+id/star" />
+
+            <TextView
+                android:id="@+id/tv_yonghu_pingjia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="用户评价"
+                android:textColor="#ff0b0b0b"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@+id/iv_shop_image"
+                app:layout_constraintTop_toBottomOf="@+id/iv_shop_image" />
+
+
+            <TextView
+                android:id="@+id/tv_click_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23dp"
+                android:text="点击查看更多"
+                android:textColor="#ff57c3b3"
+                android:textSize="13sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_yonghu_pingjia" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/tv_click_more" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:text="￥258.00"
+                android:textColor="#fffa7e00"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_zuigao_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="3dp"
+                android:textColor="#ff999999"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_money"
+                app:layout_constraintTop_toBottomOf="@+id/tv_money"
+                tools:text="最高门市价￥300.00" />
+
+
+        </LinearLayout>
+
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/rtv_liji_qianggou"
+            android:layout_width="125dp"
+            android:layout_height="42dp"
+            android:layout_marginRight="12dp"
+            android:gravity="center"
+            android:text="立即抢购"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rv_backgroundColor="@color/oranger"
+            app:rv_cornerRadius="21dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

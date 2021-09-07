@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingHorizontal="23pt">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="104pt">
+
+            <ImageView
+                android:id="@+id/iv_head"
+                android:layout_width="69pt"
+                android:layout_height="69pt"
+                android:layout_centerVertical="true" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="27pt"
+                android:layout_marginLeft="15pt"
+                android:layout_marginTop="21pt"
+                android:layout_toRightOf="@id/iv_head"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:text="姓名"
+                android:textColor="@color/black_333333"
+                android:textSize="26pt"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_data"
+                android:layout_width="wrap_content"
+                android:layout_height="24pt"
+                android:layout_marginLeft="15pt"
+                android:layout_marginTop="61pt"
+                android:layout_toRightOf="@id/iv_head"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:text="2020.07.10 评价"
+                android:textColor="@color/gray_999999"
+                android:textSize="23pt" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_pinglun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:paddingVertical="15pt"
+            android:text="商品很好商品很好商品很好好"
+            android:textColor="@color/black_333333"
+            android:textSize="30pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_shangpin_details"
+            android:layout_width="match_parent"
+            android:layout_height="61pt"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:text="综合评分：5星 | 颜色分类：2件装 黑白"
+            android:textSize="23pt" />
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/split" />
+    </LinearLayout>
+</LinearLayout>

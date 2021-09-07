@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#192136"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:fitsSystemWindows="true"
+            tools:context="com.yiyang.cn.activity.WindHeaterActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Title"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <ImageView
+                        android:id="@+id/iv_windmill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        app:srcCompat="@drawable/windmill" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_toStartOf="@+id/sb_speed"
+                        android:layout_toLeftOf="@+id/sb_speed"
+                        android:text="5"
+                        android:textColor="@android:color/white" />
+
+
+                    <SeekBar
+                        android:id="@+id/sb_speed"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:maxHeight="3dp"
+                        android:minHeight="3dp"
+                        android:max="25"
+                        android:progressDrawable="@drawable/seek_bar_bg2"
+                        android:thumb="@drawable/progress_ball" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toEndOf="@+id/sb_speed"
+                        android:layout_toRightOf="@+id/sb_speed"
+                        android:text="30"
+                        android:textColor="@color/white" />
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toStartOf="@+id/tv_wd"
+                        android:layout_toLeftOf="@+id/tv_wd"
+                        app:srcCompat="@drawable/car_air_conditions" />
+
+                    <TextView
+                        android:id="@+id/tv_wd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_centerHorizontal="false"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="--C°"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/sb_speed"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        android:text="启动时间"
+                        android:textColor="@color/white" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+                    <ImageView
+                        android:id="@+id/iv_car"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_centerHorizontal="false"
+                        app:srcCompat="@drawable/car_new" />
+
+                    <ImageView
+                        android:id="@+id/iv_left_head_door"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iv_car"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginStart="177dp"
+                        android:layout_marginLeft="177dp"
+                        android:layout_marginTop="-18dp"
+                        android:visibility="gone"
+                        android:animateLayoutChanges="true"
+                        app:srcCompat="@drawable/cardoor_left_1" />
+
+                    <ImageView
+                        android:id="@+id/iv_right_head_door"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/iv_car"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginStart="177dp"
+                        android:layout_marginLeft="177dp"
+                        android:layout_marginBottom="-19dp"
+                        android:visibility="gone"
+                        android:animateLayoutChanges="true"
+                        app:srcCompat="@drawable/cardoor_right_1" />
+
+                    <ImageView
+                        android:id="@+id/iv_left_rear_door"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iv_car"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginStart="201dp"
+                        android:layout_marginLeft="201dp"
+                        android:layout_marginTop="-23dp"
+                        android:visibility="gone"
+                        android:animateLayoutChanges="true"
+                        app:srcCompat="@drawable/cardoor_left_2" />
+
+                    <ImageView
+                        android:id="@+id/iv_right_rear_door"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/iv_car"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginStart="204dp"
+                        android:layout_marginLeft="204dp"
+                        android:layout_marginBottom="-22dp"
+                        android:visibility="gone"
+                        android:animateLayoutChanges="true"
+                        app:srcCompat="@drawable/cardoor_right_2" />
+
+                    <ImageView
+                        android:id="@+id/iv_trunk_covers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="-29dp"
+                        android:layout_marginLeft="-29dp"
+                        android:layout_marginTop="74dp"
+                        android:layout_toEndOf="@+id/iv_car"
+                        android:layout_toRightOf="@+id/iv_car"
+                        android:visibility="gone"
+                        android:animateLayoutChanges="true"
+                        app:srcCompat="@drawable/trunk_on" />
+
+                    <ImageView
+                        android:id="@+id/iv_head_light"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginEnd="-12dp"
+                        android:layout_marginRight="-12dp"
+                        android:layout_toStartOf="@+id/iv_car"
+                        android:layout_toLeftOf="@+id/iv_car"
+                        android:visibility="gone"
+                        android:animateLayoutChanges="true"
+                        app:srcCompat="@drawable/head_light" />
+
+                    <ImageView
+                        android:id="@+id/iv_back_light"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="-11dp"
+                        android:layout_marginLeft="-11dp"
+                        android:layout_marginTop="70dp"
+                        android:layout_toEndOf="@+id/iv_car"
+                        android:layout_toRightOf="@+id/iv_car"
+                        android:visibility="gone"
+                        android:animateLayoutChanges="true"
+                        app:srcCompat="@drawable/ataillight_on" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/bg_shape_green" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_horizontal"
+                        android:text="GPS"
+                        android:textColor="@android:color/white" />
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/bg_shape_green" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_horizontal"
+                        android:text="GPRS"
+                        android:textColor="@android:color/white" />
+
+                    <ImageView
+                        android:id="@+id/iv_tyre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/car_luntai" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_horizontal"
+                        android:text="(2.4、2.4、2.4/2.4)bar"
+                        android:textColor="@android:color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="-30dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/car_leftshape">
+
+                        <ImageView
+                            android:id="@+id/iv_fuel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="10dp"
+                            app:srcCompat="@drawable/oil" />
+
+                        <TextView
+                            android:id="@+id/tv_fuel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/iv_fuel"
+                            android:layout_alignEnd="@+id/iv_fuel"
+                            android:layout_alignRight="@+id/iv_fuel"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="5dp"
+
+                            android:layout_marginRight="5dp"
+                            android:gravity="center"
+                            android:text="--%"
+                            android:textColor="@android:color/white"
+                            android:textSize="8sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_coolant"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/tv_coolant"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginBottom="5dp"
+                            app:srcCompat="@drawable/lengqueye" />
+
+                        <TextView
+                            android:id="@+id/tv_coolant"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignEnd="@+id/tv_fuel"
+                            android:layout_alignRight="@+id/tv_fuel"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:gravity="center"
+                            android:text="--%"
+                            android:textColor="@android:color/white"
+                            android:textSize="8sp" />
+
+                    </RelativeLayout>
+
+                    <com.yiyang.cn.view.CircleMenuView
+                        android:id="@+id/circle_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:layout_marginLeft="-30dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/car_rightshape">
+
+                        <ImageView
+                            android:id="@+id/iv_glass_water"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginRight="15dp"
+                            app:srcCompat="@drawable/bolishui" />
+
+                        <TextView
+                            android:id="@+id/tv_glass_water"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/iv_glass_water"
+                            android:layout_alignStart="@+id/iv_glass_water"
+                            android:layout_alignLeft="@+id/iv_glass_water"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginRight="15dp"
+                            android:gravity="center"
+                            android:text="--%"
+                            android:textColor="@android:color/white"
+                            android:textSize="8sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_speed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/tv_speed"
+                            android:layout_alignStart="@+id/tv_glass_water"
+                            android:layout_alignLeft="@+id/tv_glass_water"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginBottom="5dp"
+                            app:srcCompat="@drawable/speed" />
+
+                        <TextView
+                            android:id="@+id/tv_speed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:gravity="center"
+                            android:text="--%"
+                            android:textColor="@android:color/white"
+                            android:textSize="8sp" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="@null"
+            app:headerLayout="@layout/nav_header_menu"
+            app:menu="@menu/wind_heater_menu" />
+    </androidx.drawerlayout.widget.DrawerLayout>
+</LinearLayout>

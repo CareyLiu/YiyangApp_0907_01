@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="96pt"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/ll_title1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="首页"
+                android:textColor="@color/text_red"
+                android:textSize="31pt" />
+
+            <View
+                android:id="@+id/line_title1"
+                android:layout_width="65pt"
+                android:layout_height="8pt"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/bg_red_radius_15" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_title2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="便民信息"
+                android:textColor="@color/text_color3"
+                android:textSize="31pt" />
+
+            <View
+                android:id="@+id/line_title2"
+                android:layout_width="65pt"
+                android:layout_height="8pt"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/bg_red_radius_15"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_title3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_title3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="我的"
+                android:textColor="@color/text_color3"
+                android:textSize="31pt" />
+
+            <View
+                android:id="@+id/line_title3"
+                android:layout_width="65pt"
+                android:layout_height="8pt"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/bg_red_radius_15"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1pt"
+        android:background="@color/line" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.yiyang.cn.view.NoSlidingViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never" />
+
+        <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="96pt"
+            android:layout_height="96pt"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="36pt"
+            android:layout_marginBottom="160pt"
+            android:src="@mipmap/product_tianjiasahngpin" />
+    </FrameLayout>
+</LinearLayout>

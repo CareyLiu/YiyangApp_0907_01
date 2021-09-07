@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="634pt"
+        android:layout_height="576pt"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="96pt"
+        android:background="@drawable/bg_tuya_switch_line"
+        android:padding="8pt">
+
+        <RelativeLayout
+            android:id="@+id/rl_switch_left"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tuya_switch_left"
+            android:gravity="center_horizontal">
+
+            <View
+                android:id="@+id/view_switch_left"
+                android:layout_width="46pt"
+                android:layout_height="12pt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="58pt"
+                android:background="@drawable/bg_tuya_switch_n" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="4pt"
+            android:layout_height="match_parent"
+            android:background="@color/split" />
+
+        <RelativeLayout
+            android:id="@+id/rl_switch_center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tuya_switch_center"
+            android:gravity="center_horizontal">
+
+            <View
+                android:id="@+id/view_switch_center"
+                android:layout_width="46pt"
+                android:layout_height="12pt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="58pt"
+                android:background="@drawable/bg_tuya_switch_n" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="4pt"
+            android:layout_height="match_parent"
+            android:background="@color/split" />
+
+        <RelativeLayout
+            android:id="@+id/rl_switch_right"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tuya_switch_right"
+            android:gravity="center_horizontal">
+
+            <View
+                android:id="@+id/view_switch_right"
+                android:layout_width="46pt"
+                android:layout_height="12pt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="58pt"
+                android:background="@drawable/bg_tuya_switch_n" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="634pt"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="23pt"
+        android:paddingHorizontal="8pt">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="左键"
+            android:textColor="@color/color_6"
+            android:textSize="27pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4pt"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="中键"
+            android:textColor="@color/color_6"
+            android:textSize="27pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="右键"
+            android:textColor="@color/color_6"
+            android:textSize="27pt"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="662pt"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="31pt"
+        android:background="@drawable/bg_white_radius_8"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="115pt"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="33pt">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="开关模式："
+                android:textSize="31pt"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_kaiguan_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="正常"
+                android:textColor="@color/color_main"
+                android:textSize="31pt"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="，背光指示"
+                android:textSize="31pt"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_beiguang_zhuangtai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已开启"
+                android:textColor="@color/color_main"
+                android:textSize="31pt"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1pt"
+            android:background="@color/line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="115pt">
+
+            <LinearLayout
+                android:id="@+id/ll_quankai"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="46pt"
+                    android:layout_height="46pt"
+                    android:layout_marginRight="31pt"
+                    android:src="@mipmap/tuya_icon_switch_quankai" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="全开"
+                    android:textColor="@color/color_main"
+                    android:textSize="31pt"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1pt"
+                android:layout_height="match_parent"
+                android:background="@color/line" />
+
+            <LinearLayout
+                android:id="@+id/ll_quanguan"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="46pt"
+                    android:layout_height="46pt"
+                    android:layout_marginRight="31pt"
+                    android:src="@mipmap/tuya_icon_switch_quanguan" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="全关"
+                    android:textColor="@color/color_3"
+                    android:textSize="31pt"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1pt"
+                android:layout_height="match_parent"
+                android:background="@color/line" />
+
+            <LinearLayout
+                android:id="@+id/ll_dingshi"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="46pt"
+                    android:layout_height="46pt"
+                    android:layout_marginRight="31pt"
+                    android:src="@mipmap/tuya_icon_switch_dingshi" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="定时"
+                    android:textColor="@color/color_3"
+                    android:textSize="31pt"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

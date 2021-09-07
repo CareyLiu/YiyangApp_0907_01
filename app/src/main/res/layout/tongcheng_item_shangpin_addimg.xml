@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_main"
+        android:layout_width="154pt"
+        android:layout_height="154pt"
+        android:layout_marginRight="15pt"
+        android:layout_marginBottom="23pt"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/shoppicture_icon_add_gray" />
+</LinearLayout>

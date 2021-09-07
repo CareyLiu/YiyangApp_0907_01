@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_app">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="138pt"
+        android:layout_marginHorizontal="31pt"
+        android:layout_marginTop="31pt"
+        android:background="@drawable/bg_white_radius_15"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="31pt">
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="84pt"
+            android:layout_height="84pt"
+            android:layout_marginRight="31pt" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_device_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:text="名称"
+                android:textColor="@color/color_3"
+                android:textSize="31pt"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_room_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10pt"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:text="名称"
+                android:textColor="@color/color_9"
+                android:textSize="27pt" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_switch"
+            android:layout_width="84pt"
+            android:layout_height="84pt" />
+    </LinearLayout>
+</LinearLayout>

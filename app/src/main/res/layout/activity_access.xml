@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.dingdan.AccessActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/iv_product"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="14dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="@color/black_111111" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:text="大容量移动硬盘1t/750g/500g/320..."
+                android:textColor="#ff2c2c2c"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_product"
+                app:layout_constraintLeft_toRightOf="@+id/iv_product"
+                app:layout_constraintTop_toTopOf="@+id/iv_product" />
+
+            <TextView
+                android:id="@+id/tv_pinglun_huashu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="评价"
+                android:textColor="#ff666666"
+                android:textSize="15sp"
+                app:layout_constraintLeft_toLeftOf="@+id/iv_product"
+                app:layout_constraintTop_toBottomOf="@+id/iv_product" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/rb_bar1"
+                style="@style/storeRatingBarPink1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:numStars="5"
+                android:stepSize="0.5"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_pinglun_huashu"
+                app:layout_constraintLeft_toRightOf="@+id/tv_pinglun_huashu"
+                app:layout_constraintTop_toTopOf="@+id/tv_pinglun_huashu" />
+
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/grayf3f3f3"
+                app:layout_constraintTop_toBottomOf="@+id/tv_pinglun_huashu" />
+
+
+            <EditText
+                android:id="@+id/et_text"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="27dp"
+                android:background="@null"
+                android:gravity="top"
+                android:hint="亲，您对这个商品满意吗？您的评价会帮助我们选择更好的商品"
+                android:textColor="#ff999999"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+    <com.flyco.roundview.RoundRelativeLayout
+        android:id="@+id/rrl_tijiao"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:rv_backgroundColor="@color/pink"
+        app:rv_cornerRadius="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="提交"
+            android:textColor="#ffffffff"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </com.flyco.roundview.RoundRelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

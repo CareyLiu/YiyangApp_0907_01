@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.yiyang.cn.activity.CarBrandActivity">
+
+    <LinearLayout
+        android:layout_width="259dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/bg_family_add"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_dialog_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:gravity="center"
+            android:text="请输入相关内容"
+            android:textColor="#111111"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginRight="14dp"
+            android:background="@drawable/bg_family_add_edittext"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:singleLine="true"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="11dp"
+                android:background="#CCCCCC" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="43dp">
+
+            <TextView
+                android:id="@+id/tv_clean"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/view"
+                android:layout_toLeftOf="@+id/view"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="#111111"
+                android:textSize="15sp" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="#CCCCCC" />
+
+            <TextView
+                android:id="@+id/tv_submit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/view"
+                android:layout_toRightOf="@+id/view"
+                android:gravity="center"
+                android:text="保存"
+                android:textColor="#111111"
+                android:textSize="15sp" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

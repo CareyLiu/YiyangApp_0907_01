@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:expandedTitleMarginEnd="60dp"
+            app:expandedTitleMarginStart="48dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <LinearLayout
+                android:id="@+id/main"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/item_back_pink"
+                android:orientation="horizontal"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="pin"
+                app:layout_collapseParallaxMultiplier="0.5" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="pin">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_back"
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:layout_marginTop="5dp"
+
+                        android:src="@mipmap/return_white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/tv_youzhanname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="联府石油"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+                        app:layout_constraintLeft_toRightOf="@+id/iv_back"
+                        app:layout_constraintTop_toTopOf="@+id/iv_back" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-60dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/rlv_youzhan_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="12dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <RelativeLayout
+
+                        android:layout_width="341dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/item_background_you_details"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/civ_youzhan_img"
+                            android:layout_width="54dp"
+                            android:layout_height="54dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constrain"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/civ_youzhan_img">
+
+                            <TextView
+                                android:ellipsize="end"
+                                android:lines="1"
+                                android:id="@+id/tv_shop_name"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="13dp"
+                                android:layout_marginTop="17dp"
+                                android:includeFontPadding="false"
+                                android:text="联府石油联府石油联府石油"
+                                android:textColor="#ff222222"
+                                android:textSize="17sp"
+                                android:textStyle="bold"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/iv_address"
+                                android:layout_width="13dp"
+                                android:layout_height="13dp"
+                                android:layout_marginTop="16dp"
+
+                                android:src="@mipmap/address"
+                                app:layout_constraintLeft_toLeftOf="@+id/tv_shop_name"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_shop_name" />
+
+                            <TextView
+
+                                android:id="@+id/tv_address"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:includeFontPadding="false"
+                                android:text="哈尔滨市南岗区ssdddssddsdds"
+                                android:textColor="#ff666666"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toBottomOf="@+id/iv_address"
+                                app:layout_constraintLeft_toRightOf="@+id/iv_address"
+                                app:layout_constraintTop_toTopOf="@+id/iv_address" />
+
+
+                            <TextView
+
+                                android:id="@+id/tv_renminbi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="23dp"
+                                android:includeFontPadding="false"
+                                android:text="¥"
+                                android:textColor="#E31938"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                app:layout_constraintLeft_toLeftOf="@+id/tv_shop_name"
+                                app:layout_constraintTop_toBottomOf="@+id/iv_address" />
+
+                            <TextView
+                                android:id="@+id/tv_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:includeFontPadding="false"
+                                android:text="4.54"
+                                android:textColor="#ffe31938"
+                                android:textSize="21sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/tv_renminbi"
+                                app:layout_constraintLeft_toRightOf="@+id/tv_renminbi" />
+
+                            <RelativeLayout
+                                android:id="@+id/ll_jiang"
+                                android:layout_width="100dp"
+                                android:layout_height="15dp"
+                                android:layout_marginLeft="7dp"
+                                android:background="@drawable/item_km_pink"
+                                android:orientation="horizontal"
+                                app:layout_constraintBottom_toBottomOf="@+id/tv_price"
+                                app:layout_constraintLeft_toRightOf="@+id/tv_price"
+                                app:layout_constraintTop_toTopOf="@+id/tv_price">
+
+
+                                <ImageView
+                                    android:layout_width="17dp"
+                                    android:layout_height="15dp"
+                                    android:src="@mipmap/jyj_jiayou_icon_xiajiang" />
+
+                                <TextView
+
+                                    android:id="@+id/tv_biguobiao"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="2dp"
+                                    android:text="比国标价降0.94元"
+                                    android:textColor="#ffe31938"
+                                    android:textSize="9sp" />
+
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:layout_width="85dp"
+                                android:layout_height="15dp"
+                                android:layout_marginLeft="7dp"
+                                android:background="@drawable/item_km_pink"
+                                android:orientation="horizontal"
+                                app:layout_constraintBottom_toBottomOf="@+id/ll_jiang"
+                                app:layout_constraintLeft_toRightOf="@+id/ll_jiang"
+                                app:layout_constraintTop_toTopOf="@+id/ll_jiang">
+
+
+                                <ImageView
+                                    android:layout_width="17dp"
+                                    android:layout_height="15dp"
+                                    android:src="@mipmap/jyj_jiayou_icon_xiajiang" />
+
+                                <TextView
+                                    android:id="@+id/tv_biyouzhan"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="2dp"
+                                    android:text="比油站降0.94元"
+                                    android:textColor="#ffe31938"
+                                    android:textSize="9sp" />
+
+                            </RelativeLayout>
+
+
+                            <ImageView
+                                android:id="@+id/iv_daohang"
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:layout_marginRight="27dp"
+                                android:src="@mipmap/iv_daohang"
+                                app:layout_constraintBottom_toBottomOf="@+id/tv_shop_name"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/tv_shop_name" />
+
+                            <TextView
+                                android:id="@+id/tv_km"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:includeFontPadding="false"
+                                android:text="1.71km"
+                                android:textColor="#ff666666"
+                                android:textSize="14sp"
+                                app:layout_constraintLeft_toLeftOf="@+id/iv_daohang"
+                                app:layout_constraintRight_toRightOf="@+id/iv_daohang"
+                                app:layout_constraintTop_toBottomOf="@+id/iv_daohang" />
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="17dp"
+                                android:layout_marginHorizontal="13dp"
+                                android:background="@color/white"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/all_product"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="24dp"
+                    android:text="全部商品："
+                    android:textColor="#ff111111"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rlv_youzhan_info" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rlv_all_pro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/all_product">
+
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+                <View
+                    android:id="@+id/view_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    app:layout_constraintTop_toBottomOf="@+id/rlv_all_pro" />
+
+                <TextView
+                    android:id="@+id/tv_choose_youhao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:text="选择油号："
+                    android:textColor="#ff111111"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="@id/all_product"
+                    app:layout_constraintTop_toBottomOf="@+id/view_white" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+
+                    android:id="@+id/rlv_youhao_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_choose_youhao">
+
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+                <View
+                    android:id="@+id/view_white_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    app:layout_constraintTop_toBottomOf="@+id/rlv_youhao_list" />
+
+                <TextView
+                    android:id="@+id/tv_qianghao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="选择枪号："
+                    android:textColor="#ff111111"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="@+id/all_product"
+                    app:layout_constraintTop_toBottomOf="@+id/view_white_1" />
+
+                <androidx.recyclerview.widget.RecyclerView
+
+                    android:id="@+id/rlv_qianghao_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_qianghao">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+                <View
+                    android:id="@+id/view_white_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    app:layout_constraintTop_toBottomOf="@+id/rlv_qianghao_list" />
+
+                <TextView
+                    android:id="@+id/tv_jiayou_jine_huashu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="27dp"
+                    android:text="加油金额："
+                    android:textColor="#ff111111"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_white_2" />
+
+                <EditText
+                    android:id="@+id/et_text"
+                    android:layout_width="230dp"
+                    android:layout_height="38dp"
+                    android:layout_marginRight="22dp"
+                    android:background="@drawable/item_km_back"
+                    android:hint="请输入消费金额"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="16dp"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_jiayou_jine_huashu"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_jiayou_jine_huashu">
+
+                </EditText>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rlv_jiayou_jine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    app:layout_constraintTop_toBottomOf="@+id/et_text" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="189dp"
+                    app:layout_constraintTop_toBottomOf="@+id/rlv_jiayou_jine" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grayfff5f5f5" />
+
+            <com.flyco.roundview.RoundRelativeLayout
+                android:id="@+id/rlv_next"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="7dp"
+                app:rv_backgroundColor="@color/pink"
+                app:rv_cornerRadius="7dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="下一步"
+                    android:textColor="#ffffffff"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+            </com.flyco.roundview.RoundRelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

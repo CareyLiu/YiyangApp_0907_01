@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/bazi_renzheng"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
+
+        <LinearLayout
+            android:id="@+id/ll_master_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="9dp"
+            android:paddingTop="20dp"
+            android:paddingRight="9dp"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:src="@mipmap/chezhuxinxi" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="车主信息"
+                android:textColor="@color/black_111111"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/iv_master_info"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:src="@mipmap/kefu_xia" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_master_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:paddingLeft="37dp"
+            android:text="车主姓名：神灯科技孙先生"
+            android:textColor="@color/black_666666"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_master_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:includeFontPadding="false"
+            android:paddingLeft="37dp"
+            android:text="车牌号码：黑A6L168G"
+            android:textColor="@color/black_666666"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="3dp"
+            android:background="@color/black_666666" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_guzhang_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="9dp"
+            android:paddingTop="20dp"
+            android:paddingRight="9dp"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/guzhangxinxi" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="故障信息"
+                android:textColor="@color/black_111111"
+                android:textSize="14sp" />
+
+
+            <ImageView
+                android:id="@+id/iv_guzhang_info"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:src="@mipmap/kefu_xia" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_master_guzhang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:includeFontPadding="false"
+            android:paddingLeft="37dp"
+            android:text="刹车盘坏了"
+            android:textColor="@color/black_666666"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="3dp"
+            android:background="@color/black_666666" />
+
+        <LinearLayout
+            android:id="@+id/ll_mendian_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="9dp"
+            android:paddingTop="20dp"
+            android:paddingRight="9dp"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:src="@mipmap/fujinmendian" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="附近门店"
+                android:textColor="@color/black_111111"
+                android:textSize="14sp" />
+
+
+            <ImageView
+                android:id="@+id/iv_mendian_info"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:src="@mipmap/kefu_xia" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_mendian"
+            android:layout_width="match_parent"
+            android:layout_height="144dp"
+            android:visibility="gone"></androidx.recyclerview.widget.RecyclerView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="3dp"
+            android:background="@color/black_666666" />
+
+        <LinearLayout
+            android:id="@+id/ll_ditu_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="9dp"
+            android:paddingTop="20dp"
+            android:paddingRight="9dp"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:src="@mipmap/dituxianshi" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="地图显示"
+                android:textColor="@color/black_111111"
+                android:textSize="14sp" />
+
+
+            <ImageView
+                android:id="@+id/iv_ditu_info"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:src="@mipmap/kefu_xia" />
+        </LinearLayout>
+
+        <com.amap.api.maps2d.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="224dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:visibility="gone"></com.amap.api.maps2d.MapView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="3dp"
+            android:background="@color/black_666666" />
+
+        <LinearLayout
+            android:id="@+id/ll_wancheng_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="9dp"
+            android:paddingTop="20dp"
+            android:paddingRight="9dp"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:src="@mipmap/dingdanwancheng" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:text="订单完成"
+                android:textColor="@color/black_111111"
+                android:textSize="14sp" />
+
+
+            <ImageView
+                android:id="@+id/iv_wancheng_info"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:src="@mipmap/kefu_xia" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_ok"
+            android:layout_width="139dp"
+            android:layout_height="28dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/a_service_button"
+            android:gravity="center"
+            android:text="完成"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>

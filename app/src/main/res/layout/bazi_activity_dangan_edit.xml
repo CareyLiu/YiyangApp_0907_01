@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="307dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="48dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="34dp"
+            android:text="姓名"
+            android:textColor="#7C7C7C"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/ed_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请输入姓名"
+            android:textColor="#7C7C7C"
+            android:textColorHint="#7C7C7C"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="307dp"
+        android:layout_height="1dp"
+        android:background="#ffe3e3e3" />
+
+    <LinearLayout
+        android:layout_width="307dp"
+        android:layout_height="58dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="33dp"
+            android:text="性别"
+            android:textColor="#7C7C7C"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_select_nan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_nan"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_marginRight="9dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ziwei_icon_circle_purple" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="男"
+                android:textColor="#7C7C7C"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_select_nv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="51dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_nv"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_marginRight="9dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ziwei_icon_circle_grey" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="女"
+                android:textColor="#7C7C7C"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="307dp"
+        android:layout_height="1dp"
+        android:background="#ffe3e3e3" />
+
+    <LinearLayout
+        android:layout_width="307dp"
+        android:layout_height="58dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="33dp"
+            android:text="年历"
+            android:textColor="#7C7C7C"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_select_yang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_yang"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_marginRight="9dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ziwei_icon_circle_purple" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="阳历"
+                android:textColor="#7C7C7C"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_select_yin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_yin"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_marginRight="9dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ziwei_icon_circle_grey" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="阴历"
+                android:textColor="#7C7C7C"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="307dp"
+        android:layout_height="1dp"
+        android:background="#ffe3e3e3" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_runyue"
+        android:layout_width="307dp"
+        android:layout_height="58dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="33dp"
+            android:text="闰月"
+            android:textColor="#7C7C7C"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_select_runyue_n"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_runyue_n"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_marginRight="9dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ziwei_icon_circle_purple" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="非闰月"
+                android:textColor="#7C7C7C"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_select_runyue_s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_runyue_s"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_marginRight="9dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ziwei_icon_circle_grey" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="闰月"
+                android:textColor="#7C7C7C"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_runyue"
+        android:layout_width="307dp"
+        android:layout_height="1dp"
+        android:background="#ffe3e3e3"
+        android:visibility="gone" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_data"
+        android:layout_width="307dp"
+        android:layout_height="58dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="13dp"
+            android:text="出生日期"
+            android:textColor="#7C7C7C"
+            android:textSize="15sp" />
+
+
+        <TextView
+            android:id="@+id/tv_data"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:textColor="#7C7C7C"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="307dp"
+        android:layout_height="1dp"
+        android:background="#ffe3e3e3" />
+
+    <LinearLayout
+        android:id="@+id/ll_shichen"
+        android:layout_width="307dp"
+        android:layout_height="58dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="13dp"
+            android:text="出生时辰"
+            android:textColor="#7C7C7C"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_shichen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:textColor="#7C7C7C"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="307dp"
+        android:layout_height="1dp"
+        android:background="#ffe3e3e3" />
+
+    <LinearLayout
+        android:layout_width="307dp"
+        android:layout_height="58dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="13dp"
+            android:text="设为默认"
+            android:textColor="#7C7C7C"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/iv_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/swich_on" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="307dp"
+        android:layout_height="1dp"
+        android:background="#ffe3e3e3" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="61dp"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/bt_moren"
+            android:layout_width="152dp"
+            android:layout_height="39dp"
+            android:layout_marginRight="9dp"
+            android:background="@drawable/bazi_button_paipan"
+            android:text="排盘"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/bt_delete"
+            android:layout_width="152dp"
+            android:layout_height="39dp"
+            android:background="@drawable/bazi_button_paipan_d"
+            android:text="删除"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+</LinearLayout>

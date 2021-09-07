@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="23pt">
+
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="138pt"
+            android:layout_height="138pt"
+            android:layout_marginTop="23pt"
+            android:layout_marginBottom="60pt" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23pt"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="31pt"
+                android:layout_marginBottom="10pt"
+                android:includeFontPadding="false"
+                android:text="电脑维修故障维修"
+                android:textColor="@color/color_3"
+                android:textSize="27pt"
+                android:textStyle="bold" />
+
+            <com.yiyang.cn.view.AutoNextLineLinearlayout
+                android:id="@+id/ll_tag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name"
+                android:layout_marginRight="31pt"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_tag"
+                android:layout_marginTop="10pt"
+                android:layout_marginBottom="20pt"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="31pt"
+                    android:layout_height="31pt"
+                    android:layout_marginRight="12pt"
+                    android:src="@mipmap/gongjiang_pic_weizhi" />
+
+                <TextView
+                    android:id="@+id/tv_juli"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="3.0km"
+                    android:textColor="@color/color_3"
+                    android:textSize="25pt" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_renzheng"
+                android:layout_width="115pt"
+                android:layout_height="38pt"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="26pt"
+                android:layout_marginRight="20pt"
+                android:src="@mipmap/gongjiang_pic_yirenzheng" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1pt"
+        android:background="@color/line" />
+</LinearLayout>

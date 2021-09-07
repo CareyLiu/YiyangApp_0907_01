@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><!-- shape如果不声明形状默认是正方形 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 设置填充色 -->
+    <solid android:color="@color/white"></solid>
+    <!--  设置渐变  -->
+    <gradient
+        android:angle="90"
+        android:endColor="#FDFDFD"
+        android:startColor="#AAAAAA"
+        android:type="linear"
+        android:useLevel="true" />
+</shape>

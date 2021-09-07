@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayfff5f5f5">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_280"
+                android:background="@mipmap/wenshidu_chuanganqi_beijing">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="46dp"
+                    android:orientation="horizontal">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_wendu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="当前温度"
+                            android:textColor="#ffffffff"
+                            android:textSize="15sp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_wenduzhi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="31dp"
+                            android:includeFontPadding="false"
+                            android:text="19.6"
+                            android:textColor="#ffffffff"
+                            android:textSize="67sp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_wendu" />
+
+                        <TextView
+                            android:id="@+id/tv_danwei"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="℃"
+                            android:textColor="#ffffffff"
+                            android:textSize="15sp"
+                            app:layout_constraintLeft_toRightOf="@+id/tv_wenduzhi"
+                            app:layout_constraintTop_toTopOf="@+id/tv_wenduzhi" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_shidu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="当前湿度"
+                                android:textColor="#ffffffff"
+                                android:textSize="15sp"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_shiduzhi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="31dp"
+                                android:includeFontPadding="false"
+                                android:text="50.5"
+                                android:textColor="#ffffffff"
+                                android:textSize="67sp"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_shidu" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="%"
+                                android:textColor="#ffffffff"
+                                android:textSize="15sp"
+                                app:layout_constraintLeft_toRightOf="@+id/tv_shiduzhi"
+                                app:layout_constraintTop_toTopOf="@+id/tv_shiduzhi" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.flyco.roundview.RoundRelativeLayout
+                android:layout_width="329dp"
+                android:layout_height="86dp"
+                android:layout_marginTop="-70dp"
+                app:rv_backgroundColor="@color/white"
+                app:rv_cornerRadius="10dp">
+
+                <ImageView
+                    android:id="@+id/iv_icon_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:src="@mipmap/kongqi_zhiliang_icon" />
+
+                <TextView
+                    android:id="@+id/tv_dangqianwendu_huashu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/iv_icon_1"
+                    android:includeFontPadding="false"
+                    android:text="当前温度舒适，空气清新"
+                    android:textColor="#ff3a85f8"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </com.flyco.roundview.RoundRelativeLayout>
+
+
+            <com.flyco.roundview.RoundRelativeLayout
+                android:id="@+id/rll_zhumianban"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_268"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="12dp"
+                app:rv_backgroundColor="@color/white"
+                app:rv_cornerRadius="10dp">
+
+                <ImageView
+                    android:id="@+id/iv_wendu_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="17dp"
+                    android:src="@mipmap/wenshidu_pic_wendu" />
+
+                <TextView
+                    android:id="@+id/tv_dangqianwendu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@+id/iv_wendu_icon"
+                    android:text="当前温度 ℃"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:id="@+id/iv_shidu_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_toRightOf="@+id/tv_dangqianwendu"
+                    android:src="@mipmap/wenshidu_pic_shidu" />
+
+                <TextView
+
+                    android:id="@+id/tv_dangqianshidu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/tv_dangqianwendu"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/iv_shidu_icon"
+                    android:text="当前湿度 %"
+                    android:textColor="#ff333333"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_dangqianwendu"
+                    android:layout_marginTop="25dp"
+                    android:orientation="horizontal">
+
+
+                </LinearLayout>
+            </com.flyco.roundview.RoundRelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp">
+
+            </View>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

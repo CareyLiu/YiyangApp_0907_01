@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="40pt"
+        android:layout_marginRight="15pt"
+        android:background="@drawable/a_xiupeichang_tag_bg"
+        android:gravity="center"
+        android:paddingHorizontal="9pt"
+        android:text="美容门店"
+        android:textColor="#FC0100"
+        android:textSize="19pt" />
+</LinearLayout>
+
+

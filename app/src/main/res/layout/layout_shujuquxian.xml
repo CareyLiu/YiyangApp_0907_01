@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/tv_tian"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:background="@drawable/blue_back"
+            android:gravity="center"
+            android:text="天"
+            android:textColor="@color/white"
+            android:textSize="16sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_yue"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="月"
+            android:textSize="16sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_nian"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="年"
+            android:textSize="16sp">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_wendu_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="17dp"
+            android:src="@mipmap/wenshidu_pic_wendu" />
+
+        <TextView
+            android:id="@+id/tv_dangqianwendu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@+id/iv_wendu_icon"
+            android:text="当前温度 ℃"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/iv_shidu_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="17dp"
+            android:layout_toRightOf="@+id/tv_dangqianwendu"
+            android:src="@mipmap/wenshidu_pic_shidu" />
+
+        <TextView
+
+            android:id="@+id/tv_dangqianshidu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_dangqianwendu"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/iv_shidu_icon"
+            android:text="当前湿度 %"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+
+    <com.flyco.roundview.RoundRelativeLayout
+        android:id="@+id/rrl_time"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="15dp"
+        app:rv_backgroundColor="@color/grayfff5f5f5"
+        app:rv_cornerRadius="8dp">
+
+        <TextView
+            android:id="@+id/tv_riqi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="2020/12"
+            android:textColor="#ff333333"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/push_gray_999" />
+    </com.flyco.roundview.RoundRelativeLayout>
+</LinearLayout>

@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name" translatable="false">聚易佳</string>
+    <string name="home" translatable="false">首页</string>
+    <string name="play" translatable="false">神播</string>
+    <string name="car_online" translatable="false">车联网</string>
+    <string name="message" translatable="false">消息</string>
+    <string name="mine" translatable="false">我的</string>
+    <string name="sms_login" translatable="false">用短信验证码登录</string>
+    <string name="pwd_login" translatable="false">用聚易佳密码登录</string>
+    <string name="smart_devices" translatable="false">智能家居</string>
+    <string name="get_code" translatable="false">获取验证码</string>
+    <string name="text_heater_air_value" translatable="false">%1$d  ℃</string>
+    <string name="text_heater_set_temperature_value" translatable="false">预设温度：%1$d  ℃</string>
+    <string name="text_heater_manual_value" translatable="false">%1$d  档</string>
+    <string name="text_heater_current_temperature" translatable="false">当前温度</string>
+    <string name="text_heater_air_mode" translatable="false">空调模式</string>
+    <string name="text_heater_gear_mode" translatable="false">档位模式</string>
+    <string name="text_heater_pump_mode" translatable="false">水泵模式</string>
+    <string name="text_heater_yby_mode" translatable="false">预泵油</string>
+    <string name="text_heater_ytf_mode" translatable="false">预通风</string>
+    <string name="text_heater_set_temperature" translatable="false">长按选择开机模式</string>
+    <string name="text_heater_click_ofen" translatable="false">您的点击过于频繁，请稍后再试</string>
+    <string name="text_heater_bluetooth_unconnect" translatable="false">蓝牙尚未连接，请稍后再试</string>
+    <string name="scan_add" translatable="false">扫一扫添加</string>
+    <string name="hand_add" translatable="false">手动添加</string>
+    <string name="scan_hint" translatable="false">请将二维码放入框内</string>
+    <string name="xjqx" translatable="false">申请相机权限</string>
+    <string name="tcqx" translatable="false">申请弹窗权限</string>
+    <string name="get_error" translatable="false">权限获取失败，该功能无法使用</string>
+    <string name="consult" translatable="false">咨询</string>
+    <string name="master_info" translatable="false">车主信息</string>
+
+
+    <string name="loading" translatable="false">加载中,请稍后...</string>
+    <string name="load_failed" translatable="false">加载失败，请点我重试</string>
+    <string name="load_end" translatable="false">没有更多数据</string>
+
+
+    <string name="menu_item_about" translatable="false">About App</string>
+    <string name="about_app_version" translatable="false">App Version: %s</string>
+
+    <string name="main_title" translatable="false">Home</string>
+
+    <string name="esptouch_message_permission" translatable="false">APP require Location permission to get Wi-Fi information. \nClick to request permission</string>
+    <string name="esptouch_message_location" translatable="false">Please turn on GPS to get Wi-Fi information.</string>
+    <string name="esptouch_message_wifi_connection" translatable="false">Please connect Wi-Fi first.</string>
+    <string name="esptouch_message_wifi_frequency" translatable="false">Current Wi-Fi connection is 5G, but the device just support 2.4G.</string>
+
+    <string name="esptouch1_title" translatable="false">EspTouch</string>
+    <string name="esptouch1_about_version" translatable="false">EspTouch Version: %s</string>
+    <string name="esptouch1_ssid_title" translatable="false">SSID: </string>
+    <string name="esptouch1_bssid_title" translatable="false">BSSID: </string>
+    <string name="esptouch1_password_title" translatable="false">Password: </string>
+    <string name="esptouch1_device_count_title" translatable="false">Device count: </string>
+    <string name="esptouch1_package_broadcast" translatable="false">Broadcast</string>
+    <string name="esptouch1_package_multicast" translatable="false">Multicast</string>
+    <string name="esptouch1_confirm" translatable="false">Confirm</string>
+    <string name="esptouch1_wifi_5g_message" translatable="false">当前配网不支持5G制式，请切换后重新尝试</string>
+    <string name="esptouch1_location_permission_title" translatable="false">⚠️Warning</string>
+    <string name="esptouch1_location_permission_message" translatable="false">On Android M or higher version, App can\'t get Wi-Fi connection information if you forbid Location permission.</string>
+    <string name="esptouch1_configuring_message" translatable="false">请稍后</string>
+    <string name="esptouch1_configure_wifi_change_message" translatable="false">Wi-Fi disconnected or changed</string>
+    <string name="esptouch1_configure_result_failed" translatable="false">EspTouch failed</string>
+    <string name="esptouch1_configure_result_failed_port" translatable="false">Create EspTouch task failed, the EspTouch port could be used by other thread</string>
+    <string name="esptouch1_configure_result_success" translatable="false">网络连接成功</string>
+    <string name="esptouch1_configure_result_success_item" translatable="false">BSSID = %1$s, InetAddress = %2$s</string>
+
+    <string name="esptouch2_title" translatable="false">EspTouch V2</string>
+    <string name="esptouch2_about_version" translatable="false">EspTouch V2 Version: %s</string>
+    <string name="esptouch2_ssid_label" translatable="false">SSID: </string>
+    <string name="esptouch2_bssid_label" translatable="false">BSSID: </string>
+    <string name="esptouch2_ip_label" translatable="false">IP: </string>
+    <string name="esptouch2_password_label" translatable="false">Password</string>
+    <string name="esptouch2_aes_key" translatable="false">AES Key</string>
+    <string name="esptouch2_aes_key_error" translatable="false">AES Key must be null or 16 bytes data</string>
+    <string name="esptouch2_custom_data" translatable="false">Custom Data</string>
+    <string name="esptouch2_custom_data_error" translatable="false">Custom data can\'t be more than 127 bytes</string>
+
+    <string name="esptouch2_provision_title" translatable="false">Provision</string>
+    <string name="esptouch2_provision_stop" translatable="false">Stop</string>
+    <string name="esptouch2_provision_result_exception" translatable="false">Catch exception: %s</string>
+    <string name="esptouch2_provision_result_none" translatable="false">Not found any devices</string>
+    <string name="empty" translatable="false">当前数据为空!</string>
+    <string name="load_failed_no_network" translatable="false">网络连接失败,请联网后重新尝试,点击重连</string>
+    <string name="str_none" translatable="false" />
+    <string name="content" translatable="false">111</string>
+    <string name="app_id" translatable="false">5fc33e7b</string>
+
+</resources>

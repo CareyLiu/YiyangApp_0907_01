@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TuyaTimelineView">
+        <attr format="reference|dimension" name="topTextMargin"/>
+        <attr format="reference|dimension" name="bottomTextMargin"/>
+        <attr format="reference|dimension" name="smallRulerHeight"/>
+        <attr format="reference|color" name="timeScaleColor"/>
+        <attr format="reference|color" name="linesColor"/>
+        <attr format="reference|color" name="bubbleColor"/>
+        <attr format="reference|color" name="bubbleTextColor"/>
+        <attr format="reference|color" name="landscapeBgColor"/>
+        <attr format="reference|color" name="portraitBgColor"/>
+    </declare-styleable>
+</resources>

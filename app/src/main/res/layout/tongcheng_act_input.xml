@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1pt"
+        android:background="@color/line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="492pt"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/ed_input"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="top"
+            android:hint="请输入"
+            android:maxLength="200"
+            android:padding="31pt"
+            android:textColor="@color/color_3"
+            android:textColorHint="@color/color_3"
+            android:textSize="27pt" />
+
+        <TextView
+            android:id="@+id/tv_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="31pt"
+            android:layout_marginBottom="23pt"
+            android:includeFontPadding="false"
+            android:text="0/200"
+            android:textSize="27pt" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/bt_save"
+        android:layout_width="match_parent"
+        android:layout_height="94pt"
+        android:layout_marginHorizontal="29pt"
+        android:layout_marginTop="31pt"
+        android:background="@drawable/bt_login_bacground"
+        android:gravity="center"
+        android:text="保存"
+        android:textColor="@color/white"
+        android:textSize="31pt"
+        android:textStyle="bold" />
+
+</LinearLayout>

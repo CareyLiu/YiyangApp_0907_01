@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="23dp"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/tv_title_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:includeFontPadding="false"
+        android:textColor="#000000"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:includeFontPadding="false"
+        android:textColor="#000000"
+        android:textSize="29dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:paddingLeft="29dp">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="当前状态"
+            android:textColor="#909090"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_zhuangtai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:textColor="#353535"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_tixianjine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="29dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="提现金额"
+            android:textColor="#909090"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_tixianjine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="¥2859.98"
+            android:textColor="#353535"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_fuwufei"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="29dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="服务费"
+            android:textColor="#909090"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_fuwufei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="¥2.80"
+            android:textColor="#353535"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_shenqingshijian"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="29dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="申请时间"
+            android:textColor="#909090"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_shenqingshijian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="2019-03-08 22:11:44"
+            android:textColor="#353535"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_daozhangshijian"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="29dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="到账时间"
+            android:textColor="#909090"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_daozhangshijian"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:includeFontPadding="false"
+            android:text="2019-03-08 22:11:59"
+            android:textColor="#353535"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_tixianfangshi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="29dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="提现方式"
+            android:textColor="#909090"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_tixianfangshi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="支付宝"
+            android:textColor="#353535"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_tixiandanhao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="29dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="提现单号"
+            android:textColor="#909090"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_tixiandanhao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="2071903810007544"
+            android:textColor="#353535"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_shangping"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="29dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="商品"
+            android:textColor="#909090"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_shangpin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="2071903810007544"
+            android:textColor="#353535"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_shanghu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="29dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="商户全称"
+            android:textColor="#909090"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_shanghu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="2071903810007544"
+            android:textColor="#353535"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_zhifushijian"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="29dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="支付时间"
+            android:textColor="#909090"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_zhifushijian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="2071903810007544"
+            android:textColor="#353535"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_zhifupay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="29dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="支付方式"
+            android:textColor="#909090"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_zhifupay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="2071903810007544"
+            android:textColor="#353535"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_jianyidanhao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="29dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="交易单号"
+            android:textColor="#909090"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_jianyidanhao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="2071903810007544"
+            android:textColor="#353535"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_shou_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="29dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="收款方式"
+            android:textColor="#909090"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_shou_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="2071903810007544"
+            android:textColor="#353535"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_shou_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="29dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="收款时间"
+            android:textColor="#909090"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_shou_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="2071903810007544"
+            android:textColor="#353535"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_tuikuan_danhao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="29dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="退款个单号"
+            android:textColor="#909090"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_tuikuan_danhao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="2071903810007544"
+            android:textColor="#353535"
+            android:textSize="13sp" />
+    </LinearLayout>
+</LinearLayout>

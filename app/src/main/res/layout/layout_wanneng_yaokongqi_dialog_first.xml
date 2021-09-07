@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <FrameLayout
+        android:layout_width="634pt"
+        android:layout_height="595pt"
+        android:background="@drawable/bg_white_radius_15"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:id="@+id/ll_main_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="115pt"
+                android:layout_height="413pt"
+                android:layout_marginTop="32pt"
+                android:src="@mipmap/tanceng_pic_yaokongqi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23pt"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="30pt"
+                android:text="提示：点击手机屏幕上要学习的按键，将遥控器对准主机，按下要学习的按键"
+                android:textColor="@color/text_color6"
+                android:textSize="31pt" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_colse"
+            android:layout_width="60pt"
+            android:layout_height="60pt"
+            android:layout_gravity="right"
+            android:layout_marginTop="30pt"
+            android:layout_marginRight="30pt"
+            android:src="@drawable/beauty_close" />
+    </FrameLayout>
+</RelativeLayout>

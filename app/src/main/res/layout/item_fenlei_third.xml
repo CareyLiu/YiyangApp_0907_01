@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grayf3f3f3">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constrain"
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:background="@color/white">
+
+
+        <ImageView
+
+            android:id="@+id/iv_product"
+            android:layout_width="176dp"
+            android:layout_height="176dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            tools:background="@color/blue" />
+
+        <ImageView
+            android:id="@+id/biaozhi"
+            android:layout_width="23dp"
+            android:layout_height="13dp"
+            android:layout_marginLeft="10dp"
+
+
+            app:layout_constraintLeft_toLeftOf="parent"
+
+            app:layout_constraintTop_toTopOf="@+id/tv_title" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="10dp"
+            android:includeFontPadding="false"
+            android:text=" 绿茶补水保湿护肤品件套装1111111"
+            android:textColor="#ff000000"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toRightOf="@+id/biaozhi"
+            app:layout_constraintTop_toBottomOf="@+id/iv_product" />
+
+
+        <TextView
+            android:id="@+id/tv_yishou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:includeFontPadding="false"
+            android:text="已售2391"
+            android:textColor="#ff999999"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="@+id/biaozhi"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <TextView
+            android:id="@+id/tv_xianjia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="12dp"
+            android:includeFontPadding="false"
+            android:text="¥49"
+            android:textColor="#fffc0a3e"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_yishou"
+            app:layout_constraintTop_toBottomOf="@+id/tv_yishou" />
+
+        <TextView
+            android:id="@+id/tv_yuanjia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:includeFontPadding="false"
+            android:text="¥149"
+            android:textColor="#ff999999"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_xianjia"
+            app:layout_constraintLeft_toRightOf="@+id/tv_xianjia"
+            app:layout_constraintTop_toTopOf="@+id/tv_xianjia" />
+
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/rtv_youhuijuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="9dp"
+            android:layout_marginBottom="9dp"
+            android:gravity="center"
+            android:paddingHorizontal="7dp"
+            android:paddingVertical="1dp"
+            android:text="110元券"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_xianjia"
+            app:layout_constraintRight_toRightOf="@+id/iv_product"
+            app:layout_constraintTop_toTopOf="@+id/tv_xianjia"
+            app:rv_backgroundColor="@color/pinkfe0139"
+            app:rv_cornerRadius="5dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/tv_xianjia" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

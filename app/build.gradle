@@ -1,0 +1,370 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.huawei.agconnect'
+android {
+    signingConfigs {
+        debug {
+//            keyAlias 'debug'
+//            keyPassword '123456'
+//            storeFile file('D:/keystore/magic_lamp_debug.jks')
+//            storePassword '123456'
+
+            keyAlias 'key0'
+            keyPassword 'yiyangapp'
+            storeFile file('C:/keystore/yiyangapp.jks')
+            storePassword 'yiyangapp'
+        }
+        release {
+            keyAlias 'key0'
+            keyPassword 'yiyangapp'
+            storeFile file('C:/keystore/yiyangapp.jks')
+            storePassword 'yiyangapp'
+        }
+    }
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "com.yiyang.cn"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 49
+        versionName "2.1.0"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86"
+        }
+
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY  : "02c5d1167fe464e61186e333", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+                // 华为 设置manifest.xml中的变量
+                HUAWEI_APPID  : "102236539",
+                XIAOMI_APPKEY : "MI-5371840092664", // 小米平台注册的appkey,注意不要将前缀去掉 MI-appkey
+                XIAOMI_APPID  : "MI-2882303761518400664", // 小米平台注册的appid，注意不要将前缀去掉 MI-appid
+
+                OPPO_APPKEY   : "OP-19787702a8284c7da7bed54a9230758f", // OPPO平台注册的appkey
+                OPPO_APPID    : "OP-30286123", // OPPO平台注册的appid
+                OPPO_APPSECRET: "OP-04e6317bc09841b9b521083a96cd9260",//OPPO平台注册的appsecret
+
+                VIVO_APPKEY : "621d169a87b3a465d1e734cee0e98e36", // VIVO平台注册的appkey
+                VIVO_APPID : "105491607", // VIVO平台注册的appid
+
+        ]
+    }
+
+
+    buildTypes {
+        release {
+            //混淆
+            minifyEnabled false
+            zipAlignEnabled true//内存对齐
+            // proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //签名
+            signingConfig signingConfigs.release
+        }
+        debug {
+            //是否混淆
+            minifyEnabled false
+            zipAlignEnabled true
+            // proguardFiles getDefaultProguardFile('progudard-android.txt'), 'proguard-rules.pro'
+            //签名
+            signingConfig signingConfigs.debug
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    repositories {
+        mavenCentral()
+//        maven {
+//            url "http://maven..com/nexus/content/repositories/releases"
+//        }
+        maven {
+            url "https://repo.eclipse.org/content/repositories/paho-snapshots/"
+        }
+        maven { url "https://www.jitpack.io" }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+        exclude 'assets/location_map_gps_locked.png'
+        exclude 'assets/location_map_gps_3d.png'
+        //涂鸦
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'META-INF/maven/com.squareup.okio/okio/pom.properties'
+        exclude 'META-INF/maven/com.squareup.okio/okio/pom.xml'
+        exclude 'META-INF/android-offlinelog-api_release.kotlin_module'
+        exclude 'META-INF/android-offlinelog-upload_release.kotlin_module'
+        pickFirst 'lib/*/libc++_shared.so'
+        pickFirst 'lib/*/libgnustl_shared.so'
+        doNotStrip '*/mips/*.so'
+        doNotStrip '*/mips64/*.so'
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+
+def supportVersion = "27.1.1"
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.constraintlayout:constraintlayout'
+    implementation 'com.jakewharton:butterknife:10.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.github.ittianyu:BottomNavigationViewEx:2.0.4'
+    implementation 'com.jaeger.statusbarutil:library:1.5.1'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.lzy.net:okgo:3.0.4'
+    implementation 'com.readystatesoftware.chuck:library:1.0.4'
+
+    //    implementation 'com..ams:alicloud-android-hotfix:3.2.4'
+
+    //implementation 'com.wei.android.lib:fingerprintidentify:1.2.1'
+    implementation 'com.flyco.dialog:FlycoDialog_Lib:1.2.2@aar'
+    implementation 'com.flyco.animation:FlycoAnimation_Lib:1.0.0@aar'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.makeramen:roundedimageview:2.2.1'
+    implementation 'com.youth.banner:banner:1.4.10'
+    implementation 'com.github.pinguo-zhouwei:CustomPopwindow:2.1.1'
+
+    //noinspection GradleCompatible
+    implementation 'androidx.percentlayout:percentlayout:1.0.0'
+    implementation 'com.github.ZS-ZhangsShun:EasyMqttAndroidClient:1.0.2'
+    implementation 'pub.devrel:easypermissions:1.0.1'
+    implementation 'org.jaaksi:pickerview:2.0.1'
+
+    implementation 'com.github.prolificinteractive:material-calendarview:2.0.0'
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+    implementation 'com.contrarywind:wheelview:4.0.9'
+    implementation 'org.devio.takephoto:takephoto_library:4.1.0'
+    implementation 'com.smartTop:jd-address:1.0.3'
+
+    // 基础依赖包，必须要依赖
+    implementation 'com.gyf.immersionbar:immersionbar:2.3.3'
+
+    // fragment快速实现（可选）
+
+    // implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0'
+
+    //noinspection GradleCompatible
+    implementation 'androidx.legacy:legacy-support-v4'
+
+    //noinspection GradleCompatible
+    implementation 'com.google.android.material:material:1.0.0'
+
+    // implementation "com.android.support:recyclerview-v7:$supportVersion"
+
+    //implementation "androidx.annotation:annotation"
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.jakewharton:butterknife:7.0.1'
+    implementation 'io.reactivex:rxandroid:1.0.1'
+    implementation 'io.reactivex:rxjava:1.0.14'
+    implementation 'io.reactivex:rxjava-math:1.0.0'
+    implementation 'com.trello:rxlifecycle:0.3.0'
+    implementation 'com.trello:rxlifecycle-components:0.3.0'
+    implementation 'com.jakewharton.rxbinding:rxbinding:0.3.0'
+    implementation 'com.jakewharton.rxbinding:rxbinding-support-v4:0.3.0'
+    implementation 'com.jakewharton.rxbinding:rxbinding-appcompat-v7:0.3.0'
+    implementation 'com.jakewharton.rxbinding:rxbinding-recyclerview-v7:0.3.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    implementation 'com.squareup.okhttp3:okhttp:3.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+    implementation 'com.balysv:material-ripple:1.0.2'
+    implementation 'com.lsjwzh:materialloadingprogressbar:0.5.8-RELEASE'
+    implementation 'com.jph.takephoto:takephoto_library:4.0.3'
+    implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
+    implementation 'com.rairmmd:andmqtt:1.1.0'
+
+    /**
+     *    为"单Activity ＋ 多Fragment","多模块Activity + 多Fragment"架构而生,替代官方fragment
+     * */
+
+    //    // 如果不想继承SupportActivity/Fragment，自己定制Support，可仅依赖:
+
+    implementation 'com.tbruyelle.rxpermissions:rxpermissions:0.9.0@aar'
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
+    //    implementation 'me.yokeyword:fragmentation-core:1.3.4'
+
+    //
+
+    //    // 如果想使用SwipeBack 滑动边缘退出Fragment/Activity功能，完整的添加规则如下：
+
+    //    implementation 'me.yokeyword:fragmentation:1.3.4'
+
+    //
+
+    //    // swipeback基于fragmentation, 如果是自定制SupportActivity/Fragment，则参照SwipeBackActivity/Fragment实现即可
+
+    //    implementation 'me.yokeyword:fragmentation-swipeback:1.3.4'
+
+    // This is the use of androidx, if you are using the android.support: fragmentationx -> fragmentation
+    implementation 'me.yokeyword:fragmentationx:1.0.2'
+
+    // If you don't want to extends SupportActivity/Fragment and would like to customize your own support, just rely on fragmentation-core
+
+    // implementation 'me.yokeyword:fragmentationx-core:1.0.2'
+
+    // To get SwipeBack feature, rely on both fragmentation & fragmentation-swipeback
+    implementation 'me.yokeyword:fragmentationx:1.0.2'
+
+    // Swipeback is based on fragmentation. Refer to SwipeBackActivity/Fragment for your Customized SupportActivity/Fragment
+    implementation 'me.yokeyword:fragmentationx-swipeback:1.0.2'
+
+    /*Rx生命周期管理*/
+    implementation 'com.trello.rxlifecycle2:rxlifecycle:2.2.0'
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.0'
+
+    /*一个扩展原生控件支持圆角矩形框背景的库,可以减少相关shape资源文*/
+    implementation 'com.flyco.roundview:FlycoRoundView_Lib:1.1.4@aar'
+    implementation 'com.czp.arcProgressBar:ArcProgressBar:1.0.1'
+
+    //支付宝（可选）
+    compileOnly 'com.alipay.mobile.android.securitysdk:apsecuritysdk-all:3.3.0'
+
+    //登陆
+    implementation 'com.ali.auth.sdk:alibabauth_core:2.0.0.6@aar'
+    implementation 'com.ali.auth.sdk:alibabauth_ui:2.0.0.6@aar'
+    implementation 'com.ali.auth.sdk:alibabauth_ext:2.0.0.6@aar'
+
+    //安全组件
+    implementation 'com.taobao.android:securityguardaar3:5.4.171@aar'
+    implementation 'com.taobao.android:securitybodyaar3:5.4.99@aar'
+    implementation 'com.taobao.android:avmpaar3:5.4.36@aar'
+    implementation 'com.taobao.android:sgmiddletieraar3:5.4.9@aar'
+
+    //Mtop
+    implementation 'com.taobao.android:mtopsdk_allinone_open:3.1.2.5@jar'
+
+    //applink
+    implementation 'com.alibaba.sdk.android:alibc_link_partner:4.1.15@aar'
+
+    //ut
+    implementation 'com.taobao.android:utdid4all:1.5.2'
+    implementation 'com.alibaba.mtl:app-monitor-sdk:2.6.4.5_for_bc'
+
+    // 电商基础组件
+    implementation 'com.alibaba.sdk.android:AlibcTradeCommon:4.0.0.8@aar'
+    implementation 'com.alibaba.sdk.android:AlibcTradeBiz:4.0.0.8@aar'
+    implementation 'com.alibaba.sdk.android:nb_trade:4.0.0.8@aar'
+    implementation 'com.alibaba:fastjson:1.1.67.android'
+
+    /**
+     *    Android智能下拉刷新框架-SmartRefreshLayout
+     *    https://github.com/scwang90/SmartRefreshLayout
+     * */
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-5'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-5'
+
+    //没有使用特殊Header，可以不加这行
+    implementation(name: 'alipaySdk-15.6.8-20191021122455-noUtdid', ext: 'aar')
+
+    //    compile (name: 'alipaySdk-15.5.7-20181023110917', ext: 'aar')
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:5.1.4'
+    implementation files('libs/tbs_sdk_thirdapp_v3.1.0.1034_43100_sharewithdownload_obfs_20170301_182143.jar')
+
+    /**
+     *     RecyclerView的强大的BaseAdapter
+     * */
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46'
+    implementation 'org.greenrobot:greendao:3.2.2'
+
+    //二维码
+    implementation 'cn.bingoogolapple:bga-qrcode-zbar:1.2.1'
+    implementation 'cn.bingoogolapple:bga-qrcode-zxing:1.2.1'
+
+    implementation 'androidx.cardview:cardview'
+    implementation 'org.apache.commons:commons-lang3:3.7'
+    implementation project(path: ':esptouch')
+
+    // implementation 'androidx.appcompat:appcompat:1.1.0'
+
+    //implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    // implementation 'com.google.android.material:material:1.1.0'
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+
+    //其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.2.0
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+
+    //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.2.0
+
+    //implementation 'com.airbnb.android:lottie:1.0.1'
+    def lottieVersion = "3.4.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+    implementation 'com.github.zcweng:switch-button:0.0.3@aar'
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+    implementation 'com.billy.android:gloading:1.1.0'
+    implementation 'cn.rongcloud.sdk:im_lib:2.10.5'
+    implementation 'cn.rongcloud.sdk:im_kit:2.10.5'
+
+    //3D地图so及jar
+    implementation 'com.amap.api:map2d:latest.integration'
+    implementation 'com.amap.api:location:latest.integration'
+    implementation 'com.amap.api:search:latest.integration'
+    implementation 'com.blankj:utilcode:1.29.0'
+    implementation 'com.orhanobut:logger:2.2.0'
+    implementation 'cn.jiguang.sdk:jpush:3.7.0'
+
+    // 此处以JPush 3.7.0 版本为例。
+    implementation 'cn.jiguang.sdk:jcore:2.4.2'
+
+    // 此处以JCore 2.4.2 版本为例。
+    implementation 'com.bulong.rudeness:rudeness:latest.release@aar'
+
+    //涂鸦摄像头
+    implementation 'com.tuya.smart:tuyasmart-ipc-camera-middleware:3.20.0'
+    implementation 'com.tuya.smart:tuyasmart-ipc-camera-v2:3.20.0'
+    implementation 'com.tuya.smart:tuyasmart-ipc-camera-utils:3.20.0'
+    implementation 'com.tuya.smart:tuyasmart-ipc-camera-diff-api:3.20.0'
+    implementation 'com.tuya.smart:tuyasmart-ipc-camera-outside:3.20.0'
+    implementation 'com.tuya.smart:tuyasmart-base-utils:3.18.0r143-rc.9'
+    implementation 'com.tuya.smart:tuyasmart-ipc-camera-timeline:1.0.0'
+    implementation project(path: ':push')
+    implementation files('libs\\umeng-common-9.3.3.jar')
+    implementation files('libs\\umeng-asms-armeabi-v1.1.4.aar')
+    implementation files('libs\\aranger-1.0.6.jar')
+    implementation files('libs/Msc.jar')
+    implementation project(path: ':LRecyclerview_library')
+
+    implementation 'com.tuya.smart:tuyasmart:3.22.0'
+    implementation 'com.tuya.smart:tuyasmart-bizbundle-panel:3.22.0-5'
+    implementation 'com.tuya.smart:tuyasmart-bizbundle-scene:3.22.0-5'
+    implementation 'com.tuya.smart:tuyasmart-bizbundle-camera:3.22.0-5'
+    implementation 'org.xclcharts:lib:2.4'
+    implementation 'com.amap.api:search:latest.integration'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+    implementation 'com.huawei.hms:push:5.0.0.300'
+    implementation 'cn.jiguang.sdk.plugin:huawei:3.8.5'
+    implementation 'cn.jiguang.sdk.plugin:xiaomi:3.8.5'
+    implementation 'cn.jiguang.sdk.plugin:oppo:3.8.5'
+    implementation 'cn.jiguang.sdk.plugin:vivo:3.8.5'
+}

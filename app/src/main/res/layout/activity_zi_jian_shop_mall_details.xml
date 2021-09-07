@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.zijian_shangcheng.ZiJianShopMallDetailsActivity">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rlv_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_dianpu_iamge"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="7dp"
+            android:src="@mipmap/shop_icon_dianpu"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_dianpu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="店铺"
+            android:textColor="#ff999999"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="@+id/iv_dianpu_iamge"
+            app:layout_constraintTop_toBottomOf="@+id/iv_dianpu_iamge" />
+
+
+        <ImageView
+            android:id="@+id/iv_kefu_image"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_marginLeft="17dp"
+            android:src="@mipmap/shop_icon_kefu"
+            app:layout_constraintLeft_toRightOf="@+id/iv_dianpu_iamge"
+            app:layout_constraintTop_toTopOf="@+id/iv_dianpu_iamge" />
+
+        <TextView
+            android:id="@+id/tv_kefu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="客服"
+            android:textColor="#ff999999"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="@+id/iv_kefu_image"
+            app:layout_constraintRight_toRightOf="@+id/iv_kefu_image"
+            app:layout_constraintTop_toTopOf="@+id/tv_dianpu" />
+
+
+        <ImageView
+            android:id="@+id/iv_shoucang_iamge"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_marginLeft="17dp"
+            app:layout_constraintLeft_toRightOf="@+id/iv_kefu_image"
+            app:layout_constraintTop_toTopOf="@+id/iv_kefu_image" />
+
+        <TextView
+            android:id="@+id/tv_shoucang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="收藏"
+            android:textColor="#ff999999"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="@+id/iv_shoucang_iamge"
+            app:layout_constraintRight_toRightOf="@+id/iv_shoucang_iamge"
+            app:layout_constraintTop_toBottomOf="@+id/iv_shoucang_iamge" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_marginRight="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/ll_jiaru_gouwuche"
+                android:layout_width="110dp"
+                android:layout_height="43dp"
+                android:layout_gravity="center"
+                android:background="@mipmap/button_left"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="加入购物车"
+                    android:textColor="#ffffffff"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_liji_goumai"
+                android:layout_width="110dp"
+                android:layout_height="43dp"
+                android:layout_gravity="center"
+                android:background="@mipmap/button_right"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="立即购买"
+                    android:textColor="#ffffffff"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

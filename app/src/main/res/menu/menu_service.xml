@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/i_consult"
+        android:checked="true"
+        android:icon="@drawable/selector_service_home"
+        android:title="@string/consult" />
+
+    <item
+        android:id="@+id/i_master"
+        android:icon="@drawable/selector_service_master"
+        android:title="@string/master_info" />
+
+    <item
+        android:id="@+id/i_mine"
+        android:icon="@drawable/selector_service_mine"
+        android:title="@string/mine" />
+</menu>

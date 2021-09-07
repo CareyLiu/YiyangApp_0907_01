@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="14dp">
+
+        <View
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_zhineng_device_offline" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="送出的卡卷"
+            android:textColor="@color/black_111111"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="148dp"
+        android:layout_height="144dp"
+        android:background="@mipmap/kaquan_bg1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="12dp"
+            android:background="@mipmap/kaquan_bg2"></LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

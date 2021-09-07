@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constrain1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_marginLeft="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/red" />
+
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="17dp"
+            android:text="奥德赛"
+            android:textColor="#ff000000"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@+id/iv_image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:text="15746512682"
+            android:textColor="#ff000000"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_name"
+            app:layout_constraintLeft_toRightOf="@+id/tv_name"
+            app:layout_constraintTop_toTopOf="@+id/tv_name" />
+
+        <TextView
+            android:layout_width="274dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="黑龙江省 哈尔滨市 南岗区 电缆街219号 黑龙江神灯
+科技发展有限公司"
+            android:textColor="#ff000000"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+        <ImageView
+            android:id="@+id/iv_more"
+            android:layout_width="8dp"
+            android:layout_height="14dp"
+            android:layout_marginRight="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ImageView
+        android:id="@+id/iv_shop_iamge"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constrain1"
+        tools:background="@color/red" />
+
+    <TextView
+
+        android:id="@+id/tv_shop_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:text="华美数码店"
+        android:textColor="#ff000000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_shop_iamge"
+        app:layout_constraintLeft_toRightOf="@+id/iv_shop_iamge"
+        app:layout_constraintTop_toTopOf="@+id/iv_shop_iamge" />
+</androidx.constraintlayout.widget.ConstraintLayout>

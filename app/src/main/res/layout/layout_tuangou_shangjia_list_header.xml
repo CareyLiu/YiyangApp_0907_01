@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.youth.banner.Banner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:layout_marginHorizontal="14dp"
+        android:layout_marginTop="10dp"
+        app:image_scale_type="fit_xy"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@color/blue" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/banner" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grayline_cecece"
+        app:layout_constraintTop_toBottomOf="@+id/rcv_list" />
+
+    <TextView
+        android:id="@+id/tv_quanbu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:includeFontPadding="false"
+        android:padding="3dp"
+        android:text="全部"
+        android:textColor="#ff666666"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <ImageView
+        android:id="@+id/iv_image1"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginLeft="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_quanbu"
+        app:layout_constraintLeft_toRightOf="@+id/tv_quanbu"
+        app:layout_constraintTop_toTopOf="@+id/tv_quanbu" />
+
+    <LinearLayout
+        android:id="@+id/ll_mid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_image1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/iv_image1">
+
+        <TextView
+            android:id="@+id/tv_zhinengpaixu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:padding="3dp"
+            android:text="智能排序"
+            android:textColor="#ff666666"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/iv_image2"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="4dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_image3"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_image1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_image1" />
+
+    <TextView
+        android:id="@+id/tv_shaixuan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="4dp"
+        android:includeFontPadding="false"
+        android:padding="3dp"
+        android:text="筛选"
+        android:textColor="#ff666666"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_image3"
+        app:layout_constraintRight_toLeftOf="@+id/iv_image3"
+        app:layout_constraintTop_toTopOf="@+id/iv_image3" />
+
+    <View
+        android:id="@+id/view_10"
+        android:layout_width="match_parent"
+        android:layout_height="9dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shaixuan" />
+
+    <View
+        android:id="@+id/view_line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grayline_cecece"
+        app:layout_constraintTop_toBottomOf="@+id/view_10" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constrain"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/view_line1">
+
+        <ImageView
+            android:id="@+id/empty_view"
+            android:layout_width="173dp"
+            android:layout_height="173dp"
+            android:layout_marginTop="43dp"
+            android:src="@mipmap/shangjia_pic_empty"
+            android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_none"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="没有符合条件的商家"
+            android:textColor="#ff666666"
+            android:textSize="13sp"
+            android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="@+id/empty_view"
+            app:layout_constraintRight_toRightOf="@+id/empty_view"
+            app:layout_constraintTop_toBottomOf="@+id/empty_view" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

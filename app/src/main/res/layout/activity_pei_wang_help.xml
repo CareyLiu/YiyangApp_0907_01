@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.zhinengjiaju.peinet.PeiWangHelpActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/peiwang_help"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_shebei_fail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="12dp"
+                android:includeFontPadding="false"
+                android:text="设备连接失败怎么办？"
+                android:textColor="#ff111111"
+                android:textSize="17sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_img" />
+
+            <TextView
+                android:id="@+id/tv_fangan1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:includeFontPadding="false"
+                android:text="可处理方案一："
+                android:textColor="#FF488EF8"
+                android:textSize="15sp"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_shebei_fail"
+                app:layout_constraintTop_toBottomOf="@+id/tv_shebei_fail" />
+
+            <TextView
+                android:id="@+id/tv_chagnan_huashu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="51dp"
+                android:includeFontPadding="false"
+                android:text="长按「静音」按键，并等待5秒钟，直道提示音响起，根据提示音进行操作"
+                android:textColor="#ff425670"
+                android:textSize="13sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_fangan1" />
+
+            <TextView
+                android:id="@+id/tv_fangan2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:includeFontPadding="false"
+                android:text="可处理方案二："
+                android:textColor="#FF488EF8"
+                android:textSize="15sp"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_chagnan_huashu"
+                app:layout_constraintTop_toBottomOf="@+id/tv_chagnan_huashu" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:text="将设备断电，等待15秒后再接通电源，并重新开始配网"
+                android:textColor="#ff425670"
+                android:textSize="13sp"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_fangan2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_fangan2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

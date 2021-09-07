@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constrain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_shop_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="17dp"
+        android:includeFontPadding="false"
+        android:text="联府石油"
+        android:textColor="#ff222222"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_address"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_marginTop="16dp"
+
+        android:src="@mipmap/address"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_shop_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shop_name" />
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:includeFontPadding="false"
+        android:text="哈尔滨市南岗区学府路368号"
+        android:textColor="#ff666666"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_address"
+        app:layout_constraintLeft_toRightOf="@+id/iv_address"
+        app:layout_constraintTop_toTopOf="@+id/iv_address" />
+
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_marginTop="23dp"
+        android:includeFontPadding="false"
+        app:layout_constraintTop_toBottomOf="@+id/iv_address"
+        android:id="@+id/tv_renminbi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¥"
+        android:textColor="#E31938"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_shop_name" />
+
+    <TextView
+        app:layout_constraintLeft_toRightOf="@+id/tv_renminbi"
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:includeFontPadding="false"
+        android:text="4.54"
+        android:textColor="#ffe31938"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/iv_address" />
+
+    <RelativeLayout
+        android:id="@+id/ll_jiang"
+        android:layout_width="68dp"
+        android:layout_height="15dp"
+        android:layout_marginLeft="7dp"
+        android:background="@drawable/item_km_pink"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_price"
+        app:layout_constraintLeft_toRightOf="@+id/tv_price"
+        app:layout_constraintTop_toTopOf="@+id/tv_price">
+
+
+        <ImageView
+            android:layout_width="17dp"
+            android:layout_height="15dp"
+            android:src="@mipmap/jyj_jiayou_icon_xiajiang" />
+
+        <TextView
+            android:id="@+id/tv_yijiang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dp"
+            android:text="已降¥0.94"
+            android:textColor="#ffe31938"
+            android:textSize="9sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_guobiao_jia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:includeFontPadding="false"
+        android:text="国标价¥5.48"
+        android:textColor="#ff666666"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ll_jiang"
+        app:layout_constraintLeft_toRightOf="@+id/ll_jiang"
+        app:layout_constraintTop_toTopOf="@+id/ll_jiang" />
+
+
+    <ImageView
+        android:id="@+id/iv_daohang"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginRight="27dp"
+        android:src="@mipmap/iv_daohang"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_shop_name"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_shop_name" />
+
+    <TextView
+        android:id="@+id/tv_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:includeFontPadding="false"
+        android:text="1.71km"
+        android:textColor="#ff666666"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="@+id/iv_daohang"
+        app:layout_constraintRight_toRightOf="@+id/iv_daohang"
+        app:layout_constraintTop_toBottomOf="@+id/iv_daohang" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="13dp"
+        android:layout_marginTop="20dp"
+        android:background="#eeeeee"
+        app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+</androidx.constraintlayout.widget.ConstraintLayout>

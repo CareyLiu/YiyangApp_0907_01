@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="283dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_radius_7dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:src="@mipmap/pop_performance_1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/tv_butian"
+            android:layout_width="245dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/background_f5f5f5"
+            android:gravity="center"
+            android:hint="补填邀请码"
+            android:textColorHint="@color/black_333333"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_image" />
+
+        <LinearLayout
+            android:id="@+id/ll_haushu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="19dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/tv_butian">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="聚易佳欢迎您的到来："
+                android:textColor="#fffc0100"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="输入邀请码，可享受自买省，分享赚，聚易佳多项豪礼，打折优惠等活动"
+                android:textColor="#ff666666"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:includeFontPadding="false"
+                android:text="友情提示："
+                android:textColor="#fffc0100"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="输入好友邀请码，好友可获得高额返现红包"
+                android:textColor="#ff666666"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_queding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_haushu">
+
+
+            <TextView
+                android:id="@+id/tv_quxiao"
+                android:layout_width="115dp"
+                android:layout_height="42dp"
+                android:background="@drawable/background_radius_21_f5"
+                android:gravity="center"
+                android:text="忽略"
+                android:textColor="#ff333333"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_queding"
+                android:layout_width="115dp"
+                android:layout_height="42dp"
+                android:layout_marginLeft="14dp"
+                android:layout_toRightOf="@+id/tv_quxiao"
+                android:background="@drawable/background_radius_21_red"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_marginVertical="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/rl_queding" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

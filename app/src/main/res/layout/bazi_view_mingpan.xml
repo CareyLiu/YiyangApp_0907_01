@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bazi_jiexi_tab">
+
+        <LinearLayout
+            android:id="@+id/ll_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_two"
+            android:gravity="right"
+            android:orientation="horizontal"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_top"
+            android:gravity="right"
+            android:orientation="horizontal"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_data"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal|bottom"
+            android:minHeight="150pt">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_left"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ems="1"
+                android:gravity="bottom"
+                android:text="命宫"
+                android:textColor="#AB3B53"
+                android:textSize="30pt" />
+
+            <TextView
+                android:id="@+id/tv_left2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ems="1"
+                android:gravity="bottom"
+                android:text="命宫"
+                android:textColor="#A8B33F"
+                android:textSize="30pt"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_left3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ems="1"
+                android:gravity="bottom"
+                android:text="命宫"
+                android:textColor="#008310"
+                android:textSize="30pt"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="115-113"
+                    android:textColor="#000000"
+                    android:textSize="25pt" />
+
+                <TextView
+                    android:id="@+id/tv_minggong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="命宫"
+                    android:textColor="#FC0400"
+                    android:textSize="32pt" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_right3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ems="1"
+                android:gravity="bottom"
+                android:text="命宫工"
+                android:textColor="#FF9600"
+                android:textSize="30pt"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_right2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ems="1"
+                android:gravity="bottom"
+                android:text="命宫"
+                android:textColor="#20B780"
+                android:textSize="30pt"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_right"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ems="1"
+                android:gravity="bottom"
+                android:text="命宫"
+                android:textColor="#D7183D"
+                android:textSize="30pt" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:text="1 12 13 13 13 13 13"
+            android:textColor="#666666"
+            android:textSize="24pt" />
+    </RelativeLayout>
+</RelativeLayout>

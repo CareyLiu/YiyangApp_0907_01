@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smartRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:srlTextSizeTime="10sp"
+            app:srlTextSizeTitle="12sp" />
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="186pt"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/iv_icon"
+                        android:layout_width="131pt"
+                        android:layout_height="131pt"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="23pt" />
+
+                    <TextView
+                        android:id="@+id/rv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="23pt"
+                        android:layout_marginTop="47pt"
+                        android:layout_toRightOf="@id/iv_icon"
+                        android:includeFontPadding="false"
+                        android:text="NAME"
+                        android:textColor="@color/color_3"
+                        android:textSize="31pt"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="38pt"
+                        android:layout_marginLeft="23pt"
+                        android:layout_marginTop="101pt"
+                        android:layout_toRightOf="@id/iv_icon">
+
+                        <ImageView
+                            android:id="@+id/iv_gongjing"
+                            android:layout_width="115pt"
+                            android:layout_height="38pt"
+                            android:layout_marginRight="23pt"
+                            android:src="@mipmap/gongjiang_pic_yirenzheng"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_shangjia"
+                            android:layout_width="115pt"
+                            android:layout_height="38pt"
+                            android:layout_marginRight="23pt"
+                            android:src="@mipmap/gongjiang_pic_shangjia"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:background="@color/line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="96pt"
+                    android:background="@color/white">
+
+                    <RelativeLayout
+                        android:id="@+id/ll_title1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tv_title1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="商家"
+                            android:textColor="@color/text_red"
+                            android:textSize="31pt" />
+
+                        <View
+                            android:id="@+id/line_title1"
+                            android:layout_width="65pt"
+                            android:layout_height="8pt"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/bg_red_radius_15" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/ll_title2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tv_title2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="工匠"
+                            android:textColor="@color/text_color3"
+                            android:textSize="31pt" />
+
+                        <View
+                            android:id="@+id/line_title2"
+                            android:layout_width="65pt"
+                            android:layout_height="8pt"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/bg_red_radius_15"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/ll_title3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tv_title3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="便民信息"
+                            android:textColor="@color/text_color3"
+                            android:textSize="31pt" />
+
+                        <View
+                            android:id="@+id/line_title3"
+                            android:layout_width="65pt"
+                            android:layout_height="8pt"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/bg_red_radius_15"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:background="@color/line" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="18pt"
+                    android:paddingTop="24pt" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlTextSizeTime="10sp"
+            app:srlTextSizeTitle="12sp" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

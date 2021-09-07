@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_device_info"
+                android:layout_width="match_parent"
+                android:layout_height="92pt"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="31pt"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:includeFontPadding="false"
+                    android:text="设备信息"
+                    android:textColor="@color/color_3"
+                    android:textSize="31pt"
+                    android:textStyle="bold" />
+
+
+                <ImageView
+                    android:layout_width="35pt"
+                    android:layout_height="35pt"
+                    android:src="@mipmap/tuya_arrow_ccc" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1pt"
+                android:background="@color/line"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ll_device_weizhi"
+                android:layout_width="match_parent"
+                android:layout_height="92pt"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="31pt">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12pt"
+                    android:layout_weight="1"
+                    android:includeFontPadding="false"
+                    android:text="设备位置"
+                    android:textColor="@color/color_3"
+                    android:textSize="31pt"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_room_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12pt"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/color_9"
+                    android:textSize="31pt" />
+
+                <ImageView
+                    android:layout_width="35pt"
+                    android:layout_height="35pt"
+                    android:src="@mipmap/tuya_arrow_ccc" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1pt"
+                android:background="@color/line" />
+
+            <LinearLayout
+                android:id="@+id/ll_device_name"
+                android:layout_width="match_parent"
+                android:layout_height="92pt"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="31pt">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12pt"
+                    android:layout_weight="1"
+                    android:includeFontPadding="false"
+                    android:text="设备名称"
+                    android:textColor="@color/color_3"
+                    android:textSize="31pt"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_device_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12pt"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/color_9"
+                    android:textSize="31pt" />
+
+                <ImageView
+                    android:layout_width="35pt"
+                    android:layout_height="35pt"
+                    android:src="@mipmap/tuya_arrow_ccc" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1pt"
+                android:background="@color/line" />
+
+            <LinearLayout
+                android:id="@+id/ll_yinsi_mode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="92pt"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="31pt">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12pt"
+                        android:layout_weight="1"
+                        android:includeFontPadding="false"
+                        android:text="隐私模式"
+                        android:textColor="@color/color_3"
+                        android:textSize="31pt"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/iv_switch_yinsi"
+                        android:layout_width="102pt"
+                        android:layout_height="62pt"
+                        android:src="@mipmap/switch_open" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:background="@color/line" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_other_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="92pt"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="31pt"
+                    android:text="基本功能设置"
+                    android:textColor="@color/color_9"
+                    android:textSize="27pt" />
+
+                <LinearLayout
+                    android:id="@+id/ll_jichu"
+                    android:layout_width="match_parent"
+                    android:layout_height="92pt"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="31pt">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12pt"
+                        android:layout_weight="1"
+                        android:includeFontPadding="false"
+                        android:text="基本功能设置"
+                        android:textColor="@color/color_3"
+                        android:textSize="31pt"
+                        android:textStyle="bold" />
+
+
+                    <ImageView
+                        android:layout_width="35pt"
+                        android:layout_height="35pt"
+                        android:src="@mipmap/tuya_arrow_ccc" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:background="@color/line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_yeshi"
+                    android:layout_width="match_parent"
+                    android:layout_height="92pt"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="31pt">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12pt"
+                        android:layout_weight="1"
+                        android:includeFontPadding="false"
+                        android:text="红外夜视功能"
+                        android:textColor="@color/color_3"
+                        android:textSize="31pt"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_yeshi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12pt"
+                        android:includeFontPadding="false"
+                        android:text="自动"
+                        android:textColor="@color/color_9"
+                        android:textSize="31pt" />
+
+                    <ImageView
+                        android:layout_width="35pt"
+                        android:layout_height="35pt"
+                        android:src="@mipmap/tuya_arrow_ccc" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:background="@color/line" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="92pt"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="31pt"
+                    android:text="高级设置"
+                    android:textColor="@color/color_9"
+                    android:textSize="27pt" />
+
+                <LinearLayout
+                    android:id="@+id/ll_baojing"
+                    android:layout_width="match_parent"
+                    android:layout_height="92pt"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="31pt">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12pt"
+                        android:layout_weight="1"
+                        android:includeFontPadding="false"
+                        android:text="侦测报警设置"
+                        android:textColor="@color/color_3"
+                        android:textSize="31pt"
+                        android:textStyle="bold" />
+
+
+                    <ImageView
+                        android:layout_width="35pt"
+                        android:layout_height="35pt"
+                        android:src="@mipmap/tuya_arrow_ccc" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:background="@color/line" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="92pt"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="31pt"
+                    android:text="存储"
+                    android:textColor="@color/color_9"
+                    android:textSize="27pt" />
+
+                <LinearLayout
+                    android:id="@+id/ll_cunchu"
+                    android:layout_width="match_parent"
+                    android:layout_height="92pt"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="31pt">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12pt"
+                        android:layout_weight="1"
+                        android:includeFontPadding="false"
+                        android:text="存储设置"
+                        android:textColor="@color/color_3"
+                        android:textSize="31pt"
+                        android:textStyle="bold" />
+
+
+                    <ImageView
+                        android:layout_width="35pt"
+                        android:layout_height="35pt"
+                        android:src="@mipmap/tuya_arrow_ccc" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:background="@color/line" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/bt_delete"
+                android:layout_width="match_parent"
+                android:layout_height="92pt"
+                android:layout_marginTop="64pt"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="移除设备"
+                android:textColor="@color/text_red"
+                android:textSize="31pt"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
