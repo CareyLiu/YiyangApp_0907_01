@@ -91,7 +91,7 @@ public class LoginBtnView extends LinearLayout {
         String power_state = user.getPower_state();
 
         tv_name.setText(power_state_name);
-        if (power_state.equals("1")) {//聚易佳
+        if (power_state.equals("1")) {//智慧医养
             iv_img.setImageResource(R.mipmap.login_icon_chezhu);
         } else if (power_state.equals("2")) {//维修厂
             iv_img.setImageResource(R.mipmap.login_icon_qiche);
@@ -139,7 +139,7 @@ public class LoginBtnView extends LinearLayout {
                         }
 
                         switch (power_state) {
-                            case "1"://聚易佳
+                            case "1"://智慧医养
                                 activity.startActivity(new Intent(activity, HomeActivity.class));
                                 activity.finish();
                                 break;

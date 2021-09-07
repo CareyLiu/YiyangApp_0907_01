@@ -140,7 +140,7 @@
                     android:layout_marginHorizontal="15dp"
 
                     android:layout_marginBottom="15dp"
-                    android:text="语音呼叫小妮需在聚易佳内使用麦克风，仅用于随时响应“小妮小妮”等语音交互命令。"
+                    android:text="语音呼叫小妮需在智慧医养内使用麦克风，仅用于随时响应“小妮小妮”等语音交互命令。"
                     android:textColor="#ff999999"
                     android:textSize="13sp"
                     app:layout_constraintBottom_toBottomOf="parent"

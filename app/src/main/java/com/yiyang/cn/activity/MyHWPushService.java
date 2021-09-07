@@ -20,7 +20,7 @@ public class MyHWPushService extends HmsMessageService {
      *
      * jyj_0000		app_type 1:ios 2:安卓IOS / Android版本有更新
      * jyj_0001		tx_state 0:提现失败1:提现成功提现处理：通知
-     * jyj_0002		online_state 0：离线 1：上线聚易佳智能主机离线 、上线提醒
+     * jyj_0002		online_state 0：离线 1：上线智慧医养智能主机离线 、上线提醒
      * jyj_0003		href_url广告推送，跳转h5链接，h5链接放在url字段处
      * jyj_0004		通知消息推送，跳转消息列表
      * jyj_0005		kind_type

@@ -173,7 +173,7 @@ public class TaoKeHomeActivity extends BaseActivity implements TaoKeHomeInterfac
     @Override
     protected void initToolbar() {
         super.initToolbar();
-        tv_title.setText("聚易佳淘宝联盟");
+        tv_title.setText("智慧医养淘宝联盟");
         tv_title.setTextSize(17);
         tv_title.setTypeface(Typeface.SANS_SERIF, Typeface.BOLD);
         tv_title.setTextColor(getResources().getColor(R.color.black));

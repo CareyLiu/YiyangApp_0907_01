@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="14dp"
         android:layout_marginTop="22dp"
-        android:text="聚易佳大礼包"
+        android:text="智慧医养大礼包"
         android:textColor="#ff111111"
         android:textSize="17sp"
         app:layout_constraintLeft_toRightOf="@+id/iv_image"

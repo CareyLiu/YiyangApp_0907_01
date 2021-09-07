@@ -124,7 +124,7 @@ public class CustomNavigationJsObject1 {
             if (OpenLocalMapUtil.isBaiduMapInstalled()) {
                 try {
                     String uri = OpenLocalMapUtil.getBaiduMapUri(String.valueOf(qiDianLa), String.valueOf(qiDianLo), "当前位置",
-                            String.valueOf(latitude), String.valueOf(longitude), gaoDeMapModel.getGps_address(), "", "聚易佳");
+                            String.valueOf(latitude), String.valueOf(longitude), gaoDeMapModel.getGps_address(), "", "智慧医养");
                     Intent intent = Intent.parseUri(uri, 0);
                     activity.startActivity(intent); //启动调用
 
@@ -134,7 +134,7 @@ public class CustomNavigationJsObject1 {
             }
         } else if (gaoDeFlag) {
             UIHelper.ToastMessage(activity, "即将为您打开高德地图", Toast.LENGTH_SHORT);
-            String uri = OpenLocalMapUtil.getGdMapUri("聚易佳", String.valueOf(qiDianLa), String.valueOf(qiDianLo),
+            String uri = OpenLocalMapUtil.getGdMapUri("智慧医养", String.valueOf(qiDianLa), String.valueOf(qiDianLo),
                     "当前位置", String.valueOf(latitude), String.valueOf(longitude), gaoDeMapModel.getGps_address());
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setPackage("com.autonavi.minimap");

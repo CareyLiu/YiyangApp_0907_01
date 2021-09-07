@@ -22,7 +22,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
         android:includeFontPadding="false"
-        android:text="聚易佳"
+        android:text="智慧医养"
         android:textColor="@color/black_111111"
         android:textSize="17sp"
         android:textStyle="bold" />

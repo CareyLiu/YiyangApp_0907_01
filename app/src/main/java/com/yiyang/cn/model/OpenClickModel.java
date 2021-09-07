@@ -4,7 +4,7 @@ public class OpenClickModel {
 
     /**
      * n_extras : {"code":"jyj_0006","device_ccid":"12010101","device_ccid_up":"aaaaaaaaaaaaa00990140118","device_id":"1171","device_type":"12","message_id":"76396119","notify_text":"您的水利默认房间有人进入","server_id":"8/","type":"5","uri_activity":"com.yiyang.cn.activity.OpenClickActivity"}
-     * n_title : 聚易佳
+     * n_title : 智慧医养
      * n_content : 您的水利默认房间有人进入
      * msg_id : 54043426429133771
      * show_type : 4
