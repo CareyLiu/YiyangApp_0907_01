@@ -3,6 +3,11 @@ apply plugin: 'com.huawei.agconnect'
 android {
     signingConfigs {
         debug {
+//            keyAlias 'debug'
+//            keyPassword '123456'
+//            storeFile file('D:/keystore/magic_lamp_debug.jks')
+//            storePassword '123456'
+
             keyAlias 'key0'
             keyPassword 'yiyangapp'
             storeFile file('C:/keystore/yiyangapp.jks')
@@ -41,8 +46,9 @@ android {
                 OPPO_APPID    : "OP-30286123", // OPPO平台注册的appid
                 OPPO_APPSECRET: "OP-04e6317bc09841b9b521083a96cd9260",//OPPO平台注册的appsecret
 
-                VIVO_APPKEY   : "621d169a87b3a465d1e734cee0e98e36", // VIVO平台注册的appkey
-                VIVO_APPID    : "105491607", // VIVO平台注册的appid
+                VIVO_APPKEY : "621d169a87b3a465d1e734cee0e98e36", // VIVO平台注册的appkey
+                VIVO_APPID : "105491607", // VIVO平台注册的appid
+
         ]
     }
 
@@ -72,6 +78,9 @@ android {
     }
     repositories {
         mavenCentral()
+//        maven {
+//            url "http://maven..com/nexus/content/repositories/releases"
+//        }
         maven {
             url "https://repo.eclipse.org/content/repositories/paho-snapshots/"
         }
@@ -114,6 +123,7 @@ android {
     }
 }
 
+
 def supportVersion = "27.1.1"
 
 dependencies {
@@ -155,6 +165,9 @@ dependencies {
     //noinspection GradleCompatible
     implementation 'com.google.android.material:material:1.0.0'
 
+    // implementation "com.android.support:recyclerview-v7:$supportVersion"
+
+    //implementation "androidx.annotation:annotation"
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'com.google.code.gson:gson:2.8.2'
     implementation 'com.squareup.picasso:picasso:2.5.2'
@@ -187,9 +200,26 @@ dependencies {
     implementation 'com.tbruyelle.rxpermissions:rxpermissions:0.9.0@aar'
     implementation 'de.hdodenhof:circleimageview:2.1.0'
     implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
+    //    implementation 'me.yokeyword:fragmentation-core:1.3.4'
+
+    //
+
+    //    // 如果想使用SwipeBack 滑动边缘退出Fragment/Activity功能，完整的添加规则如下：
+
+    //    implementation 'me.yokeyword:fragmentation:1.3.4'
+
+    //
+
+    //    // swipeback基于fragmentation, 如果是自定制SupportActivity/Fragment，则参照SwipeBackActivity/Fragment实现即可
+
+    //    implementation 'me.yokeyword:fragmentation-swipeback:1.3.4'
 
     // This is the use of androidx, if you are using the android.support: fragmentationx -> fragmentation
     implementation 'me.yokeyword:fragmentationx:1.0.2'
+
+    // If you don't want to extends SupportActivity/Fragment and would like to customize your own support, just rely on fragmentation-core
+
+    // implementation 'me.yokeyword:fragmentationx-core:1.0.2'
 
     // To get SwipeBack feature, rely on both fragmentation & fragmentation-swipeback
     implementation 'me.yokeyword:fragmentationx:1.0.2'
@@ -263,11 +293,19 @@ dependencies {
     implementation 'org.apache.commons:commons-lang3:3.7'
     implementation project(path: ':esptouch')
 
-    //其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.2.0
+    // implementation 'androidx.appcompat:appcompat:1.1.0'
+
+    //implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    // implementation 'com.google.android.material:material:1.1.0'
     implementation 'com.tencent.bugly:crashreport:latest.release'
-    //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.2.0
+
+    //其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.2.0
     implementation 'com.tencent.bugly:nativecrashreport:latest.release'
 
+    //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.2.0
+
+    //implementation 'com.airbnb.android:lottie:1.0.1'
     def lottieVersion = "3.4.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"
     implementation 'com.github.zcweng:switch-button:0.0.3@aar'

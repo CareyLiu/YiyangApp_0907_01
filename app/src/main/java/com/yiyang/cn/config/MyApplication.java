@@ -271,7 +271,7 @@ public class MyApplication extends MultiDexApplication {
 // 初始化Bugly
 
 
-        Bugly.init(getApplicationContext(), "9aef7d7467", false);
+        Bugly.init(getApplicationContext(), "28ca17503e", false);
         AndMqtt.getInstance().init(MyApplication.this);
 
         CompositeSubscription _subscriptions = new CompositeSubscription();
