@@ -1,1 +1,1 @@
-include ':app', ':esptouch', ':mscV5PlusDemo', ':push', ':LRecyclerview_library'
+include ':app', ':esptouch', ':mscV5PlusDemo',  ':LRecyclerview_library'

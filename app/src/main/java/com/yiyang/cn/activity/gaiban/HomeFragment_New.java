@@ -2,7 +2,6 @@ package com.yiyang.cn.activity.gaiban;
 
 import android.Manifest;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -46,27 +45,18 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.yiyang.cn.R;
 import com.yiyang.cn.activity.DefaultX5WebView_HaveNameActivity;
 import com.yiyang.cn.activity.SheBeiLieBiaoActivity;
-import com.yiyang.cn.activity.TuBiaoActivity;
 import com.yiyang.cn.activity.TuanYouWebView;
-import com.yiyang.cn.activity.a_yiyang.YiyangTuActivity;
 import com.yiyang.cn.activity.a_yiyang.YiyangTuTActivity;
 import com.yiyang.cn.activity.gouwuche.GouWuCheActivity;
 import com.yiyang.cn.activity.homepage.DaLiBaoActivity;
 import com.yiyang.cn.activity.jd_taobao_pinduoduo.TaoBao_Jd_PinDuoDuoActivity;
 import com.yiyang.cn.activity.saoma.ScanActivity;
-import com.yiyang.cn.activity.tongcheng58.BianMinFaBuActivity;
 import com.yiyang.cn.activity.tongcheng58.GongJiangLieBiaoNewActivity;
-import com.yiyang.cn.activity.tongcheng58.GongJiangRuZhuActivity;
-import com.yiyang.cn.activity.tongcheng58.GongJiangYeActivity;
-import com.yiyang.cn.activity.tongcheng58.PoiKeywordSearchActivity;
 import com.yiyang.cn.activity.tongcheng58.TongChengMainActivity;
-import com.yiyang.cn.activity.tongcheng58.TongchengHomeItemFragment;
 import com.yiyang.cn.activity.tongcheng58.TongchengTagItemFragment;
 import com.yiyang.cn.activity.tongcheng58.model.TcHomeModel;
 import com.yiyang.cn.activity.tuangou.TuanGouShangJiaListActivity;
 import com.yiyang.cn.activity.xin_tuanyou.TuanYouList;
-import com.yiyang.cn.activity.zhinengjiaju.KongQiJianCeActvity;
-import com.yiyang.cn.activity.zhinengjiaju.KongQiJianCe_NewActvity;
 import com.yiyang.cn.activity.zijian_shangcheng.FenLeiThirdActivity;
 import com.yiyang.cn.activity.zijian_shangcheng.ZiJianShopMallActivity;
 import com.yiyang.cn.activity.zijian_shangcheng.ZiJianShopMallDetailsActivity;
@@ -87,17 +77,13 @@ import com.yiyang.cn.app.UIHelper;
 import com.yiyang.cn.baseadapter.baserecyclerviewadapterhelper.BaseQuickAdapter;
 import com.yiyang.cn.basicmvp.BaseFragment;
 import com.yiyang.cn.callback.JsonCallback;
-import com.yiyang.cn.common.StringUtils;
 import com.yiyang.cn.config.AppResponse;
 import com.yiyang.cn.config.PreferenceHelper;
 import com.yiyang.cn.config.Radius_GlideImageLoader;
 import com.yiyang.cn.config.Radius_XiuPeiChangImageLoader;
 import com.yiyang.cn.config.UserManager;
 import com.yiyang.cn.dialog.LordingDialog;
-import com.yiyang.cn.dialog.newdia.TishiDialog;
-import com.yiyang.cn.dialog.newdia.YuYinZhiFuDialog;
 import com.yiyang.cn.get_net.Urls;
-import com.yiyang.cn.model.AccessListModel;
 import com.yiyang.cn.model.Home;
 import com.yiyang.cn.model.TuiGuangMaModel;
 import com.yiyang.cn.util.AlertUtil;
@@ -106,10 +92,6 @@ import com.yiyang.cn.util.GridAverageUIDecoration;
 import com.yiyang.cn.util.Utils;
 import com.yiyang.cn.view.ObservableScrollView;
 import com.tbruyelle.rxpermissions.RxPermissions;
-import com.tencent.mm.opensdk.modelbiz.WXLaunchMiniProgram;
-import com.tencent.mm.opensdk.openapi.IWXAPI;
-import com.tencent.mm.opensdk.openapi.WXAPIFactory;
-import com.umeng.commonsdk.UMConfigure;
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerListener;
 
@@ -126,7 +108,6 @@ import rx.functions.Action1;
 
 import static com.yiyang.cn.app.App.JINGDU;
 import static com.yiyang.cn.app.App.WEIDU;
-import static com.yiyang.cn.app.ConstanceValue.MSG_PEIWANG_SUCCESS;
 import static com.yiyang.cn.get_net.Urls.HOME_PICTURE;
 
 /**
@@ -263,27 +244,27 @@ public class HomeFragment_New extends BaseFragment implements ObservableScrollVi
     private List<TcHomeModel.DataBean.IconListBean> iconList = new ArrayList<>();
 
     private void initIconList() {
-        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yl_tab_zhihuiyanglao, "智慧养老"));
-        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yl_tab_dianhuojizhen, "电话急诊"));
-        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.zaixianyisheng, "在线医生"));
-        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yibingchaxun, "疾病查询"));
-        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yuyueguanhao, "预约挂号"));
-        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.jijiufuwu, "急救服务"));
-        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.hujaiozhongxin, "呼叫中心"));
-        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.huodongzhongxin, "活动中心"));
-        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yanglaoshitang, "养老食堂"));
-        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.jiankangshujun, "健康数据"));
+        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yiyang_tab_zhihuiyanglao, "智慧养老"));
+        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yiyang_tab_dianhuojizhen, "电话急诊"));
+        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yiyang_tab_zaixianyisheng, "在线医生"));
+        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yiyang_tab_yibingchaxun, "疾病查询"));
+        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yiyang_tab_yuyueguanhao, "预约挂号"));
+        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yiyang_tab_jijiufuwu, "急救服务"));
+        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yiyang_tab_hujaiozhongxin, "呼叫中心"));
+        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yiyang_tab_huodongzhongxin, "活动中心"));
+        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yiyang_tab_yanglaoshitang, "养老食堂"));
+        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yiyang_tab_jiankangshujun, "健康数据"));
 
-        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yl_tab_zhihuiyanglao, "智慧养老"));
-        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yl_tab_dianhuojizhen, "电话急诊"));
-        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.zaixianyisheng, "在线医生"));
-        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yibingchaxun, "疾病查询"));
-        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yuyueguanhao, "预约挂号"));
-        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.jijiufuwu, "急救服务"));
-        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.hujaiozhongxin, "呼叫中心"));
-        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.huodongzhongxin, "活动中心"));
-        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yanglaoshitang, "养老食堂"));
-        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.jiankangshujun, "健康数据"));
+        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yiyang_tab_zhihuiyanglao, "智慧养老"));
+        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yiyang_tab_dianhuojizhen, "电话急诊"));
+        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yiyang_tab_zaixianyisheng, "在线医生"));
+        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yiyang_tab_yibingchaxun, "疾病查询"));
+        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yiyang_tab_yuyueguanhao, "预约挂号"));
+        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yiyang_tab_jijiufuwu, "急救服务"));
+        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yiyang_tab_hujaiozhongxin, "呼叫中心"));
+        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yiyang_tab_huodongzhongxin, "活动中心"));
+        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yiyang_tab_yanglaoshitang, "养老食堂"));
+        iconList.add(new TcHomeModel.DataBean.IconListBean(R.mipmap.yiyang_tab_jiankangshujun, "健康数据"));
     }
 
     private void initTag() {

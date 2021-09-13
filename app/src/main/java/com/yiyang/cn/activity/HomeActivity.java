@@ -1,30 +1,18 @@
 package com.yiyang.cn.activity;
 
-import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
-import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseIntArray;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
@@ -36,8 +24,9 @@ import com.lzy.okgo.model.Response;
 import com.rairmmd.andmqtt.AndMqtt;
 import com.rairmmd.andmqtt.MqttPublish;
 import com.rairmmd.andmqtt.MqttSubscribe;
+import com.tuya.smart.wrapper.api.TuyaWrapper;
+import com.vivo.push.PushClient;
 import com.yiyang.cn.R;
-import com.yiyang.cn.activity.gaiban.HomeFragment_New;
 import com.yiyang.cn.activity.zhinengjiaju.RenTiGanYingActivity;
 import com.yiyang.cn.activity.zhinengjiaju.function.LouShuiActivity;
 import com.yiyang.cn.activity.zhinengjiaju.function.MenCiActivity;
@@ -50,69 +39,69 @@ import com.yiyang.cn.app.AppManager;
 import com.yiyang.cn.app.BaseActivity;
 import com.yiyang.cn.app.ConstanceValue;
 import com.yiyang.cn.app.Notice;
-import com.yiyang.cn.app.RxBus;
 import com.yiyang.cn.app.UIHelper;
 import com.yiyang.cn.callback.JsonCallback;
 import com.yiyang.cn.common.StringUtils;
 import com.yiyang.cn.config.AppResponse;
-import com.yiyang.cn.config.AudioFocusManager;
 import com.yiyang.cn.config.MyApplication;
 import com.yiyang.cn.config.PreferenceHelper;
 import com.yiyang.cn.config.UserManager;
-import com.yiyang.cn.dialog.MyCarCaoZuoDialog_Notify;
 import com.yiyang.cn.dialog.newdia.TishiDialog;
-import com.yiyang.cn.fragment.MessagerFragment;
-import com.yiyang.cn.fragment.MineFragment;
-import com.yiyang.cn.fragment.OnlineFragment;
-import com.yiyang.cn.fragment.znjj.ZhiNengJiaJuFragment;
+import com.yiyang.cn.fragment.yiyang.TabAnfangFragment;
+import com.yiyang.cn.fragment.yiyang.TabHomeFragment;
+import com.yiyang.cn.fragment.yiyang.TabWodeFragment;
+import com.yiyang.cn.fragment.yiyang.TabXiaoxiFragment;
 import com.yiyang.cn.get_net.Urls;
-import com.yiyang.cn.inter.YuYinInter;
-import com.yiyang.cn.model.AccessListModel;
-import com.yiyang.cn.model.AlarmClass;
 import com.yiyang.cn.model.DongTaiShiTiZhuangTaiModel;
 import com.yiyang.cn.model.ZhiNengJiaJuNotifyJson;
-import com.yiyang.cn.util.AlertUtil;
 import com.yiyang.cn.util.AppToast;
 import com.yiyang.cn.util.DoMqttValue;
-import com.yiyang.cn.util.ShangChuanDongTaiShiTiTool;
 import com.yiyang.cn.util.SoundPoolUtils;
 import com.yiyang.cn.util.YuYinChuLiTool;
 import com.yiyang.cn.view.NoScrollViewPager;
-import com.tuya.smart.wrapper.api.TuyaWrapper;
-import com.vivo.push.PushClient;
 
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
 import org.eclipse.paho.client.mqttv3.IMqttToken;
-import org.eclipse.paho.client.mqttv3.MqttException;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 
-import static com.yiyang.cn.app.ConstanceValue.MSG_PEIWANG_SUCCESS;
 import static com.yiyang.cn.config.MyApplication.CAR_NOTIFY;
 import static com.yiyang.cn.config.MyApplication.context;
-import static com.yiyang.cn.config.MyApplication.getAppContext;
 import static com.yiyang.cn.config.MyApplication.getUser_id;
 import static com.yiyang.cn.get_net.Urls.ZHINENGJIAJU;
 
 
 public class HomeActivity extends BaseActivity {
 
+
+    @BindView(R.id.bnve)
+    BottomNavigationViewEx mBnve;
     @BindView(R.id.vp)
     NoScrollViewPager mVp;
     @BindView(R.id.activity_with_view_pager)
     RelativeLayout activityWithViewPager;
-    @BindView(R.id.bnve)
-    BottomNavigationViewEx mBnve;
     @BindView(R.id.tv_yuyin_image)
     ImageView tvYuyinImage;
+    @BindView(R.id.tv_shangchuan)
+    TextView tvShangchuan;
+    @BindView(R.id.tv_chaxun_dabao_zhuangtai)
+    TextView tvChaxunDabaoZhuangtai;
+    @BindView(R.id.tv_shezhi)
+    TextView tvShezhi;
     @BindView(R.id.iv_close)
     ImageView ivClose;
     @BindView(R.id.cl_top)
@@ -123,20 +112,10 @@ public class HomeActivity extends BaseActivity {
     TextView tvResult;
     @BindView(R.id.rrl_yuyin_mianban)
     RelativeLayout rrlYuyinMianban;
-    @BindView(R.id.tv_shezhi)
-    TextView tvShezhi;
-    @BindView(R.id.tv_chaxun_dabao_zhuangtai)
-    TextView tvChaxunDabaoZhuangtai;
-    @BindView(R.id.layout_bg)
-    RelativeLayout layoutBg;
-    @BindView(R.id.tv_shangchuan)
-    TextView tvShangchuan;
+
     private boolean isExit;
     private SparseIntArray items;
-    AlarmClass alarmClass;
-    private int i = 0;
     TishiDialog tishiDialog;
-    YuYinChuLiTool yuYinChuLiTool;
 
     @Override
     public int getContentViewResId() {
@@ -144,20 +123,14 @@ public class HomeActivity extends BaseActivity {
     }
 
     @Override
-    public void initImmersion() {
-        mImmersionBar.with(this).statusBarColor(R.color.white).init();
-    }
-
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppManager.getAppManager().addActivity(this);
         boolean vPush = PushClient.getInstance(context).isSupport();
         Log.i("vPush", "" + vPush);
-
         boolean OPush = HeytapPushManager.isSupportPush();
         Log.i("OPush", "" + OPush);
-        //  getZhuJiNet();
+
         StatusBarUtil.setLightMode(this);
         ButterKnife.bind(this);
         IntentFilter intentFilter = new IntentFilter();
@@ -169,39 +142,10 @@ public class HomeActivity extends BaseActivity {
         initData();
         initEvent();
 
-        AppManager.getAppManager().addActivity(this);
-        yuYinChuLiTool = new YuYinChuLiTool(HomeActivity.this, new YuYinInter() {
-            @Override
-            public void showMianBan() {
-                Log.i("展示面板", "showMianBan");
-                rrlYuyinMianban.setVisibility(View.VISIBLE);
-                SoundPoolUtils.soundPool(mContext, R.raw.huanxing_mianban);
-            }
-
-            @Override
-            public void dismissMianBan() {
-                rrlYuyinMianban.setVisibility(View.GONE);
-            }
-
-            @Override
-            public void yuYinResult(String result) {
-                tvResult.setText(result);
-            }
-        });
-
-        String yuYinZhuShouEnable = PreferenceHelper.getInstance(HomeActivity.this).getString(AppConfig.YUYINZHUSHOU, "0");
-        Log.i("yuYinZhuShou", "yuYinZhuShou: " + yuYinZhuShouEnable);
-        if (yuYinZhuShouEnable.equals("0")) {
-
-        } else {
-            wakeUpClick();
-        }
         _subscriptions.add(toObservable().observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<Notice>() {
             @Override
             public void call(Notice notice) {
-                if (notice.type == ConstanceValue.MSG_GUZHANG_SHOUYE) {
-                    tuiSongTanChuang(notice);
-                } else if (notice.type == ConstanceValue.MSG_GOTOXIAOXI) {
+                if (notice.type == ConstanceValue.MSG_GOTOXIAOXI) {
                     mVp.setCurrentItem(3, false);
                 } else if (notice.type == ConstanceValue.MSG_P) {
                     handler.removeCallbacks(runnable);
@@ -209,21 +153,6 @@ public class HomeActivity extends BaseActivity {
                     mVp.setCurrentItem(1, false);
                 } else if (notice.type == ConstanceValue.MSG_ZHINENGJIAJU_MENCI) {
                     zhiNengJiaJuCaoZuo(notice);
-                } else if (notice.type == ConstanceValue.MSG_YUYINHUANXING) {//语音唤醒
-                    if (rrlYuyinMianban.getVisibility() == View.VISIBLE) {
-
-                    } else {
-                        rrlYuyinMianban.setVisibility(View.VISIBLE);
-                        yuYinChuLiTool.beginYuYIn();
-                    }
-
-                } else if (notice.type == ConstanceValue.MSG_YUYINKAIQITONGZHI) {
-                    wakeUpClick();
-                } else if (notice.type == ConstanceValue.MSG_YUYINGUANBITONGZHI) {
-                    yuYinChuLiTool.stopHuanXing();//停止唤醒同时停止录音
-                } else if (notice.type == ConstanceValue.MSG_YUYINXIAOSHI) {
-                    yuYinChuLiTool.closeMianBan();
-                    rrlYuyinMianban.setVisibility(View.GONE);
                 } else if (notice.type == ConstanceValue.MSG_CAOZUODONGTAISHITI) {
                     dognTaiShiTiUrl();
                 } else if (notice.type == ConstanceValue.MSG_XIUGAIDONGTAISHITIFINISH) {
@@ -272,7 +201,6 @@ public class HomeActivity extends BaseActivity {
         ivClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                yuYinChuLiTool.closeMianBan();
                 rrlYuyinMianban.setVisibility(View.GONE);
             }
         });
@@ -284,31 +212,6 @@ public class HomeActivity extends BaseActivity {
             }
         });
 
-        tvChaxunDabaoZhuangtai.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                yuYinChuLiTool.chaXunDaBaoZhuangTai();
-            }
-        });
-        tvShangchuan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                List<String> roomList = new ArrayList<>();
-//                roomList.add("茶杯");
-//                roomList.add("缸子");
-//                List<String> sheBeiList = new ArrayList<>();
-//                sheBeiList.add("英雄");
-//                sheBeiList.add("大熊猫");
-//
-//                ShangChuanDongTaiShiTiTool shangChuanDongTaiShiTiTool = new ShangChuanDongTaiShiTiTool(context, roomList, sheBeiList);
-//                shangChuanDongTaiShiTiTool.syncContactsRoom(roomList);
-//                shangChuanDongTaiShiTiTool.syncContactsSheBei(sheBeiList);
-//
-//
-//                yuYinChuLiTool.syncContactsSheBei();
-//                yuYinChuLiTool.syncContactsRoom();
-            }
-        });
         dognTaiShiTiUrl();
 
         if (AndMqtt.getInstance().isConnect()) {
@@ -524,210 +427,13 @@ public class HomeActivity extends BaseActivity {
 
     }
 
-    private void tuiSongTanChuang(Notice notice) {
 
-        String message = (String) notice.content;
-        Gson gson = new Gson();
-        alarmClass = gson.fromJson(message.toString(), AlarmClass.class);
-        Log.i("alarmClass", alarmClass.changjia_name + alarmClass.sell_phone);
-
-        if (MyApplication.activity_main.getClass().getSimpleName().equals(FengNuanActivity.class.getSimpleName())) {
-            return;
-        } else if (MyApplication.activity_main.getClass().getSimpleName().equals(DiagnosisActivity.class.getSimpleName())) {
-            return;
-        }
-
-        Log.i("HomeActivity", "11111");
-        if (alarmClass.type.equals("1")) {
-            switch (alarmClass.sound) {
-
-                case "chSound1.mp3":
-                    // SoundPoolUtils.soundPool(mContext,R.raw.ch_sound1);
-                    playMusic(R.raw.ch_sound1);
-                    break;
-                case "chSound2.mp3":
-                    playMusic(R.raw.ch_sound2);
-                    break;
-                case "chSound3.mp3":
-                    playMusic(R.raw.ch_sound3);
-                    break;
-                case "chSound4.mp3":
-                    playMusic(R.raw.ch_sound4);
-                    break;
-                case "chSound5.mp3":
-                    playMusic(R.raw.ch_sound5);
-                    break;
-                case "chSound6.mp3":
-                    playMusic(R.raw.ch_sound6);
-                    break;
-                case "chSound8.mp3":
-                    playMusic(R.raw.ch_sound8);
-                    break;
-                case "chSound9.mp3":
-                    playMusic(R.raw.ch_sound9);
-                    break;
-                case "chSound10.mp3":
-                    playMusic(R.raw.ch_sound10);
-                    break;
-                case "chSound11.mp3":
-                    playMusic(R.raw.ch_sound11);
-                    break;
-                case "chSound18.mp3":
-                    playMusic(R.raw.ch_sound18);
-                    break;
-            }
-        } else if (alarmClass.type.equals("5")) {
-            if (alarmClass.code.equals("jyj_0006")) {
-
-                tishiDialog = new TishiDialog(mContext, 1, new TishiDialog.TishiDialogListener() {
-                    @Override
-                    public void onClickCancel(View v, TishiDialog dialog) {
-                    }
-
-                    @Override
-                    public void onClickConfirm(View v, TishiDialog dialog) {
-
-                        if (alarmClass.device_type.equals("12")) {
-                            MenCiActivity.actionStart(mContext, alarmClass.device_id);
-                        } else if (alarmClass.device_type.equals("11")) {
-                            YanGanActivity.actionStart(mContext, alarmClass.device_id);
-                        } else if (alarmClass.device_type.equals("15")) {
-                            SosActivity.actionStart(mContext, alarmClass.device_id, true);
-                            SoundPoolUtils.soundPool(mContext, R.raw.baojingyin_1);
-                        } else if (alarmClass.device_type.equals("05")) {
-                            MenSuoActivity.actionStart(mContext, alarmClass.device_id);
-                        } else if (alarmClass.device_type.equals("13")) {
-                            LouShuiActivity.actionStart(mContext, alarmClass.device_id);
-                        }
-                    }
-
-                    @Override
-                    public void onDismiss(TishiDialog dialog) {
-
-                    }
-                });
-                tishiDialog.setTextContent("您的家庭有新的状况，是否前去查看?");
-
-
-            } else if (alarmClass.code.equals("jyj_0007")) {
-
-            }
-        }
-    }
-
-    public MediaPlayer player;
-    public AudioFocusManager audioFocusManage;
     public int position;
     Runnable runnable;
-
-    public void playMusic(int res) {
-        boolean flag = false;
-
-        Activity currentActivity = MyApplication.activity_main;
-        boolean flag1 = !currentActivity.getClass().getSimpleName().equals(DiagnosisActivity.class.getSimpleName());
-        boolean flag2 = !currentActivity.getClass().getSimpleName().equals(FengNuanActivity.class.getSimpleName());
-        if (currentActivity != null) {
-            if (flag1 && flag2) {
-                TishiDialog myCarCaoZuoDialog_notify = new TishiDialog(HomeActivity.this, 1, new TishiDialog.TishiDialogListener() {
-
-                    @Override
-                    public void onClickCancel(View v, TishiDialog dialog) {
-                        if (SoundPoolUtils.soundPool != null) {
-                            SoundPoolUtils.soundPool.release();
-                        }
-                    }
-
-                    @Override
-                    public void onClickConfirm(View v, TishiDialog dialog) {
-                        DiagnosisActivity.actionStart(HomeActivity.this, alarmClass);
-                        //SoundPoolUtils.soundPool.release();
-                        if (SoundPoolUtils.soundPool != null) {
-                            SoundPoolUtils.soundPool.release();
-                        }
-                    }
-
-                    @Override
-                    public void onDismiss(TishiDialog dialog) {
-
-                    }
-                }
-
-                );
-
-                // myCarCaoZuoDialog_notify.getWindow().setType(WindowManager.LayoutParams.TYPE_APPLICATION_ATTACHED_DIALOG);
-                myCarCaoZuoDialog_notify.show();
-
-                myCarCaoZuoDialog_notify.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                    @Override
-                    public void onDismiss(DialogInterface dialog) {
-                        if (SoundPoolUtils.soundPool != null) {
-                            SoundPoolUtils.soundPool.release();
-                        }
-                    }
-                });
-
-            } else {
-                flag = true;
-            }
-        }
-
-        if (flag) {
-            return;
-        }
-
-        SoundPoolUtils.soundPool(mContext, res);
-
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.i("HomeActivity_xxx", "onRestart");
-    }
-
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i("HomeActivity_xxx", "onPause");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.i("HomeActivity_xxx", "onDestroy");
-
-//        if (AndMqtt.getInstance().getMqttClient().isConnected()) {
-//            try {
-//                //要做的事情
-//                AndMqtt.getInstance().publish(new MqttPublish()
-//                        .setMsg("K.")
-//                        .setQos(2).setRetained(false)
-//                        .setTopic("wit/server/01/" + getUser_id()), new IMqttActionListener() {
-//                    @Override
-//                    public void onSuccess(IMqttToken asyncActionToken) {
-//                        Log.i("Rair", "订阅K.成功");
-//
-//                    }
-//
-//                    @Override
-//                    public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-//                        Log.i("Rair", "(MainActivity.java:84)-onFailure:-&gt;发布失败");
-//                    }
-//                });
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//
-//
-//
-//        }
-    }
 
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-
         if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
             if (!isExit) {
                 AppToast.makeShortToast(this, "再按一次返回键退出");
@@ -741,11 +447,9 @@ public class HomeActivity extends BaseActivity {
                 }.start();
                 return true;
             }
-//            AppManager.AppExit();
             AppManager.getAppManager().finishAllActivity();
         }
         return super.onKeyDown(keyCode, event);
-
     }
 
     @Override
@@ -753,12 +457,6 @@ public class HomeActivity extends BaseActivity {
         super.startActivity(intent);
         overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
     }
-
-    @Override
-    public void finish() {
-        super.finish();
-    }
-
 
     /**
      * change BottomNavigationViewEx style
@@ -773,32 +471,26 @@ public class HomeActivity extends BaseActivity {
      * create fragments
      */
     private void initData() {
-        List<Fragment> fragments = new ArrayList<>(5);
-        items = new SparseIntArray(5);
+        List<Fragment> fragments = new ArrayList<>(4);
+        items = new SparseIntArray(4);
 
-        HomeFragment_New homeFragment = new HomeFragment_New();
-        ZhiNengJiaJuFragment zhiNengJiaJuFragment = new ZhiNengJiaJuFragment();
-        OnlineFragment onlineFragment = new OnlineFragment();
-        MessagerFragment messagerFragment = new MessagerFragment();
-        MineFragment mineFragment = new MineFragment();
-        fragments.add(homeFragment);
-        //   fragments.add(playerFragment);
-        fragments.add(zhiNengJiaJuFragment);
-        fragments.add(onlineFragment);
-        fragments.add(messagerFragment);
-        fragments.add(mineFragment);
-//
+        TabHomeFragment tabHomeFragment = new TabHomeFragment();
+        TabAnfangFragment tabAnfangFragment = new TabAnfangFragment();
+        TabXiaoxiFragment tabXiaoxiFragment = new TabXiaoxiFragment();
+        TabWodeFragment tabWodeFragment = new TabWodeFragment();
+
+        fragments.add(tabHomeFragment);
+        fragments.add(tabAnfangFragment);
+        fragments.add(tabXiaoxiFragment);
+        fragments.add(tabWodeFragment);
+
         items.put(R.id.i_home, 0);
         items.put(R.id.i_zhinengjiaju, 1);
-        items.put(R.id.i_car_online, 2);
-        items.put(R.id.i_message, 3);
-        items.put(R.id.i_mine, 4);
+        items.put(R.id.i_message, 2);
+        items.put(R.id.i_mine, 3);
 
-        // set adapter
         VpAdapter adapter = new VpAdapter(getSupportFragmentManager(), fragments);
-        //禁用懒加载，不然每次切换页面都会重新获取数据
-        mVp.setOffscreenPageLimit(5);
-        //viewPage禁止滑动
+        mVp.setOffscreenPageLimit(4);
         mVp.setScroll(false);
         mVp.setAdapter(adapter);
     }
@@ -846,7 +538,6 @@ public class HomeActivity extends BaseActivity {
         });
     }
 
-    private boolean flag = true;
     Handler handler;
 
     @Override
@@ -880,33 +571,5 @@ public class HomeActivity extends BaseActivity {
 
     public static HomeActivity getInstance() {
         return new HomeActivity();
-    }
-
-    private void wakeUpClick() {
-        yuYinChuLiTool.beginWakeUp();
-    }
-
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        String font_settings = PreferenceHelper.getInstance(mContext).getString(AppConfig.FONT_SETTINGS, "");
-        if (TextUtils.isEmpty(font_settings)) {
-            setFortXiao();
-        } else {
-            if (font_settings.equals(AppConfig.FONT_DA)) {
-                setFortDa();
-            } else {
-                setFortXiao();
-            }
-        }
-    }
-
-    private void setFortXiao() {
-        mBnve.setTextSize(12);
-    }
-
-    private void setFortDa() {
-        mBnve.setTextSize(15);
     }
 }

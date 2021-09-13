@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smartRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:srlTextSizeTime="10sp"
+            app:srlTextSizeTitle="12sp" />
+
+        <com.yiyang.cn.view.ObservableScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="88pt"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/iv_weizhi"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="11dp"
+                        android:src="@mipmap/home_nav_icon_weizhi"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_logo"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/iv_logo" />
+
+                    <TextView
+                        android:id="@+id/tv_weizhi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:paddingLeft="3dp"
+                        android:text="哈尔滨"
+                        android:textColor="#ff333333"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_weizhi"
+                        app:layout_constraintLeft_toRightOf="@+id/iv_weizhi"
+                        app:layout_constraintTop_toTopOf="@+id/iv_weizhi" />
+
+                    <ImageView
+                        android:id="@+id/iv_saoma"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:src="@mipmap/jij_shouye_saoyisao"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_logo"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/iv_logo" />
+
+                    <TextView
+                        android:id="@+id/iv_logo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="智慧医养"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1pt"
+                    android:background="@color/line" />
+
+                <com.youth.banner.Banner
+                    android:id="@+id/banner_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="288pt"
+                    android:layout_marginHorizontal="29pt"
+                    android:layout_marginVertical="19pt" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="29pt"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="38pt"
+                        android:layout_height="38pt"
+                        android:src="@mipmap/yiyang_icon_zhihuiyanglao" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="9pt"
+                        android:text="智慧养老"
+                        android:textColor="@color/color_3"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_zhihuiyanglao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="19pt" />
+
+                <ImageView
+                    android:id="@+id/banner_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="134pt"
+                    android:layout_marginHorizontal="29pt"
+                    android:layout_marginBottom="19pt"
+                    android:src="@mipmap/yiyang_banner_two" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="221pt"
+                    android:layout_marginHorizontal="29pt"
+                    android:layout_marginBottom="19pt">
+
+                    <ImageView
+                        android:id="@+id/iv_tab_jiatingyisheng"
+                        android:layout_width="322pt"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/jitingyisheng" />
+
+                    <ImageView
+                        android:id="@+id/iv_tab_yanglaopinggu"
+                        android:layout_width="322pt"
+                        android:layout_height="106pt"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/yanglaopinggu" />
+
+                    <ImageView
+                        android:id="@+id/iv_tab_jitingdangan"
+                        android:layout_width="322pt"
+                        android:layout_height="106pt"
+                        android:layout_alignParentBottom="true"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/jitingdangan" />
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="29pt"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="38pt"
+                        android:layout_height="38pt"
+                        android:src="@mipmap/yiyang_icon_jujiashenghuo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="9pt"
+                        android:text="居家生活"
+                        android:textColor="@color/color_3"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_jujiashenghuo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="29pt"
+                    android:layout_marginTop="19pt" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="192pt"
+                    android:layout_marginHorizontal="29pt"
+                    android:layout_marginBottom="19pt">
+
+                    <ImageView
+                        android:id="@+id/iv_tab_bianminshenghuo"
+                        android:layout_width="322pt"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/bianminshenghuo" />
+
+                    <ImageView
+                        android:id="@+id/iv_tab_zhihuishangcheng"
+                        android:layout_width="322pt"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/zhinengshangcheng" />
+                </RelativeLayout>
+            </LinearLayout>
+        </com.yiyang.cn.view.ObservableScrollView>
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlTextSizeTime="10sp"
+            app:srlTextSizeTitle="12sp" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</RelativeLayout>
+

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="124pt"
+        android:background="@drawable/yiyang_title"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:paddingVertical="33pt">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="消息"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="58pt"
+        android:layout_marginHorizontal="29pt"
+        android:layout_marginTop="23pt"
+        android:layout_marginBottom="19pt"
+        android:background="@drawable/yiyang_title_bg">
+
+        <TextView
+            android:id="@+id/tv_title_liaotian"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/yiyang_title_select"
+            android:gravity="center"
+            android:text="聊天"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_title_fuwuxiaoxi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="服务消息"
+            android:textColor="#C1C1C1"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_title_xitongtongzhi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="系统通知"
+            android:textColor="#C1C1C1"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_group_baojing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="336pt"
+            android:layout_marginHorizontal="29pt"
+            android:layout_marginBottom="19pt"
+            android:background="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="19pt"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="27pt">
+
+            <ImageView
+                android:layout_width="33pt"
+                android:layout_height="33pt"
+                android:layout_marginRight="5pt"
+                android:src="@mipmap/abfang_icon_baojingshebei" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1pt"
+                android:includeFontPadding="false"
+                android:text="报警设备"
+                android:textColor="@color/color_3"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_baojing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_group_rizhi"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="日志"
+            android:textSize="50sp" />
+    </LinearLayout>
+</LinearLayout>

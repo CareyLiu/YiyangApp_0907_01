@@ -142,7 +142,7 @@
     <color name="toolbar_background_color">#ffffff</color>
 
     <!--仿今日头条下面用到的资源-->
-    <color name="activity_bg_color">#f5f5f5</color>
+    <color name="activity_bg_color">#F5F5F5</color>
 
     <color name="grayfff5f5f5">#fff5f5f5</color>
     <color name="grayfff5f5">#fff5f5</color>
@@ -553,6 +553,7 @@
     <color name="color_8">#888888</color>
     <color name="color_9">#999999</color>
     <color name="color_main">#3A85F8</color>
+    <color name="color_main_yiyang">#018AFE</color>
     <color name="color_main_80">#803A85F8</color>
     <color name="black_55">#55000000</color>
     <color name="line">#EEEEEE</color>

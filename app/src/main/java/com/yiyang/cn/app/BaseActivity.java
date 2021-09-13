@@ -17,9 +17,7 @@ import com.lzy.okgo.OkGo;
 import com.yiyang.cn.R;
 import com.yiyang.cn.basicmvp.BasicModel;
 import com.yiyang.cn.basicmvp.BasicPresenter;
-import com.yiyang.cn.config.MyApplication;
 import com.yiyang.cn.dialog.LordingDialog;
-import com.umeng.message.PushAgent;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -110,8 +108,6 @@ public abstract class BaseActivity<T extends BasicPresenter, E extends BasicMode
         ButterKnife.bind(this);
         AppManager.getAppManager().addActivity(this);
         _subscriptions = RxUtils.getNewCompositeSubIfUnsubscribed(_subscriptions);
-
-        PushAgent.getInstance(this).onAppStart();//友盟推送
     }
 
     @Override

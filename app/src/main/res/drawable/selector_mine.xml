@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@mipmap/jyjtab_icon_wode_sel" android:state_checked="true" />
-    <item android:drawable="@mipmap/tab_icon_wode_nor" android:state_pressed="true" />
-    <item android:drawable="@mipmap/jyjtab_icon_wode_sel" />
+    <item android:drawable="@mipmap/yiyang_main_wd_sel" android:state_checked="true" />
+    <item android:drawable="@mipmap/yiyang_main_wd_nor" android:state_pressed="true" />
+    <item android:drawable="@mipmap/yiyang_main_wd_sel" />
 </selector>

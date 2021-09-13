@@ -21,21 +21,15 @@ import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
 import com.yiyang.cn.R;
 import com.yiyang.cn.activity.PhoneCheckActivity;
-import com.yiyang.cn.activity.ShopCartActivity;
-import com.yiyang.cn.activity.fenxiang_tuisong.HuoDongTanCengActivity;
 import com.yiyang.cn.activity.fenxiang_tuisong.ShouYeFenXiangActivity;
-import com.yiyang.cn.activity.saoma.SaoMaZhiFuActivity;
-import com.yiyang.cn.activity.wode_page.MyQianBaoActivity;
 import com.yiyang.cn.activity.wode_page.TiXianActivity;
 import com.yiyang.cn.activity.zijian_shangcheng.ZiJianShopMallDetailsActivity;
-import com.yiyang.cn.adapter.xin_tuanyou.XinTuanYouShengChengDingDanActivity;
 import com.yiyang.cn.app.App;
 import com.yiyang.cn.app.ConstanceValue;
 import com.yiyang.cn.app.Notice;
 import com.yiyang.cn.app.RxBus;
 import com.yiyang.cn.app.UIHelper;
 import com.yiyang.cn.callback.JsonCallback;
-import com.yiyang.cn.common.StringUtils;
 import com.yiyang.cn.config.AppResponse;
 
 import com.yiyang.cn.config.PreferenceHelper;
@@ -114,82 +108,30 @@ public class AndroidForJs {
     @JavascriptInterface
     public void jsToAppPayAction(String para) {
         Bundle bundle = new Bundle();
-
-        //  String str = bundle.getString("jsToAppPayAction ");
-        Log.i("jsToAppPayAction", para);
-//        if (cmd.equals("jsToAppPayAction")) {//
-//            //调起支付
-//            //SaoMaZhiFuActivity.actionStart();
-//            Log.i("jsToAppPayAction", para);
-//        }
-
-        //SaoMaZhiFuActivity.actionStart(mContext, null, null, null, null);
-
         SaoMaPayModel saoMaPayModel = new Gson().fromJson(para, SaoMaPayModel.class);
         PreferenceHelper.getInstance(mContext).putString(App.SAOMA_PAY, "saoma_pay");
         if (saoMaPayModel.getType().equals("1")) {//调支付宝支付
 
             SaoMaZhiFuBaoPayModel saoMaZhiFuBaoPayModel = new Gson().fromJson(para, SaoMaZhiFuBaoPayModel.class);
             payV2(saoMaZhiFuBaoPayModel.getPay());//这里填写后台返回的支付信息
-
-
         } else if (saoMaPayModel.getType().equals("2")) {//调微信支付
             SaoMaWeiXinPayModel saoMaWeiXinPayModel = new Gson().fromJson(para, SaoMaWeiXinPayModel.class);
             SaoMaWeiXinPayModel.PayBean payBean = saoMaWeiXinPayModel.getPay();
 
-
             goToWeChatPay(saoMaWeiXinPayModel);
         }
-
-
     }
 
     @JavascriptInterface
     public void jsToAppMap(String startLat) {
         //去做想做的事情。比如导航，直接带着开始和结束的经纬度Intent到导航activity就可以
-
-        Log.i("isToAppConkOut", startLat);
-//        if (TextUtils.isEmpty(startLat) || TextUtils.isEmpty(startLng) || TextUtils.isEmpty(endLat)
-//                || TextUtils.isEmpty(endLng)) {//如果接收的数据不正确，给予提示
-//            Toast.makeText(activity, "有不正确的数据", Toast.LENGTH_LONG).show();
-//            return;
-//        }
-//
-//        final AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-//        builder.setTitle("提示");
-//        builder.setMessage("请调用自己的导航\n开始经纬度:" +
-//                startLat + "    " + startLng +
-//                "\n结束经纬度:" + endLat + "    " + endLng);
-//
-//        builder.setPositiveButton("确定",
-//                new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        dialog.dismiss();
-//                    }
-//                });
-//
-//        builder.setCancelable(false);
-//        builder.show();
-
     }
 
     //JS请求java
     @JavascriptInterface
     public void jsToAppProductAction(String para) {
         Bundle bundle = new Bundle();
-
-        //  String str = bundle.getString("jsToAppPayAction ");
-        Log.i("jsToAppProductAction", para);
-//        if (cmd.equals("jsToAppPayAction")) {//
-//            //调起支付
-//            //SaoMaZhiFuActivity.actionStart();
-//            Log.i("jsToAppPayAction", para);
-//        }
         MenSuoModel menSuoModel = new Gson().fromJson(para, MenSuoModel.class);
-        //SaoMaZhiFuActivity.actionStart(mContext, null, null, null, null);
-
-
         if (menSuoModel.getWares_id() != null && menSuoModel.getShop_product_id() != null) {
             ZiJianShopMallDetailsActivity.actionStart(mContext, menSuoModel.getShop_product_id(), menSuoModel.getWares_id());
         }
@@ -198,17 +140,12 @@ public class AndroidForJs {
     //JS请求java
     @JavascriptInterface
     public void jsToAppDlsTXActionn(String para) {
-
-
         getDaiLiQianBaoNet();
-
     }
 
     //JS请求java
     @JavascriptInterface
     public void jsToAppTyShare(String para) {
-//        UIHelper.ToastMessage(mContext, para);
-//        Log.i("app_to_share", para);
         Home.DataBean.activity activity = new Gson().fromJson(para, Home.DataBean.activity.class);
         ShouYeFenXiangActivity.actionStart(mContext, activity);
     }
@@ -253,33 +190,17 @@ public class AndroidForJs {
                     String resultStatus = payResult.getResultStatus();
                     // 判断resultStatus 为9000则代表支付成功
                     if (TextUtils.equals(resultStatus, "9000")) {
-//                        Notice n = new Notice();
-//                        n.type = ConstanceValue.MSG_DALIBAO_SUCCESS;
-//                        //  n.content = message.toString();
-//                        RxBus.getDefault().sendRx(n);
-//                        finish();
-                        // 该笔订单是否真实支付成功，需要依赖服务端的异步通知。
-                        //   Toast.makeText(DaLiBaoZhiFuActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
-                        //   finish();
-                        // 通过商品购买正常确认订单支付回调  包括常规商品 大礼包  抢货拼手快商品
-
-                        // MyCarCaoZuoDialog_Success dialog_success = new MyCarCaoZuoDialog_Success(DaLiBaoZhiFuActivity.this, "支付成功", "恭喜您支付成功");
-                        // dialog_success.show();
                         UIHelper.ToastMessage(mContext, "支付成功", Toast.LENGTH_SHORT);
                         //finish();
                         Notice n = new Notice();
                         n.type = ConstanceValue.MSG_SAOMASUCCESS;
                         //  n.content = message.toString();
                         RxBus.getDefault().sendRx(n);
-
                     } else {
                         // 该笔订单真实的支付结果，需要依赖服务端的异步通知。
                         Toast.makeText(mContext, "支付失败", Toast.LENGTH_SHORT).show();
-                        //finish();
-
                         Notice n = new Notice();
                         n.type = ConstanceValue.MSG_SAOMAFAILE;
-                        //  n.content = message.toString();
                         RxBus.getDefault().sendRx(n);
                     }
                     break;
@@ -290,7 +211,6 @@ public class AndroidForJs {
         }
 
     };
-
 
     /**
      * 微信支付
@@ -311,7 +231,6 @@ public class AndroidForJs {
         req.nonceStr = out.getPay().getNoncestr();
         req.sign = out.getPay().getSign();
         req.packageValue = out.getPay().getPackageX();
-
         api.sendReq(req);
     }
 
@@ -340,26 +259,7 @@ public class AndroidForJs {
                          * userName	用户名
                          * pay_name	支付宝真实姓名
                          */
-
-
-//                        String checkAliPay = PreferenceHelper.getInstance(mContext).getString(App.CUNCHUBIND_ALIPAY, "0x11");
-//                        if (checkAliPay.equals("1")) {//已经设置
-//                            if (StringUtils.isEmpty(response.body().data.get(0).getUser_money())) {
-//                                response.body().data.get(0).setUser_money("0.00");
-//                            }
-//                            BigDecimal bigDecimal = new BigDecimal(response.body().data.get(0).getUser_money());
-//
-//                            if (bigDecimal.compareTo(BigDecimal.ZERO) == 1) {
-//                                //跳正常页面
-//                                TiXianActivity.actionStart(mContext, response.body().data.get(0).getUser_money(),"1");
-//                            } else {
-//                                UIHelper.ToastMessage(mContext, "当前不可提现");
-//                            }
-//                        } else {//2 未设置
-//                            showTwo();
-//                        }
                         showWeiXinOrZhiFuBaoSelect(response);
-
                     }
 
 
@@ -375,18 +275,15 @@ public class AndroidForJs {
      * 两个按钮的 dialog
      */
     private void showTwo() {
-
         builder = new AlertDialog.Builder(mContext).setIcon(R.mipmap.logi_icon).setTitle("账号绑定")
                 .setMessage("是否前去绑定支付宝账号").setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
                         mContext.startActivity(new Intent(mContext, PhoneCheckActivity.class).putExtra("mod_id", "0008"));
                     }
                 }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
                         dialogInterface.dismiss();
                     }
                 });
@@ -409,14 +306,11 @@ public class AndroidForJs {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         choice = i;
-
-
                     }
                 }).setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         if (choice == 0) {//微信
-
                             String weixinPay = PreferenceHelper.getInstance(mContext).getString(App.CUNCHUBIND_WEIXINPAY, "0x11");
                             if (weixinPay.equals("1")) {
                                 TiXianActivity.actionStart(mContext, response.body().data.get(0).getUser_money(), "1", "2");
@@ -428,17 +322,13 @@ public class AndroidForJs {
                                 req.state = "wechat_sdk_demo_test";
                                 api.sendReq(req);
                             }
-
                         } else {//支付宝
                             String checkAliPay = PreferenceHelper.getInstance(mContext).getString(App.CUNCHUBIND_ALIPAY, "0x11");
                             if (checkAliPay.equals("1")) {//已经设置
-
                                 TiXianActivity.actionStart(mContext, response.body().data.get(0).getUser_money(), "1", "1");
-
                             } else {//2 未设置
                                 showTwo();
                             }
-
                         }
                     }
                 });

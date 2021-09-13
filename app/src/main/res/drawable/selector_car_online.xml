@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@mipmap/jyjtab_icon_zhikong_sel" android:state_checked="true" />
-    <item android:drawable="@mipmap/jyjtab_icon_zhikong_nor" android:state_pressed="true" />
-    <item android:drawable="@mipmap/jyjtab_icon_zhikong_sel" />
+    <item android:drawable="@mipmap/yiyang_main_anfang_sel" android:state_checked="true" />
+    <item android:drawable="@mipmap/yiyang_main_anfang_nor" android:state_pressed="true" />
+    <item android:drawable="@mipmap/yiyang_main_anfang_sel" />
 </selector>

@@ -52,8 +52,6 @@ import com.yiyang.cn.util.AlertUtil;
 import com.yiyang.cn.util.CleanMessageUtil;
 import com.tuya.smart.android.user.api.ILogoutCallback;
 import com.tuya.smart.home.sdk.TuyaHomeSdk;
-import com.umeng.message.PushAgent;
-import com.umeng.message.UTrack;
 
 import org.devio.takephoto.app.TakePhoto;
 import org.devio.takephoto.app.TakePhotoImpl;
@@ -524,13 +522,7 @@ public class SettingActivity extends BaseActivity implements Observer, TakePhoto
                                 TuyaHomeSdk.getUserInstance().logout(new ILogoutCallback() {
                                     @Override
                                     public void onSuccess() {
-                                        String strPhone = PreferenceHelper.getInstance(SettingActivity.this).getString("user_phone", "");
-                                        PushAgent.getInstance(SettingActivity.this).deleteAlias(strPhone, "TUYA_SMART", new UTrack.ICallBack() {
-                                            @Override
-                                            public void onMessage(boolean isSuccess, String message) {
 
-                                            }
-                                        });
                                     }
 
                                     @Override

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="116pt"
+        android:paddingHorizontal="19pt">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1pt"
+            android:layout_alignParentBottom="true"
+            android:background="#E5E5E5" />
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="77pt"
+            android:layout_height="77pt"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="19pt"
+            android:layout_marginTop="19pt"
+            android:layout_toRightOf="@id/iv_icon"
+            android:includeFontPadding="false"
+            android:text="智能摄像头"
+            android:textColor="@color/color_3"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="19pt"
+            android:layout_marginBottom="31pt"
+            android:layout_toRightOf="@id/iv_icon"
+            android:includeFontPadding="false"
+            android:text="您好，针对您的咨询我已回复，请查看。"
+            android:textColor="#C1C1C1"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="19pt"
+            android:layout_marginRight="19pt"
+            android:text="昨天19:58"
+            android:textColor="@color/color_3"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="30pt"
+            android:layout_height="30pt"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="27pt"
+            android:layout_marginBottom="27pt"
+            android:background="@drawable/yiyang_state_lixian"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="2"
+            android:textColor="@color/white"
+            android:textSize="23pt" />
+    </RelativeLayout>
+</LinearLayout>
+
+

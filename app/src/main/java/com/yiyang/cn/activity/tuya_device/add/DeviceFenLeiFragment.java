@@ -1,27 +1,18 @@
 package com.yiyang.cn.activity.tuya_device.add;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.yiyang.cn.R;
-import com.yiyang.cn.activity.shuinuan.Y;
 import com.yiyang.cn.activity.tuya_device.add.model.DeviceListModel;
-import com.yiyang.cn.activity.zhinengjiaju.peinet.PeiWangYinDaoPageActivity;
 import com.yiyang.cn.activity.zhinengjiaju.peinet.SheBeiChongZhiActivity;
-import com.yiyang.cn.activity.zhinengjiaju.peinet.ZhiNengJiaJuPeiWangActivity;
-import com.yiyang.cn.activity.zijian_shangcheng.FenLeiThirdActivity;
 import com.yiyang.cn.adapter.FenLeiRightAdapter;
-import com.yiyang.cn.app.AppConfig;
 import com.yiyang.cn.app.UIHelper;
 import com.yiyang.cn.basicmvp.BaseFragment;
-import com.yiyang.cn.config.PreferenceHelper;
 import com.yiyang.cn.model.FenLeiContentModel;
-import com.yiyang.cn.model.ZiJianFenLeiBean;
 import com.yiyang.cn.project_A.zijian_interface.FenLeiContenInterface;
 import com.yiyang.cn.util.GridSectionAverageGapItemDecoration;
-import com.umeng.commonsdk.UMConfigure;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +26,6 @@ public class DeviceFenLeiFragment extends BaseFragment implements FenLeiContenIn
     private FenLeiRightAdapter fenLeiRightAdapter;
     private List<FenLeiContentModel> mDatas;
 
-    // boolean flag = true;// true 是第一个 false 不是第一个
     private String one_item;
     private String two_item;
     FenLeiContentModel fenLeiContentModel;
@@ -96,21 +86,6 @@ public class DeviceFenLeiFragment extends BaseFragment implements FenLeiContenIn
                     case R.id.constrain:
                         fenLeiContentModel = mDatas.get(position);
                         // TODO: 2021/2/8  添加是否由主机校验
-//                        String strZhuJi = PreferenceHelper.getInstance(getActivity()).getString(AppConfig.HAVEZHUJI, "");
-//                        if (fenLeiContentModel.type.equals("00")) {
-//                            if (strZhuJi.equals("0")) {
-//                                SheBeiChongZhiActivity.actionStart(getActivity(), mDatas.get(position).getItem_name(), mDatas.get(position).getImg_url(), mDatas.get(position).header, fenLeiContentModel);
-//                            } else {
-//                                UIHelper.ToastMessage(getActivity(), "此家庭已有主机,请切换家庭后重新尝试");
-//                            }
-//                        } else {
-//                            if (strZhuJi.equals("0")) {
-//                                UIHelper.ToastMessage(getActivity(), "此家庭没有主机,请先添加主机后重新尝试");
-//                            } else {
-//
-//                            }
-//                        }
-
                         //1 是可用 2是不可用
                         if (fenLeiContentModel.is_product.equals("2")) {
                             //暂未开放此设备，敬请期待
