@@ -3,9 +3,6 @@ package com.yiyang.cn.config;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
-import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -15,22 +12,17 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.location.LocationManager;
-import android.net.Uri;
 import android.net.wifi.WifiManager;
-import android.os.Build;
 import android.os.Bundle;
 
-import androidx.core.app.NotificationCompat;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.multidex.MultiDexApplication;
 
-import android.os.Handler;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
-import android.widget.RemoteViews;
 
 import com.alibaba.baichuan.android.trade.AlibcTradeSDK;
 import com.alibaba.baichuan.android.trade.callback.AlibcTradeInitCallback;
@@ -56,8 +48,6 @@ import com.yiyang.cn.R;
 import com.yiyang.cn.aakefudan.chat.MyMessage;
 import com.yiyang.cn.aakefudan.chat.MyMessageItemProvider;
 import com.yiyang.cn.activity.LoginActivity;
-import com.yiyang.cn.activity.WelcomeActivity;
-import com.yiyang.cn.activity.shuinuan.Y;
 import com.yiyang.cn.activity.tuya_device.utils.BizBundleFamilyServiceImpl;
 import com.yiyang.cn.adapter.view.GlobalAdapter;
 import com.yiyang.cn.app.App;
@@ -69,7 +59,6 @@ import com.yiyang.cn.app.HardWareValue;
 import com.yiyang.cn.app.Notice;
 import com.yiyang.cn.app.RxBus;
 import com.yiyang.cn.app.RxUtils;
-import com.yiyang.cn.app.UIHelper;
 import com.yiyang.cn.callback.JsonCallback;
 import com.yiyang.cn.common.StringUtils;
 import com.yiyang.cn.dialog.newdia.TishiDialog;
@@ -82,7 +71,6 @@ import com.yiyang.cn.model.ZhiNengJiaJu_0009Model;
 import com.yiyang.cn.util.DoMqttValue;
 import com.yiyang.cn.util.JinChengUtils;
 import com.yiyang.cn.util.SerializeUtil;
-import com.yiyang.cn.util.ShangChuanDongTaiShiTiTool;
 import com.tencent.bugly.Bugly;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.tuya.smart.api.router.UrlBuilder;
@@ -92,12 +80,7 @@ import com.tuya.smart.commonbiz.bizbundle.family.api.AbsBizBundleFamilyService;
 import com.tuya.smart.home.sdk.TuyaHomeSdk;
 import com.tuya.smart.optimus.sdk.TuyaOptimusSdk;
 import com.tuya.smart.wrapper.api.TuyaWrapper;
-import com.umeng.commonsdk.UMConfigure;
-import com.umeng.message.IUmengRegisterCallback;
-import com.umeng.message.PushAgent;
-import com.umeng.message.UmengMessageHandler;
-import com.umeng.message.entity.UMessage;
-import com.vivo.push.PushClient;
+
 import com.xiaomi.mipush.sdk.MiPushClient;
 
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
@@ -111,7 +94,6 @@ import org.jaaksi.pickerview.util.Util;
 import org.jaaksi.pickerview.widget.DefaultCenterDecoration;
 import org.jaaksi.pickerview.widget.PickerView;
 
-import java.sql.BatchUpdateException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -119,7 +101,6 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
-
 
 import cn.jpush.android.api.JPushInterface;
 import io.rong.imkit.RongIM;
@@ -136,23 +117,18 @@ public class MyApplication extends MultiDexApplication {
     protected static final String TAG = "MyApplication";
     @SuppressLint("StaticFieldLeak")
     public static Context context;
+
     //获取屏幕宽高
     public static int windowHeight;
     public static int windowWidth;
 
     public static Activity activity_main;
 
-
-    //String mqttUrl = "tcp://192.168.1.127";//大个本地
-    String mqttUrl = "tcp://mqtt.hljsdkj.com";//正式
-    //String mqttUrl = "tcp://ggw.hljsdkj.com";//ggw
-
     public String getMqttUrl() {
         if (Urls.SERVER_URL.equals("https://shop.hljsdkj.com/")) {
             return "tcp://mqtt.hljsdkj.com";
         } else {
             return "tcp://ggw.hljsdkj.com";
-//            return "tcp://mqtt.hljsdkj.com";
         }
     }
 
@@ -259,16 +235,15 @@ public class MyApplication extends MultiDexApplication {
         initDefaultPicker();
         initOkgo();
         initTuya();//涂鸦智能家居
-        initYoumeng();//友盟推送
 
         // 获取当前包名
         String packageName = context.getPackageName();
-// 获取当前进程名
+        // 获取当前进程名
         String processName = JinChengUtils.getProcessName();
-// 设置是否为上报进程
+        // 设置是否为上报进程
         CrashReport.UserStrategy strategy = new CrashReport.UserStrategy(context);
         strategy.setUploadProcess(processName == null || processName.equals(packageName));
-// 初始化Bugly
+        // 初始化Bugly
 
 
         Bugly.init(getApplicationContext(), "28ca17503e", false);
@@ -369,46 +344,7 @@ public class MyApplication extends MultiDexApplication {
         //  new ShangChuanDongTaiShiTiTool(context, roomList, sheBeiList);
     }
 
-    private void initYoumeng() {
-        UMConfigure.init(this, "5fdff473842ba953b890dd98", "Umeng", UMConfigure.DEVICE_TYPE_PHONE, "a51f307db82a88eaa46cf1cef4009316");
-        PushAgent mPushAgent = PushAgent.getInstance(this);
-        mPushAgent.register(new IUmengRegisterCallback() {
-            @Override
-            public void onSuccess(String token) {
-
-            }
-
-            @Override
-            public void onFailure(String s, String s1) {
-
-            }
-        });
-
-        UmengMessageHandler messageHandler = new UmengMessageHandler() {
-            @Override
-            public void dealWithCustomMessage(final Context context, final UMessage msg) {
-                new Handler(getMainLooper()).post(new Runnable() {
-
-                    @Override
-                    public void run() {
-
-                    }
-                });
-            }
-
-//            @Override
-//            public Notification getNotification(Context context, UMessage msg) {
-//                Notification.Builder builder = new Notification.Builder(context).setContentTitle(msg.title).setContentText(msg.text).setDefaults(Notification.DEFAULT_ALL);
-//                return builder.build();
-//            }
-        };
-
-        mPushAgent.setMessageHandler(messageHandler);
-    }
-
     private void initTuya() {//涂鸦智能家居
-//        TuyaHomeSdk.init(this);
-//        TuyaHomeSdk.setDebugMode(true);
         Fresco.initialize(this);
         TuyaHomeSdk.init(this);
         TuyaWrapper.init(this, new RouteEventListener() {
@@ -515,7 +451,6 @@ public class MyApplication extends MultiDexApplication {
                 }
             });
         }
-
     }
 
     public void connectRongYun(String token) {
@@ -546,8 +481,6 @@ public class MyApplication extends MultiDexApplication {
                 //UIHelper.ToastMessage(mContext, "融云连接成功");
                 Log.i("rongYun", "融云连接成功");
                 PreferenceHelper.getInstance(getApplicationContext()).putString(AppConfig.RONGYUN_TOKEN, token);
-
-
             }
 
             /**
@@ -559,7 +492,6 @@ public class MyApplication extends MultiDexApplication {
                 Log.i("rongYun", "融云连接失败");
             }
         });
-
     }
 
 
@@ -609,7 +541,6 @@ public class MyApplication extends MultiDexApplication {
                 MqttConnect builder = new MqttConnect();
                 builder.setClientId(HardWareValue.CLIENT_ID + getUser_id() + System.currentTimeMillis())//连接服务器
                         .setPort(9096)
-//                        .setPort(9093)
                         .setAutoReconnect(true)
                         .setCleanSession(true)
                         .setKeepAlive(60)
@@ -761,7 +692,7 @@ public class MyApplication extends MultiDexApplication {
                     @Override
                     public void deliveryComplete(IMqttDeliveryToken token) {
                         try {
-                            Log.i("Rair", "消息送达完成： "+token.getMessage().toString());
+                            Log.i("Rair", "消息送达完成： " + token.getMessage().toString());
                         } catch (MqttException e) {
                             e.printStackTrace();
                         }

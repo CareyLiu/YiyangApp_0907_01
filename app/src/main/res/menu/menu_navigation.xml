@@ -9,12 +9,8 @@
     <item
         android:id="@+id/i_zhinengjiaju"
         android:icon="@drawable/selector_car_online"
-        android:title="智能家居" />
+        android:title="安防" />
 
-    <item
-        android:id="@+id/i_car_online"
-        android:icon="@drawable/selector_play"
-        android:title="设备" />
     <item
         android:id="@+id/i_message"
         android:icon="@drawable/selector_message"

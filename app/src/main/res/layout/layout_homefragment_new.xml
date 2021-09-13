@@ -128,7 +128,7 @@
                             android:layout_width="17dp"
                             android:layout_height="17dp"
                             android:layout_marginLeft="14dp"
-                            android:src="@mipmap/zhihuiyanglao" />
+                            android:src="@mipmap/yiyang_icon_zhihuiyanglao" />
 
                         <TextView
                             android:layout_width="wrap_content"

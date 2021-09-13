@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.yiyang.cn.R;
-import com.yiyang.cn.activity.a_yiyang.YiyangTuActivity;
 import com.yiyang.cn.activity.a_yiyang.YiyangTuTActivity;
 import com.yiyang.cn.activity.tongcheng58.adapter.TcHomeTagAdapter;
 import com.yiyang.cn.activity.tongcheng58.model.TcHomeModel;

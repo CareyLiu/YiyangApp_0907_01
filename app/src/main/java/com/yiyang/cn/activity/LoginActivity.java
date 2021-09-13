@@ -49,8 +49,6 @@ import com.tuya.smart.android.user.api.ILoginCallback;
 import com.tuya.smart.android.user.bean.User;
 import com.tuya.smart.home.sdk.TuyaHomeSdk;
 import com.tuya.smart.sdk.api.IResultCallback;
-import com.umeng.message.PushAgent;
-import com.umeng.message.UTrack;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -72,24 +70,16 @@ import static com.yiyang.cn.get_net.Urls.SERVER_URL;
 
 
 public class LoginActivity extends BaseActivity {
-    @BindView(R.id.iv_icon)
-    ImageView ivIcon;
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
     @BindView(R.id.ed_phone)
     EditText mEtPhone;
     @BindView(R.id.ed_pwd)
     EditText mEtPwdCode;
     @BindView(R.id.get_code)
     TextView mTvGetCode;
-    @BindView(R.id.ll_pwd)
-    LinearLayout llPwd;
     @BindView(R.id.tv_switch)
     TextView tv_switch;
     @BindView(R.id.tv_zhaohui)
     TextView tvZhaohui;
-    @BindView(R.id.ll_qiehuan)
-    LinearLayout llQiehuan;
     @BindView(R.id.bt_login)
     Button btLogin;
     @BindView(R.id.tv_yinsi)
@@ -117,7 +107,7 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     public void initImmersion() {
-        mImmersionBar.with(this).statusBarColor(R.color.white).init();
+        mImmersionBar.with(this).statusBarColor(R.color.trans).init();
     }
 
     @Override
@@ -393,31 +383,11 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void onSuccess(User user) {
                 loginXiayibu();
-                loginYoumeng(phone);
             }
 
             @Override
             public void onError(String code, String error) {
                 Y.t("登录失败:" + error);
-            }
-        });
-    }
-
-    private void loginYoumeng(String phone) {
-        PushAgent.getInstance(this).setAlias(phone, "TUYA_SMART", new UTrack.ICallBack() {
-            @Override
-            public void onMessage(boolean isSuccess, String message) {
-                TuyaHomeSdk.getPushInstance().registerDevice(phone, "umeng", new IResultCallback() {
-                    @Override
-                    public void onError(String code, String error) {
-
-                    }
-
-                    @Override
-                    public void onSuccess() {
-
-                    }
-                });
             }
         });
     }
