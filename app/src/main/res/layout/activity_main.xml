@@ -20,123 +20,17 @@
             app:itemTextColor="@drawable/selector_item_primary_color"
             app:menu="@menu/menu_navigation" />
 
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="1pt"
+            android:layout_above="@+id/bnve"
+            android:background="@color/line" />
+
         <com.yiyang.cn.view.NoScrollViewPager
             android:id="@+id/vp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@id/bnve" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rrl_yuyin_mianban"
-        android:layout_width="match_parent"
-        android:layout_height="144dp"
-        android:layout_margin="15dp"
-        android:background="@mipmap/yuyinbackground"
-        android:orientation="horizontal"
-        android:visibility="gone">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_top"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="15dp"
-            android:layout_marginTop="15dp">
-
-            <ImageView
-                android:id="@+id/tv_yuyin_image"
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:src="@mipmap/yuyinzhushou_icon_mai"
-
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="神灯正在听"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_yuyin_image"
-
-                app:layout_constraintLeft_toRightOf="@+id/tv_yuyin_image"
-                app:layout_constraintTop_toTopOf="@+id/tv_yuyin_image" />
-
-            <TextView
-                android:id="@+id/tv_shangchuan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:text="上传"
-                android:textColor="@color/white"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_yuyin_image"
-                app:layout_constraintRight_toLeftOf="@+id/tv_chaxun_dabao_zhuangtai"
-                app:layout_constraintTop_toTopOf="@+id/tv_yuyin_image" />
-
-            <TextView
-                android:id="@+id/tv_chaxun_dabao_zhuangtai"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:text="查询打包状态"
-                android:textColor="@color/white"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_yuyin_image"
-                app:layout_constraintRight_toLeftOf="@+id/tv_shezhi"
-                app:layout_constraintTop_toTopOf="@+id/tv_yuyin_image">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/tv_shezhi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:text="设置"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_yuyin_image"
-
-                app:layout_constraintRight_toLeftOf="@+id/iv_close"
-                app:layout_constraintTop_toTopOf="@+id/tv_yuyin_image" />
-
-
-            <ImageView
-                android:id="@+id/iv_close"
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:layout_alignParentRight="true"
-                android:src="@mipmap/pop_icon_close"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_yuyin_image"
-
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tv_yuyin_image" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <TextView
-            android:id="@+id/tv_shishishuo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/cl_top"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
-            android:text="试试说"
-            android:textColor="@color/white">
-
-        </TextView>
-
-
-        <TextView
-            android:id="@+id/tv_result"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_shishishuo"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
-            android:text="打开客厅灯"
-            android:textColor="@color/white"
-            android:textSize="22sp"></TextView>
+            android:layout_above="@id/view_line" />
     </RelativeLayout>
 </RelativeLayout>

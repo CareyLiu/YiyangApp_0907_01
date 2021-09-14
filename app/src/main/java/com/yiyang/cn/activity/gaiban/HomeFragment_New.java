@@ -187,8 +187,7 @@ public class HomeFragment_New extends BaseFragment implements ObservableScrollVi
     HomeReMenAdapter homeReMenAdapter;
     private ImageView iv_home_xiaoxi;
 
-    RoundRelativeLayout rrlYuYinMianBan;
-    TextView tvResult;
+
 
     @Override
     protected void initLogic() {
@@ -327,9 +326,6 @@ public class HomeFragment_New extends BaseFragment implements ObservableScrollVi
     @Override
     protected void initView(View view) {
         initNewView(view);
-
-        rrlYuYinMianBan = view.findViewById(R.id.rrl_yuyin_mianban);
-        tvResult = view.findViewById(R.id.tv_result);
 
         nestedScrollView = view.findViewById(R.id.scrollView);
         topPanel = view.findViewById(R.id.topPanel);
@@ -1234,7 +1230,6 @@ public class HomeFragment_New extends BaseFragment implements ObservableScrollVi
 
 
         }
-
     }
 }
 

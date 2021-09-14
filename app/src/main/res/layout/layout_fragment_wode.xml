@@ -955,27 +955,24 @@
                         android:layout_toRightOf="@+id/con_dibu">
 
                         <ImageView
-                            android:layout_marginTop="3dp"
                             android:id="@+id/iv_lianxi"
-                            android:layout_width="@dimen/dp_25"
+                            android:layout_width="25dp"
                             android:layout_height="25dp"
+                            android:layout_centerHorizontal="true"
                             android:layout_marginLeft="9dp"
-                            android:src="@mipmap/wode_kefu"
-
-                            android:layout_centerHorizontal="true">
-
+                            android:layout_marginTop="3dp"
+                            android:src="@mipmap/wode_kefu">
                         </ImageView>
 
                         <TextView
-
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_below="@+id/iv_lianxi"
                             android:layout_marginTop="14dp"
                             android:includeFontPadding="false"
                             android:text="联系我们"
                             android:textColor="#ff333333"
-                            android:textSize="12sp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                            android:textSize="12sp">
 
                         </TextView>
 

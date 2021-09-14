@@ -29,7 +29,6 @@ import com.alibaba.baichuan.android.trade.callback.AlibcTradeInitCallback;
 
 import com.billy.android.loading.Gloading;
 import com.bulong.rudeness.RudenessScreenHelper;
-import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.gson.Gson;
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechUtility;
@@ -48,7 +47,6 @@ import com.yiyang.cn.R;
 import com.yiyang.cn.aakefudan.chat.MyMessage;
 import com.yiyang.cn.aakefudan.chat.MyMessageItemProvider;
 import com.yiyang.cn.activity.LoginActivity;
-import com.yiyang.cn.activity.tuya_device.utils.BizBundleFamilyServiceImpl;
 import com.yiyang.cn.adapter.view.GlobalAdapter;
 import com.yiyang.cn.app.App;
 import com.yiyang.cn.app.AppConfig;
@@ -73,14 +71,6 @@ import com.yiyang.cn.util.JinChengUtils;
 import com.yiyang.cn.util.SerializeUtil;
 import com.tencent.bugly.Bugly;
 import com.tencent.bugly.crashreport.CrashReport;
-import com.tuya.smart.api.router.UrlBuilder;
-import com.tuya.smart.api.service.RouteEventListener;
-import com.tuya.smart.api.service.ServiceEventListener;
-import com.tuya.smart.commonbiz.bizbundle.family.api.AbsBizBundleFamilyService;
-import com.tuya.smart.home.sdk.TuyaHomeSdk;
-import com.tuya.smart.optimus.sdk.TuyaOptimusSdk;
-import com.tuya.smart.wrapper.api.TuyaWrapper;
-
 import com.xiaomi.mipush.sdk.MiPushClient;
 
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
@@ -210,8 +200,6 @@ public class MyApplication extends MultiDexApplication {
     String doMqtt = "0";//0 不执行mqtt相关功能 1执行mqtt相关功能
 
     public void onCreate() {
-
-
         PreferenceHelper.getInstance(this).removeKey(App.CHOOSE_KONGZHI_XIANGMU);
         StringBuffer param = new StringBuffer();
         param.append("appid=" + getString(R.string.app_id));
@@ -234,7 +222,6 @@ public class MyApplication extends MultiDexApplication {
         initWindow();
         initDefaultPicker();
         initOkgo();
-        initTuya();//涂鸦智能家居
 
         // 获取当前包名
         String packageName = context.getPackageName();
@@ -244,14 +231,12 @@ public class MyApplication extends MultiDexApplication {
         CrashReport.UserStrategy strategy = new CrashReport.UserStrategy(context);
         strategy.setUploadProcess(processName == null || processName.equals(packageName));
         // 初始化Bugly
-
-
         Bugly.init(getApplicationContext(), "28ca17503e", false);
+
         AndMqtt.getInstance().init(MyApplication.this);
 
         CompositeSubscription _subscriptions = new CompositeSubscription();
         _subscriptions = RxUtils.getNewCompositeSubIfUnsubscribed(_subscriptions);
-
         _subscriptions.add(RxBus.getDefault().toObservable(Notice.class).observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<Notice>() {
             @Override
             public void call(Notice message) {
@@ -305,7 +290,6 @@ public class MyApplication extends MultiDexApplication {
                 // 设置是否使用同步淘客打点
                 AlibcTradeSDK.setSyncForTaoke(true);
 
-
                 // 设置全局淘客参数，方便开发者用同一个淘客参数，不需要在show接口重复传入
                 //   AlibcTradeSDK.setTaokeParams(taokeParams);
                 Log.i("AlibcTradeSDK", "success");
@@ -314,7 +298,6 @@ public class MyApplication extends MultiDexApplication {
             @Override
             public void onFailure(int code, String msg) {
                 //初始化失败，可以根据code和msg判断失败原因，详情参见错误说明
-
                 Log.i("AlibcTradeSDK", "fail" + "code:" + code + "msg:" + msg);
             }
         });
@@ -325,46 +308,11 @@ public class MyApplication extends MultiDexApplication {
 
         mBroadcastData = new MutableLiveData<>();
         IntentFilter filter = new IntentFilter(WifiManager.NETWORK_STATE_CHANGED_ACTION);
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-//            filter.addAction(LocationManager.PROVIDERS_CHANGED_ACTION);
-//        }
         registerReceiver(mReceiver, filter);
 
         //view
         Gloading.initDefault(new GlobalAdapter());
         Logger.addLogAdapter(new AndroidLogAdapter());
-
-//        List<String> roomList = new ArrayList<>();
-//        roomList.add("茶杯");
-//        roomList.add("缸子");
-//        List<String> sheBeiList = new ArrayList<>();
-//        sheBeiList.add("英雄");
-//        sheBeiList.add("大熊猫");
-
-        //  new ShangChuanDongTaiShiTiTool(context, roomList, sheBeiList);
-    }
-
-    private void initTuya() {//涂鸦智能家居
-        Fresco.initialize(this);
-        TuyaHomeSdk.init(this);
-        TuyaWrapper.init(this, new RouteEventListener() {
-            @Override
-            public void onFaild(int errorCode, UrlBuilder urlBuilder) {
-                // urlBuilder.target is a router address, urlBuilder.params is a router params
-                // urlBuilder.target 目标路由， urlBuilder.params 路由参数
-                Log.e("router not implement", errorCode + "  帆帆帆帆  " + urlBuilder.target + "  嘎嘎嘎  " + urlBuilder.params.toString());
-            }
-        }, new ServiceEventListener() {
-            @Override
-            public void onFaild(String serviceName) {
-                Log.e("service not implement", serviceName);
-            }
-        });
-        TuyaOptimusSdk.init(this);
-
-        // register family service，mall bizbundle don't have to implement it.
-        // 注册家庭服务，商城业务包可以不注册此服务
-        TuyaWrapper.registerService(AbsBizBundleFamilyService.class, new BizBundleFamilyServiceImpl());
     }
 
     private void initRongYun() {

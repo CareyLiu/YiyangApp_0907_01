@@ -20,7 +20,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_280"
+                android:layout_height="280dp"
                 android:background="@mipmap/wenshidu_chuanganqi_beijing">
 
 
@@ -157,7 +157,7 @@
             <com.flyco.roundview.RoundRelativeLayout
                 android:id="@+id/rll_zhumianban"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_268"
+                android:layout_height="268dp"
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginTop="12dp"
                 app:rv_backgroundColor="@color/white"

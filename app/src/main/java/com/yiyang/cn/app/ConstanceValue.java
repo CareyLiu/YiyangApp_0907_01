@@ -148,8 +148,7 @@ public interface ConstanceValue {
 
     int MSG_DEVICE_DINGSHI_CHONGFU = 0x10109;//定时设置重复
 
-    int MSG_TUYA_TIANQI = 0x10110;//涂鸦天气设置
-    int MSG_RIQICHONGFU = 0x10111;//涂鸦天气设置
+
     int MSG_ZHINENGJIAJU_SHEBEILIEBIAO = 0x10112;//智能家居单个设备列表信息
     int MSG_ZHINENGJIAJU_ICON = 0x10113;//智能家居单个设备列表信息
     int MSG_DINGSHI_NEED = 0x10114;//定时使用

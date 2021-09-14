@@ -29,21 +29,11 @@ import com.yiyang.cn.activity.ZhiNengJiaoHuaAutoActivity;
 import com.yiyang.cn.activity.ZhiNengRoomDeviceDetailAutoActivity;
 import com.yiyang.cn.activity.ZhiNengZhuJiDetailAutoActivity;
 import com.yiyang.cn.activity.shuinuan.Y;
-import com.yiyang.cn.activity.tuya_device.add.TuyaDeviceAddActivity;
-import com.yiyang.cn.activity.tuya_device.camera.TuyaCameraActivity;
-import com.yiyang.cn.activity.tuya_device.device.DeviceChazuoActivity;
-import com.yiyang.cn.activity.tuya_device.device.DeviceWangguanActivity;
-import com.yiyang.cn.activity.tuya_device.device.DeviceWgCzActivity;
-import com.yiyang.cn.activity.tuya_device.utils.TuyaConfig;
 import com.yiyang.cn.activity.yaokongqi.KongQiJingHuaKongZhiActivity;
-import com.yiyang.cn.activity.yaokongqi.KongQiJingHuaPeiActivity;
 import com.yiyang.cn.activity.yaokongqi.WanNengYaoKongQi;
-import com.yiyang.cn.activity.yaokongqi.WanNengYaoKongQiPeiDuiZidingyi;
 import com.yiyang.cn.activity.yaokongqi.YaokongKT;
 import com.yiyang.cn.activity.yaokongqi.ZhenWanNengYaoKongQiKongZhi;
-import com.yiyang.cn.activity.yaokongqi.ZhenWanNengYaoKongQiPeiDuiZidingyi;
 import com.yiyang.cn.activity.zckt.AirConditionerActivity;
-import com.yiyang.cn.activity.zhinengjiaju.KongQiJianCeActvity;
 import com.yiyang.cn.activity.zhinengjiaju.KongQiJianCe_NewActvity;
 import com.yiyang.cn.activity.zhinengjiaju.RenTiGanYingActivity;
 import com.yiyang.cn.activity.zhinengjiaju.WenShiDuChuanGanQiActivity;
@@ -76,8 +66,6 @@ import com.yiyang.cn.model.ZhiNengFamilyEditBean;
 import com.yiyang.cn.mqtt_zhiling.ZnjjMqttMingLing;
 import com.yiyang.cn.tools.NetworkUtils;
 import com.yiyang.cn.util.GridAverageUIDecoration;
-import com.tuya.smart.api.MicroContext;
-import com.tuya.smart.panelcaller.api.AbsPanelCallerService;
 
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
 import org.eclipse.paho.client.mqttv3.IMqttToken;
@@ -157,9 +145,6 @@ public class ZhiNengDeviceFragment extends BaseFragment {
                         String ty_device_ccid = deviceBean.getTy_device_ccid();
                         if (tuyaId.equals(ty_device_ccid)) {
                             String device_type = deviceBean.getDevice_type();
-                            if (device_type.equals(TuyaConfig.CATEGORY_WNYKQ)) {
-                                deleteDevice(deviceBean.getDevice_id());
-                            }
                         }
                     }
                 } else if (message.type == ConstanceValue.MSG_ZHINENGJIAJU_ZI_SHUAXIN) {
@@ -393,31 +378,7 @@ public class ZhiNengDeviceFragment extends BaseFragment {
                                 bundle.putString("work_state", deviceBean.getWork_state());
                                 startActivity(new Intent(getActivity(), ZhiNengRoomDeviceDetailAutoActivity.class).putExtras(bundle));
                             } else {
-                                Y.e("设备的信息是什么啊  " + "device_category:" + deviceBean.getDevice_type() + "  produco:" + deviceBean.getDevice_category() + "  device_category_code:" + deviceBean.getDevice_category_code());
-                                if (deviceBean.getDevice_type().equals(TuyaConfig.CATEGORY_CAMERA)) {//涂鸦摄像机
-                                    TuyaCameraActivity.actionStart(getActivity(), member_type, deviceBean.getDevice_id(), ty_device_ccid, deviceBean.getDevice_name(), deviceBean.getRoom_name());
-                                } else if (deviceBean.getDevice_type().equals(TuyaConfig.CATEGORY_CHAZUO)) {//涂鸦插座
-                                    if (deviceBean.getDevice_category().equals(TuyaConfig.PRODUCTID_CHAZUO_WG)) {
-                                        DeviceWgCzActivity.actionStart(getActivity(), member_type, deviceBean.getDevice_id(), ty_device_ccid, deviceBean.getDevice_name(), deviceBean.getRoom_name());
-                                    } else {
-                                        DeviceChazuoActivity.actionStart(getActivity(), member_type, deviceBean.getDevice_id(), ty_device_ccid, deviceBean.getDevice_name(), deviceBean.getRoom_name());
-                                    }
-                                } else if (deviceBean.getDevice_type().equals(TuyaConfig.CATEGORY_WANGGUAN)) {//涂鸦网关
-                                    DeviceWangguanActivity.actionStart(getActivity(), member_type, deviceBean.getDevice_id(), ty_device_ccid, deviceBean.getDevice_name(), deviceBean.getRoom_name());
-                                } else if (deviceBean.getDevice_type().equals(TuyaConfig.CATEGORY_WNYKQ)) {//万能遥控器
-//                                    AbsPanelCallerService service = MicroContext.getServiceManager().findServiceByInterface(AbsPanelCallerService.class.getName());
-//                                    service.goPanelWithCheckAndTip(getActivity(), ty_device_ccid);
 
-                                    Bundle bundle = new Bundle();
-                                    bundle.putString("device_id", deviceBean.getDevice_id());
-                                    bundle.putString("device_type", deviceBean.getDevice_type());
-                                    bundle.putString("member_type", member_type);
-                                    bundle.putString("work_state", deviceBean.getWork_state());
-                                    startActivity(new Intent(getActivity(), ZhiNengRoomDeviceDetailAutoActivity.class).putExtras(bundle));
-                                } else {//其他涂鸦设备
-                                    AbsPanelCallerService service = MicroContext.getServiceManager().findServiceByInterface(AbsPanelCallerService.class.getName());
-                                    service.goPanelWithCheckAndTip(getActivity(), ty_device_ccid);
-                                }
                             }
                         }
                         break;
@@ -453,7 +414,6 @@ public class ZhiNengDeviceFragment extends BaseFragment {
             tishiDialog.show();
         } else if (str.equals("1")) {
             PreferenceHelper.getInstance(getActivity()).putString(AppConfig.MC_DEVICE_CCID, "aaaaaaaaaaaaaaaa80140018");
-            TuyaDeviceAddActivity.actionStart(getContext());
         }
     }
 

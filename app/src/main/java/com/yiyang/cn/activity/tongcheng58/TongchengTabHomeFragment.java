@@ -219,7 +219,7 @@ public class TongchengTabHomeFragment extends BaseFragment {
             @Override
             public IPagerTitleView getTitleView(Context context, final int index) {
                 SimplePagerTitleView simplePagerTitleView = new ColorTransitionPagerTitleView(context);
-                simplePagerTitleView.setNormalColor(Y.getColor(R.color.text_color3));
+                simplePagerTitleView.setNormalColor(Y.getColor(R.color.color_3));
                 simplePagerTitleView.setSelectedColor(Y.getColor(R.color.text_red));
                 simplePagerTitleView.setText(shop_type_list.get(index).getIr_industry_type_name());
                 simplePagerTitleView.setOnClickListener(new View.OnClickListener() {

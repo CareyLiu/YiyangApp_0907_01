@@ -24,7 +24,6 @@ import com.lzy.okgo.model.Response;
 import com.rairmmd.andmqtt.AndMqtt;
 import com.rairmmd.andmqtt.MqttPublish;
 import com.rairmmd.andmqtt.MqttSubscribe;
-import com.tuya.smart.wrapper.api.TuyaWrapper;
 import com.vivo.push.PushClient;
 import com.yiyang.cn.R;
 import com.yiyang.cn.activity.zhinengjiaju.RenTiGanYingActivity;
@@ -94,28 +93,13 @@ public class HomeActivity extends BaseActivity {
     NoScrollViewPager mVp;
     @BindView(R.id.activity_with_view_pager)
     RelativeLayout activityWithViewPager;
-    @BindView(R.id.tv_yuyin_image)
-    ImageView tvYuyinImage;
-    @BindView(R.id.tv_shangchuan)
-    TextView tvShangchuan;
-    @BindView(R.id.tv_chaxun_dabao_zhuangtai)
-    TextView tvChaxunDabaoZhuangtai;
-    @BindView(R.id.tv_shezhi)
-    TextView tvShezhi;
-    @BindView(R.id.iv_close)
-    ImageView ivClose;
-    @BindView(R.id.cl_top)
-    ConstraintLayout clTop;
-    @BindView(R.id.tv_shishishuo)
-    TextView tvShishishuo;
-    @BindView(R.id.tv_result)
-    TextView tvResult;
-    @BindView(R.id.rrl_yuyin_mianban)
-    RelativeLayout rrlYuyinMianban;
+
+
+
 
     private boolean isExit;
     private SparseIntArray items;
-    TishiDialog tishiDialog;
+    private TishiDialog tishiDialog;
 
     @Override
     public int getContentViewResId() {
@@ -136,37 +120,9 @@ public class HomeActivity extends BaseActivity {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
 
-        TuyaWrapper.onLogin();
-
         initView();
-        initData();
+        initData(savedInstanceState);
         initEvent();
-
-        _subscriptions.add(toObservable().observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<Notice>() {
-            @Override
-            public void call(Notice notice) {
-                if (notice.type == ConstanceValue.MSG_GOTOXIAOXI) {
-                    mVp.setCurrentItem(3, false);
-                } else if (notice.type == ConstanceValue.MSG_P) {
-                    handler.removeCallbacks(runnable);
-                } else if (notice.type == ConstanceValue.MSG_ZHINENGJIAJU) {
-                    mVp.setCurrentItem(1, false);
-                } else if (notice.type == ConstanceValue.MSG_ZHINENGJIAJU_MENCI) {
-                    zhiNengJiaJuCaoZuo(notice);
-                } else if (notice.type == ConstanceValue.MSG_CAOZUODONGTAISHITI) {
-                    dognTaiShiTiUrl();
-                } else if (notice.type == ConstanceValue.MSG_XIUGAIDONGTAISHITIFINISH) {
-                    xiuGaiDongTaiShiTiFinish();
-                }
-            }
-        }));
-
-        rrlYuyinMianban.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
         handler = new Handler();
         runnable = new Runnable() {
@@ -198,19 +154,7 @@ public class HomeActivity extends BaseActivity {
 
         handler.postDelayed(runnable, 5000);
 
-        ivClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rrlYuyinMianban.setVisibility(View.GONE);
-            }
-        });
 
-        tvShezhi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                YuYinSheZhiActivity.actionStart(HomeActivity.this);
-            }
-        });
 
         dognTaiShiTiUrl();
 
@@ -470,12 +414,12 @@ public class HomeActivity extends BaseActivity {
     /**
      * create fragments
      */
-    private void initData() {
+    private void initData(Bundle savedInstanceState) {
         List<Fragment> fragments = new ArrayList<>(4);
         items = new SparseIntArray(4);
 
         TabHomeFragment tabHomeFragment = new TabHomeFragment();
-        TabAnfangFragment tabAnfangFragment = new TabAnfangFragment();
+        TabAnfangFragment tabAnfangFragment = new TabAnfangFragment(savedInstanceState);
         TabXiaoxiFragment tabXiaoxiFragment = new TabXiaoxiFragment();
         TabWodeFragment tabWodeFragment = new TabWodeFragment();
 

@@ -5,6 +5,7 @@
     android:background="@color/bg_app">
 
     <ImageView
+        android:id="@+id/iv_dian"
         android:layout_width="match_parent"
         android:layout_height="346pt"
         android:scaleType="fitXY"
@@ -65,7 +66,6 @@
                     android:text="我的活动"
                     android:textColor="@color/color_2"
                     android:textSize="12sp" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -88,7 +88,6 @@
                     android:text="我的健康"
                     android:textColor="@color/color_2"
                     android:textSize="12sp" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -141,14 +140,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="19pt"
-                    android:text="我的机构"
+                    android:text="全部订单"
                     android:textColor="@color/color_4"
                     android:textSize="12sp" />
 
                 <ImageView
                     android:layout_width="11pt"
                     android:layout_height="18pt"
-                    android:src="@drawable/arrow_more" />
+                    android:src="@drawable/push_gray" />
             </LinearLayout>
 
             <View
@@ -301,11 +300,9 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_marginBottom="100pt"
                 android:layout_height="1pt"
+                android:layout_marginBottom="100pt"
                 android:background="@color/line" />
-
-
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

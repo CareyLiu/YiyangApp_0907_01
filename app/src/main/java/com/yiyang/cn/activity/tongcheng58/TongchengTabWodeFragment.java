@@ -272,9 +272,9 @@ public class TongchengTabWodeFragment extends BaseFragment {
     }
 
     private void select(int pos) {
-        tvTitle1.setTextColor(Y.getColor(R.color.text_color3));
-        tvTitle2.setTextColor(Y.getColor(R.color.text_color3));
-        tvTitle3.setTextColor(Y.getColor(R.color.text_color3));
+        tvTitle1.setTextColor(Y.getColor(R.color.color_3));
+        tvTitle2.setTextColor(Y.getColor(R.color.color_3));
+        tvTitle3.setTextColor(Y.getColor(R.color.color_3));
         lineTitle1.setVisibility(View.GONE);
         lineTitle2.setVisibility(View.GONE);
         lineTitle3.setVisibility(View.GONE);

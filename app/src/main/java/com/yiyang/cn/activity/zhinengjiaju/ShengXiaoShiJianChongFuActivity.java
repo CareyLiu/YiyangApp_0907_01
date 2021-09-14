@@ -19,7 +19,6 @@ import com.yiyang.cn.app.ConstanceValue;
 import com.yiyang.cn.app.Notice;
 import com.yiyang.cn.app.RxBus;
 import com.yiyang.cn.app.UIHelper;
-import com.tuya.smart.home.sdk.bean.WeatherBean;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -95,7 +94,6 @@ public class ShengXiaoShiJianChongFuActivity extends BaseActivity {
             public void onClick(View v) {
                 UIHelper.ToastMessage(mContext, "保存成功");
                 Notice n = new Notice();
-                n.type = ConstanceValue.MSG_RIQICHONGFU;
                 n.content = mDatas;
                 RxBus.getDefault().sendRx(n);
                 finish();

@@ -96,20 +96,6 @@ android {
         exclude 'META-INF/proguard/androidx-annotations.pro'
         exclude 'assets/location_map_gps_locked.png'
         exclude 'assets/location_map_gps_3d.png'
-        //涂鸦
-        exclude 'META-INF/LICENSE.txt'
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/NOTICE.txt'
-        exclude 'META-INF/INDEX.LIST'
-        exclude 'META-INF/maven/com.squareup.okio/okio/pom.properties'
-        exclude 'META-INF/maven/com.squareup.okio/okio/pom.xml'
-        exclude 'META-INF/android-offlinelog-api_release.kotlin_module'
-        exclude 'META-INF/android-offlinelog-upload_release.kotlin_module'
-        pickFirst 'lib/*/libc++_shared.so'
-        pickFirst 'lib/*/libgnustl_shared.so'
-        doNotStrip '*/mips/*.so'
-        doNotStrip '*/mips64/*.so'
     }
 
     lintOptions {
@@ -290,22 +276,10 @@ dependencies {
     // 此处以JCore 2.4.2 版本为例。
     implementation 'com.bulong.rudeness:rudeness:latest.release@aar'
 
-    //涂鸦摄像头
-    implementation 'com.tuya.smart:tuyasmart-ipc-camera-middleware:3.20.0'
-    implementation 'com.tuya.smart:tuyasmart-ipc-camera-v2:3.20.0'
-    implementation 'com.tuya.smart:tuyasmart-ipc-camera-utils:3.20.0'
-    implementation 'com.tuya.smart:tuyasmart-ipc-camera-diff-api:3.20.0'
-    implementation 'com.tuya.smart:tuyasmart-ipc-camera-outside:3.20.0'
-    implementation 'com.tuya.smart:tuyasmart-base-utils:3.18.0r143-rc.9'
-    implementation 'com.tuya.smart:tuyasmart-ipc-camera-timeline:1.0.0'
     implementation files('libs\\aranger-1.0.6.jar')
     implementation files('libs/Msc.jar')
     implementation project(path: ':LRecyclerview_library')
 
-    implementation 'com.tuya.smart:tuyasmart:3.22.0'
-    implementation 'com.tuya.smart:tuyasmart-bizbundle-panel:3.22.0-5'
-    implementation 'com.tuya.smart:tuyasmart-bizbundle-scene:3.22.0-5'
-    implementation 'com.tuya.smart:tuyasmart-bizbundle-camera:3.22.0-5'
     implementation 'org.xclcharts:lib:2.4'
     implementation 'com.amap.api:search:latest.integration'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'

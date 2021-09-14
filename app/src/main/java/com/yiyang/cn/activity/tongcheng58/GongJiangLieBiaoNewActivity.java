@@ -249,7 +249,7 @@ public class GongJiangLieBiaoNewActivity extends BaseActivity {
             @Override
             public IPagerTitleView getTitleView(Context context, final int index) {
                 SimplePagerTitleView simplePagerTitleView = new ColorTransitionPagerTitleView(context);
-                simplePagerTitleView.setNormalColor(Y.getColor(R.color.text_color3));
+                simplePagerTitleView.setNormalColor(Y.getColor(R.color.color_3));
                 simplePagerTitleView.setSelectedColor(Y.getColor(R.color.text_red));
                 simplePagerTitleView.setText(iconList.get(index).getService_type_name());
                 simplePagerTitleView.setOnClickListener(new View.OnClickListener() {

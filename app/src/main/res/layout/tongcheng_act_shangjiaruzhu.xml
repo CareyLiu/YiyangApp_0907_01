@@ -123,7 +123,7 @@
                         android:layout_width="31pt"
                         android:layout_height="31pt"
                         android:layout_marginLeft="16pt"
-                        android:src="@drawable/arrow_more" />
+                        android:src="@drawable/push_gray" />
                 </LinearLayout>
 
                 <View
@@ -162,7 +162,7 @@
                         android:layout_width="31pt"
                         android:layout_height="31pt"
                         android:layout_marginLeft="16pt"
-                        android:src="@drawable/arrow_more" />
+                        android:src="@drawable/push_gray" />
                 </LinearLayout>
 
                 <View
@@ -201,7 +201,7 @@
                         android:layout_width="31pt"
                         android:layout_height="31pt"
                         android:layout_marginLeft="16pt"
-                        android:src="@drawable/arrow_more" />
+                        android:src="@drawable/push_gray" />
                 </LinearLayout>
 
                 <View
@@ -240,7 +240,7 @@
                         android:layout_width="31pt"
                         android:layout_height="31pt"
                         android:layout_marginLeft="16pt"
-                        android:src="@drawable/arrow_more" />
+                        android:src="@drawable/push_gray" />
                 </LinearLayout>
 
                 <View
@@ -378,7 +378,7 @@
                         android:layout_width="31pt"
                         android:layout_height="31pt"
                         android:layout_marginHorizontal="16pt"
-                        android:src="@drawable/arrow_more" />
+                        android:src="@drawable/push_gray" />
                 </LinearLayout>
 
                 <View
@@ -418,7 +418,7 @@
                         android:layout_width="31pt"
                         android:layout_height="31pt"
                         android:layout_marginHorizontal="16pt"
-                        android:src="@drawable/arrow_more" />
+                        android:src="@drawable/push_gray" />
                 </LinearLayout>
 
                 <View
@@ -548,7 +548,7 @@
                         android:layout_width="31pt"
                         android:layout_height="31pt"
                         android:layout_marginLeft="16pt"
-                        android:src="@drawable/arrow_more" />
+                        android:src="@drawable/push_gray" />
                 </LinearLayout>
 
                 <View
@@ -588,7 +588,7 @@
                         android:layout_width="31pt"
                         android:layout_height="31pt"
                         android:layout_marginLeft="16pt"
-                        android:src="@drawable/arrow_more" />
+                        android:src="@drawable/push_gray" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -627,7 +627,7 @@
                     android:layout_width="31pt"
                     android:layout_height="31pt"
                     android:layout_marginLeft="16pt"
-                    android:src="@drawable/arrow_more" />
+                    android:src="@drawable/push_gray" />
             </LinearLayout>
 
 

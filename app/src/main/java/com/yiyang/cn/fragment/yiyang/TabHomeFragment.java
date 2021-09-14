@@ -9,6 +9,7 @@ import com.gyf.barlibrary.ImmersionBar;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.yiyang.cn.R;
 import com.yiyang.cn.activity.a_yiyang.YiyangTuTActivity;
+import com.yiyang.cn.activity.a_yiyang.ZaixianyishengActivity;
 import com.yiyang.cn.activity.tongcheng58.model.TcHomeModel;
 import com.yiyang.cn.adapter.yiyang.HomeZhylAdapter;
 import com.yiyang.cn.basicmvp.BaseFragment;
@@ -125,7 +126,7 @@ public class TabHomeFragment extends BaseFragment {
                         YiyangTuTActivity.actionStart(getContext(), R.mipmap.act_dianhuajizhen);
                         break;
                     case 2:
-                        YiyangTuTActivity.actionStart(getContext(), R.mipmap.act_zaixianyisheng);
+                        ZaixianyishengActivity.actionStart(getContext());
                         break;
                     case 3:
                         YiyangTuTActivity.actionStart(getContext(), R.mipmap.act_jibingchaxun);

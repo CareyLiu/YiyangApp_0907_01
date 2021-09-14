@@ -50,8 +50,6 @@ import com.yiyang.cn.model.Upload;
 import com.yiyang.cn.model.UserInfo;
 import com.yiyang.cn.util.AlertUtil;
 import com.yiyang.cn.util.CleanMessageUtil;
-import com.tuya.smart.android.user.api.ILogoutCallback;
-import com.tuya.smart.home.sdk.TuyaHomeSdk;
 
 import org.devio.takephoto.app.TakePhoto;
 import org.devio.takephoto.app.TakePhotoImpl;
@@ -519,17 +517,6 @@ public class SettingActivity extends BaseActivity implements Observer, TakePhoto
                                 RongIM.getInstance().logout();
                                 JPushInterface.deleteAlias(SettingActivity.this, 0);
                                 startActivity(new Intent(SettingActivity.this, LoginActivity.class));
-                                TuyaHomeSdk.getUserInstance().logout(new ILogoutCallback() {
-                                    @Override
-                                    public void onSuccess() {
-
-                                    }
-
-                                    @Override
-                                    public void onError(String errorCode, String errorMsg) {
-
-                                    }
-                                });
                             }
                         });
                 break;

@@ -106,7 +106,7 @@
                             android:layout_height="wrap_content"
                             android:includeFontPadding="false"
                             android:text="0.0km 黑龙江省哈尔滨市南岗区"
-                            android:textColor="@color/text_color3"
+                            android:textColor="@color/color_3"
                             android:textSize="27pt" />
                     </LinearLayout>
 
@@ -129,7 +129,7 @@
                             android:layout_marginRight="30pt"
                             android:includeFontPadding="false"
                             android:text="某先生 15112345678"
-                            android:textColor="@color/text_color3"
+                            android:textColor="@color/color_3"
                             android:textSize="27pt" />
 
 
@@ -145,7 +145,7 @@
                             android:layout_height="wrap_content"
                             android:includeFontPadding="false"
                             android:text="08:00-17:00"
-                            android:textColor="@color/text_color3"
+                            android:textColor="@color/color_3"
                             android:textSize="27pt" />
                     </LinearLayout>
                 </LinearLayout>

@@ -53,7 +53,7 @@
                 <ImageView
                     android:id="@+id/iv_touxiang"
                     android:layout_width="52dp"
-                    android:layout_height="@dimen/dp_52"
+                    android:layout_height="52dp"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="15dp" />

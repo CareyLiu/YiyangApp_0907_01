@@ -1,7 +1,5 @@
 package com.yiyang.cn.fragment.znjj;
 
-import android.animation.ObjectAnimator;
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,7 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.gson.Gson;
 import com.gyf.barlibrary.ImmersionBar;
@@ -27,14 +24,10 @@ import com.rairmmd.andmqtt.MqttSubscribe;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
-import com.scwang.smartrefresh.layout.util.DensityUtil;
 import com.yiyang.cn.R;
 import com.yiyang.cn.activity.ZhiNengFamilyManageDetailActivity;
 import com.yiyang.cn.activity.ZhiNengHomeListActivity;
 import com.yiyang.cn.activity.shuinuan.Y;
-import com.yiyang.cn.activity.tuya_device.add.TuyaDeviceAddActivity;
-import com.yiyang.cn.activity.tuya_device.changjing.TuyaTianqiActivity;
-import com.yiyang.cn.activity.tuya_device.utils.manager.TuyaHomeManager;
 import com.yiyang.cn.activity.zhinengjiaju.peinet.PeiWangYinDaoPageActivity;
 import com.yiyang.cn.adapter.NewsFragmentPagerAdapter;
 import com.yiyang.cn.app.App;
@@ -52,7 +45,6 @@ import com.yiyang.cn.fragment.znjj.model.ZhiNengModel;
 import com.yiyang.cn.get_net.Urls;
 import com.yiyang.cn.model.ZhiNengFamilyManageBean;
 import com.yiyang.cn.util.DensityUtils;
-import com.yiyang.cn.util.DoMqttValue;
 import com.yiyang.cn.util.GlideShowImageUtils;
 import com.yiyang.cn.view.NoSlidingViewPager;
 import com.yiyang.cn.view.magicindicator.MagicIndicator;
@@ -67,14 +59,6 @@ import com.yiyang.cn.view.magicindicator.buildins.commonnavigator.titles.SimpleP
 import com.tencent.mm.opensdk.modelbiz.WXLaunchMiniProgram;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
-import com.tuya.smart.home.sdk.TuyaHomeSdk;
-import com.tuya.smart.home.sdk.bean.HomeBean;
-import com.tuya.smart.home.sdk.bean.MemberBean;
-import com.tuya.smart.home.sdk.bean.WeatherBean;
-import com.tuya.smart.home.sdk.callback.ITuyaGetHomeListCallback;
-import com.tuya.smart.home.sdk.callback.ITuyaGetMemberListCallback;
-import com.tuya.smart.home.sdk.callback.ITuyaHomeResultCallback;
-import com.tuya.smart.sdk.api.IResultCallback;
 
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
 import org.eclipse.paho.client.mqttv3.IMqttToken;
@@ -391,21 +375,6 @@ public class ZhiNengJiaJuFragment extends BaseFragment implements View.OnClickLi
                     getnet("MSG_ZHINENGJIAJU_ZHUJI");
                 } else if (message.type == ConstanceValue.MSG_DEVICE_ADD) {
                     getnet("MSG_DEVICE_ADD");
-                } else if (message.type == ConstanceValue.MSG_TUYA_TIANQI) {
-                    Object content = message.content;
-                    if (content == null) {
-                        isSettianqi = false;
-                        tv_tianqi.setText("欢迎回家");
-                        tv_tianqi_wendu.setText("设置家庭位置，获取更多信息");
-                        iv_tianqi_enter.setVisibility(View.VISIBLE);
-                    } else {
-                        isSettianqi = true;
-                        WeatherBean result = (WeatherBean) message.content;
-                        tv_tianqi.setText(result.getCondition());
-                        Glide.with(getContext()).applyDefaultRequestOptions(GlideShowImageUtils.showNull()).load(result.getInIconUrl()).into(iv_tianqi);
-                        tv_tianqi_wendu.setText(zhuJiWenShiDu + "室外温度:" + result.getTemp() + "℃");
-                        iv_tianqi_enter.setVisibility(View.GONE);
-                    }
                 } else if (message.type == ConstanceValue.MSG_DEVICE_DELETE) {//删除设备
                     getnet("MSG_DEVICE_DELETE");
                 } else if (message.type == ConstanceValue.MSG_TIANJIASHEBEI) {//添加普通设备
@@ -530,23 +499,9 @@ public class ZhiNengJiaJuFragment extends BaseFragment implements View.OnClickLi
                         if (TextUtils.isEmpty(ty_family_id)) {
                             if (dataBean.get(0).getMember_type().equals("1") || dataBean.get(0).getMember_type().equals("3")) {
                                 List<String> addRooms = new ArrayList<>();
-                                TuyaHomeSdk.getHomeManagerInstance().createHome(dataBean.get(0).getFamily_name(), 0, 0, "", addRooms, new ITuyaHomeResultCallback() {
-                                    @Override
-                                    public void onSuccess(HomeBean bean) {
-                                        long tuyaHomeId = bean.getHomeId();
-                                        PreferenceHelper.getInstance(getActivity()).putLong(AppConfig.TUYA_HOME_ID, tuyaHomeId);
-                                        addTuyaHome(familyId, tuyaHomeId);
-                                    }
-
-                                    @Override
-                                    public void onError(String errorCode, String errorMsg) {
-                                        Y.e("创建家庭失败:" + errorMsg);
-                                    }
-                                });
                             }
                         } else {
                             PreferenceHelper.getInstance(getActivity()).putLong(AppConfig.TUYA_HOME_ID, Y.getLong(ty_family_id));
-                            TuyaHomeManager.getHomeManager().setHomeId(Y.getLong(ty_family_id));
                         }
 
                         for (int i = 0; i < dataBean.get(0).getDevice().size(); i++) {
@@ -609,7 +564,6 @@ public class ZhiNengJiaJuFragment extends BaseFragment implements View.OnClickLi
                 .execute(new JsonCallback<AppResponse<ZhiNengFamilyManageBean.DataBean>>() {
                     @Override
                     public void onSuccess(final Response<AppResponse<ZhiNengFamilyManageBean.DataBean>> response) {
-                        TuyaHomeManager.getHomeManager().setHomeId(ty_family_id);
                     }
 
                     @Override
@@ -636,8 +590,7 @@ public class ZhiNengJiaJuFragment extends BaseFragment implements View.OnClickLi
 
     private void clickSetTianqi() {
         if (isSettianqi) {
-            TuyaTianqiActivity.actionStart(getContext());
-//            TuyaChangjingActivity.actionStart(getContext());
+
         } else {
             Bundle bundle = new Bundle();
             bundle.putString("family_id", dataBean.get(0).getFamily_id());
@@ -673,90 +626,12 @@ public class ZhiNengJiaJuFragment extends BaseFragment implements View.OnClickLi
 
         } else if (str.equals("1")) {
             PreferenceHelper.getInstance(getActivity()).putString(AppConfig.MC_DEVICE_CCID, "aaaaaaaaaaaaaaaa80140018");
-            TuyaDeviceAddActivity.actionStart(getContext());
         }
-//        getHomefff();
-//        getHomeList();
-    }
-
-    private void getHomefff() {
-        TuyaHomeSdk.getMemberInstance().queryMemberList(28846708, new ITuyaGetMemberListCallback() {
-            @Override
-            public void onSuccess(List<MemberBean> memberBeans) {
-                // do something
-                Y.e("看了艰苦奋斗是 " + memberBeans.size());
-                for (int i = 0; i < memberBeans.size(); i++) {
-                    MemberBean bean = memberBeans.get(i);
-                    Y.e("家庭成员的信息  " + bean.getMemberId() + "   " + bean.getAccount() + "   " + bean.getNickName());
-                }
-
-                TuyaHomeSdk.getMemberInstance().removeMember(31948111, new IResultCallback() {
-                    @Override
-                    public void onSuccess() {
-                        // do something
-                        Y.e("离开家庭成功");
-                    }
-
-                    @Override
-                    public void onError(String code, String error) {
-                        // do something
-                        Y.e("离开家庭失败  " + error);
-                    }
-                });
-            }
-
-            @Override
-            public void onError(String errorCode, String error) {
-                // do something
-                Y.e("我是范德萨范德萨  " + error);
-            }
-        });
-    }
-
-    private void getHomeList() {
-        TuyaHomeSdk.getHomeManagerInstance().queryHomeList(new ITuyaGetHomeListCallback() {
-            @Override
-            public void onSuccess(List<HomeBean> homeBeans) {
-                for (int i = 0; i < homeBeans.size(); i++) {
-                    HomeBean homeBean = homeBeans.get(i);
-                    long homeId = homeBean.getHomeId();
-                    String name = homeBean.getName();
-                    Y.e("家庭名称  " + name + "  " + homeId);
-
-                    if (homeId == 31193089 || homeId == 31190326) {
-
-                    } else {
-//                        deleteTuyaJiating(homeId + "");
-                    }
-
-                }
-            }
-
-            @Override
-            public void onError(String errorCode, String error) {
-
-            }
-        });
     }
 
     @Override
     public void onSupportVisible() {
         super.onSupportVisible();
         getnet("显示");
-    }
-
-    private void deleteTuyaJiating(String ty_family_id) {
-        Y.e("解散的涂鸦家庭是多少啊 " + ty_family_id);
-        TuyaHomeSdk.newHomeInstance(Y.getLong(ty_family_id)).dismissHome(new IResultCallback() {
-            @Override
-            public void onSuccess() {
-                Y.e("解散涂鸦家庭成功 ");
-            }
-
-            @Override
-            public void onError(String code, String error) {
-                Y.e("解散家庭失败:" + error);
-            }
-        });
     }
 }

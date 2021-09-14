@@ -17,7 +17,6 @@ import com.rairmmd.andmqtt.AndMqtt;
 import com.rairmmd.andmqtt.MqttSubscribe;
 import com.yiyang.cn.R;
 import com.yiyang.cn.activity.shuinuan.Y;
-import com.yiyang.cn.activity.tuya_device.utils.manager.TuyaHomeManager;
 import com.yiyang.cn.activity.zhinengjiaju.peinet.PeiWangYinDaoPageActivity;
 import com.yiyang.cn.adapter.RoomAddDeviceAdapter;
 import com.yiyang.cn.adapter.ZhiNengRoomManageSettingAdapter;
@@ -37,14 +36,7 @@ import com.yiyang.cn.dialog.MyCarCaoZuoDialog_Success;
 import com.yiyang.cn.fragment.znjj.model.ZhiNengModel;
 import com.yiyang.cn.get_net.Urls;
 import com.yiyang.cn.model.ZhiNengFamilyEditBean;
-import com.tuya.smart.home.sdk.TuyaHomeSdk;
-import com.tuya.smart.home.sdk.bean.HomeBean;
-import com.tuya.smart.home.sdk.callback.ITuyaHomeResultCallback;
 
-import org.eclipse.paho.client.mqttv3.IMqttActionListener;
-import org.eclipse.paho.client.mqttv3.IMqttToken;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

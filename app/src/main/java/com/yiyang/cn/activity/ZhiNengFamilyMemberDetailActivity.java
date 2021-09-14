@@ -21,7 +21,6 @@ import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
 import com.yiyang.cn.R;
 import com.yiyang.cn.activity.shuinuan.Y;
-import com.yiyang.cn.activity.tuya_device.utils.manager.TuyaHomeManager;
 import com.yiyang.cn.app.AppConfig;
 import com.yiyang.cn.app.BaseActivity;
 import com.yiyang.cn.app.UIHelper;
@@ -34,11 +33,7 @@ import com.yiyang.cn.dialog.MyCarCaoZuoDialog_Success;
 import com.yiyang.cn.get_net.Urls;
 import com.yiyang.cn.model.ZhiNengFamilyEditBean;
 import com.yiyang.cn.model.ZhiNengFamilyMAnageDetailBean;
-import com.tuya.smart.home.sdk.TuyaHomeSdk;
-import com.tuya.smart.home.sdk.bean.MemberBean;
-import com.tuya.smart.home.sdk.bean.MemberWrapperBean;
-import com.tuya.smart.home.sdk.callback.ITuyaGetMemberListCallback;
-import com.tuya.smart.sdk.api.IResultCallback;
+
 
 import java.io.File;
 import java.util.HashMap;
@@ -160,61 +155,8 @@ public class ZhiNengFamilyMemberDetailActivity extends BaseActivity implements V
                         } else if (memberType.equals("3")) {
                             tv_type.setText("二级管理员");
                         }
-
-                        upDataTuya(member_type);
                     }
                 });
-    }
-
-    private void upDataTuya(String member_type) {
-        int memberRole = 0;
-        if (member_type.equals("2")) {
-            memberRole = 0;
-        } else {
-            memberRole = 1;
-        }
-        long homeId = PreferenceHelper.getInstance(mContext).getLong(AppConfig.TUYA_HOME_ID, 0);
-        @SuppressLint("WrongConstant") MemberWrapperBean bean = new MemberWrapperBean.Builder()
-                .setHomeId(homeId)
-                .setNickName(memberBean.getMember_phone())
-                .setAccount(memberBean.getMember_phone())
-                .setCountryCode("86")
-                .setRole(memberRole)
-                .setHeadPic("")
-                .setAutoAccept(true)
-                .build();
-        TuyaHomeSdk.getMemberInstance().updateMember(bean, new IResultCallback() {
-            @Override
-            public void onSuccess() {
-                // do something
-            }
-
-            @Override
-            public void onError(String code, String error) {
-                // do something
-            }
-        });
-    }
-
-    private void initMember() {
-        Y.e("涂鸦成员ID是多少" + tuya_memberId);
-        Y.e("涂鸦家庭ID是多少" + ty_family_id);
-
-        TuyaHomeSdk.getMemberInstance().queryMemberList(Y.getLong(ty_family_id), new ITuyaGetMemberListCallback() {
-            @Override
-            public void onSuccess(List<MemberBean> memberBeans) {
-                for (int i = 0; i < memberBeans.size(); i++) {
-                    MemberBean memberBean = memberBeans.get(i);
-                    String account = memberBean.getAccount();
-                    Y.e("账号是多少啊啊啊 " + account + "   " + memberBean.getMemberId());
-                }
-            }
-
-            @Override
-            public void onError(String errorCode, String error) {
-                Y.e("我失败了么啊啊啊" + error);
-            }
-        });
     }
 
     private void initView() {
@@ -312,22 +254,7 @@ public class ZhiNengFamilyMemberDetailActivity extends BaseActivity implements V
                             });
                             dialog_success.show();
                         }
-                        removeMember(tuya_memberId);
                     }
                 });
-    }
-
-    private void removeMember(long memberId) {
-        TuyaHomeSdk.getMemberInstance().removeMember(memberId, new IResultCallback() {
-            @Override
-            public void onSuccess() {
-                Y.e("删除成功");
-            }
-
-            @Override
-            public void onError(String code, String error) {
-                Y.e("删除失败" + code + "   " + error);
-            }
-        });
     }
 }

@@ -23,12 +23,7 @@ import com.jaeger.library.StatusBarUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
 import com.yiyang.cn.R;
-import com.yiyang.cn.activity.shuinuan.Y;
-import com.yiyang.cn.activity.tuya_device.camera.TuyaCameraActivity;
-import com.yiyang.cn.activity.tuya_device.device.DeviceChazuoActivity;
-import com.yiyang.cn.activity.tuya_device.device.DeviceWangguanActivity;
-import com.yiyang.cn.activity.tuya_device.device.DeviceWgCzActivity;
-import com.yiyang.cn.activity.tuya_device.utils.TuyaConfig;
+
 import com.yiyang.cn.activity.zckt.AirConditionerActivity;
 import com.yiyang.cn.activity.zhinengjiaju.WenShiDuChuanGanQiActivity;
 import com.yiyang.cn.activity.zhinengjiaju.function.LouShuiActivity;
@@ -55,8 +50,7 @@ import com.yiyang.cn.get_net.Urls;
 import com.yiyang.cn.model.ZhiNengFamilyEditBean;
 import com.yiyang.cn.model.ZhiNengRoomManageSettingBean;
 import com.yiyang.cn.tools.NetworkUtils;
-import com.tuya.smart.api.MicroContext;
-import com.tuya.smart.panelcaller.api.AbsPanelCallerService;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -336,25 +330,7 @@ public class ZhiNengRoomSettingActivity extends BaseActivity implements View.OnC
                 bundle.putString("work_state", deviceBean.getWork_state());
                 startActivity(new Intent(mContext, ZhiNengRoomDeviceDetailAutoActivity.class).putExtras(bundle));
             } else {
-                Y.e("设备的信息是什么啊  " + "device_category:" + deviceBean.getDevice_type() + "  produco:" + deviceBean.getDevice_category() + "  device_category_code:" + deviceBean.getDevice_category_code());
 
-                if (deviceBean.getDevice_type().equals(TuyaConfig.CATEGORY_CAMERA)) {//涂鸦摄像机
-                    TuyaCameraActivity.actionStart(mContext, member_type, deviceBean.getDevice_id(), ty_device_ccid, deviceBean.getDevice_name(), deviceBean.getRoom_name());
-                } else if (deviceBean.getDevice_type().equals(TuyaConfig.CATEGORY_CHAZUO)) {//涂鸦插座
-                    if (deviceBean.getDevice_category().equals(TuyaConfig.PRODUCTID_CHAZUO_WG)) {
-                        DeviceWgCzActivity.actionStart(mContext, member_type, deviceBean.getDevice_id(), ty_device_ccid, deviceBean.getDevice_name(), deviceBean.getRoom_name());
-                    } else {
-                        DeviceChazuoActivity.actionStart(mContext, member_type, deviceBean.getDevice_id(), ty_device_ccid, deviceBean.getDevice_name(), deviceBean.getRoom_name());
-                    }
-                } else if (deviceBean.getDevice_type().equals(TuyaConfig.CATEGORY_WANGGUAN)) {//涂鸦网关
-                    DeviceWangguanActivity.actionStart(mContext, member_type, deviceBean.getDevice_id(), ty_device_ccid, deviceBean.getDevice_name(), deviceBean.getRoom_name());
-                } else if (deviceBean.getDevice_type().equals(TuyaConfig.CATEGORY_WNYKQ)) {//万能遥控器
-                    AbsPanelCallerService service = MicroContext.getServiceManager().findServiceByInterface(AbsPanelCallerService.class.getName());
-                    service.goPanelWithCheckAndTip(ZhiNengRoomSettingActivity.this, ty_device_ccid);
-                } else {//其他涂鸦设备
-                    AbsPanelCallerService service = MicroContext.getServiceManager().findServiceByInterface(AbsPanelCallerService.class.getName());
-                    service.goPanelWithCheckAndTip(ZhiNengRoomSettingActivity.this, ty_device_ccid);
-                }
             }
         }
     }

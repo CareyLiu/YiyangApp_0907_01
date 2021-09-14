@@ -41,10 +41,7 @@ import com.yiyang.cn.get_net.Urls;
 import com.yiyang.cn.model.ZhiNengFamilyEditBean;
 import com.yiyang.cn.model.ZhiNengFamilyManageBean;
 import com.yiyang.cn.model.ZhiNengHomeListBean;
-import com.tuya.smart.home.sdk.TuyaHomeSdk;
-import com.tuya.smart.home.sdk.bean.HomeBean;
-import com.tuya.smart.home.sdk.bean.RoomBean;
-import com.tuya.smart.home.sdk.callback.ITuyaHomeResultCallback;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -117,14 +114,6 @@ public class ZhiNengFamilyManageActivity extends BaseActivity implements View.On
                 startActivity(new Intent(context, ZhiNengFamilyManageDetailActivity.class).putExtras(bundle));
             }
         });
-        _subscriptions.add(toObservable().observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<Notice>() {
-            @Override
-            public void call(Notice message) {
-                if (message.type == ConstanceValue.MSG_FAMILY_MANAGE_ADD) {
-                    creatTuyaFamily(message.content.toString());
-                }
-            }
-        }));
     }
 
     @Override
@@ -183,22 +172,7 @@ public class ZhiNengFamilyManageActivity extends BaseActivity implements View.On
                 });
     }
 
-    private void creatTuyaFamily(String name) {//创建涂鸦家庭
-        List<String> addRooms = new ArrayList<>();
-        TuyaHomeSdk.getHomeManagerInstance().createHome(name, 0, 0, "", addRooms, new ITuyaHomeResultCallback() {
-            @Override
-            public void onSuccess(HomeBean bean) {
-                long tuyaHomeId = bean.getHomeId();
-                Y.e("创建涂鸦家庭成功了啊 " + tuyaHomeId);
-                creatFamily(name, tuyaHomeId, 0);
-            }
 
-            @Override
-            public void onError(String errorCode, String errorMsg) {
-                Y.t("创建家庭失败:" + errorMsg);
-            }
-        });
-    }
     TishiDialog tishiDialog;
     private void creatFamily(String familyName, long ty_family_id, long ty_room_id) {
         //访问网络获取数据 下面的列表数据

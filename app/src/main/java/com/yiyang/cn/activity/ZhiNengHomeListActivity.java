@@ -37,10 +37,6 @@ import com.yiyang.cn.config.UserManager;
 import com.yiyang.cn.get_net.Urls;
 import com.yiyang.cn.model.ZhiNengHomeBean;
 import com.yiyang.cn.model.ZhiNengHomeListBean;
-import com.tuya.smart.home.sdk.TuyaHomeSdk;
-import com.tuya.smart.home.sdk.bean.HomeBean;
-import com.tuya.smart.home.sdk.bean.WeatherBean;
-import com.tuya.smart.home.sdk.callback.ITuyaGetHomeListCallback;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,8 +44,7 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
+
 
 import static com.yiyang.cn.get_net.Urls.ZHINENGJIAJU;
 

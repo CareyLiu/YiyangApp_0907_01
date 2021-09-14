@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="29pt"
+        android:layout_marginBottom="19pt"
+        android:background="@drawable/yiyang_bg_white_radius_10">
+
+        <ImageView
+            android:id="@+id/iv_head"
+            android:layout_width="77pt"
+            android:layout_height="77pt"
+            android:layout_marginLeft="30pt"
+            android:layout_marginTop="30pt"
+            android:src="@mipmap/touxiangnan" />
+
+        <ImageView
+            android:id="@+id/iv_tuijian"
+            android:layout_width="77pt"
+            android:layout_height="77pt"
+            android:src="@mipmap/tuijain" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10pt"
+            android:layout_marginTop="34pt"
+            android:layout_toRightOf="@id/iv_head"
+            android:includeFontPadding="false"
+            android:text="木子李"
+            android:textColor="@color/color_1"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_keshi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30pt"
+            android:layout_marginTop="34pt"
+            android:layout_toRightOf="@id/tv_name"
+            android:includeFontPadding="false"
+            android:text="外科"
+            android:textColor="@color/color_1"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_zhiwei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30pt"
+            android:layout_marginTop="34pt"
+            android:layout_toRightOf="@id/tv_keshi"
+            android:includeFontPadding="false"
+            android:text="主任医师"
+            android:textColor="@color/color_1"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:id="@+id/tv_yiyuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name"
+            android:layout_marginLeft="10pt"
+            android:layout_marginTop="34pt"
+            android:layout_toRightOf="@id/iv_head"
+            android:includeFontPadding="false"
+            android:text="上海医院"
+            android:textColor="#A86C3C"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tv_jibie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name"
+            android:layout_marginLeft="30pt"
+            android:layout_marginTop="34pt"
+            android:layout_toRightOf="@id/tv_yiyuan"
+            android:includeFontPadding="false"
+            android:text="三级甲等"
+            android:textColor="#A86C3C"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tv_jingli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_head"
+            android:layout_marginHorizontal="21pt"
+            android:layout_marginVertical="39pt"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="2"
+            android:text="擅长：甲状腺肿,结直肠癌,胰腺炎,肠梗阻,阑尾炎,直肠癌,肛裂,肛瘘,胃癌,肝癌,胆总管结石,胆结石..."
+            android:textColor="@color/color_1"
+            android:textSize="12sp" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1pt"
+            android:layout_below="@id/tv_jingli"
+            android:layout_marginHorizontal="19pt"
+            android:background="@color/line" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="54pt"
+            android:layout_below="@id/line"
+            android:layout_marginHorizontal="20pt"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="24小时回复率  99%   服务人数  4568  好评率  98%"
+            android:textSize="8sp" />
+    </RelativeLayout>
+</LinearLayout>
+
+

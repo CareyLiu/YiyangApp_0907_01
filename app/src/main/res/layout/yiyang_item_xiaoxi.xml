@@ -18,6 +18,7 @@
             android:id="@+id/iv_icon"
             android:layout_width="77pt"
             android:layout_height="77pt"
+            android:src="@mipmap/yiyang_tab_zhihuiyanglao"
             android:layout_centerVertical="true" />
 
         <TextView
@@ -28,7 +29,7 @@
             android:layout_marginTop="19pt"
             android:layout_toRightOf="@id/iv_icon"
             android:includeFontPadding="false"
-            android:text="智能摄像头"
+            android:text="李医生"
             android:textColor="@color/color_3"
             android:textSize="14sp" />
 

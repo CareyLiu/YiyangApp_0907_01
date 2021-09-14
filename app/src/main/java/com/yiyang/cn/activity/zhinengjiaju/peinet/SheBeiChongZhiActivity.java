@@ -2,7 +2,6 @@ package com.yiyang.cn.activity.zhinengjiaju.peinet;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.wifi.WifiInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,7 +16,6 @@ import com.flyco.dialog.listener.OnOperItemClickL;
 import com.flyco.dialog.widget.ActionSheetDialog;
 import com.flyco.roundview.RoundRelativeLayout;
 import com.yiyang.cn.R;
-import com.yiyang.cn.activity.tuya_device.add.zi.TuyaAddCameraActivity;
 import com.yiyang.cn.activity.yaokongqi.KongQiJingHuaPeiActivity;
 import com.yiyang.cn.activity.yaokongqi.WanNengYaoKongQiPeiDui;
 import com.yiyang.cn.activity.yaokongqi.YaokongKTPei;
@@ -102,8 +100,7 @@ public class SheBeiChongZhiActivity extends BaseActivity {
                         }
 
                     } else if (fenLeiContentModel.type.equals("18")) {//摄像头
-                        // TODO: 2021/2/3 添加摄像头
-                        TuyaAddCameraActivity.actionStart(mContext,cameraType);
+
                     } else if (fenLeiContentModel.type.equals("28")) {//其实是电视
                         WanNengYaoKongQiPeiDui.actionStart(SheBeiChongZhiActivity.this);
                     } else if (fenLeiContentModel.type.equals("37")) {

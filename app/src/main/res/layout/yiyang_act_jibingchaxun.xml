@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="29pt"
+        android:layout_marginTop="19pt"
+        android:background="@drawable/yiyang_bg_grey_e9_radius_10"
+        android:gravity="center_vertical"
+        android:paddingVertical="19pt">
+
+        <ImageView
+            android:layout_width="24pt"
+            android:layout_height="24pt"
+            android:layout_marginLeft="11pt"
+            android:scaleType="fitXY"
+            android:src="@mipmap/doudaren_title_sousuo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="12pt"
+            android:layout_marginLeft="10pt"
+            android:text="搜索医生/科室"
+            android:textColor="#A8a8a8"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</LinearLayout>

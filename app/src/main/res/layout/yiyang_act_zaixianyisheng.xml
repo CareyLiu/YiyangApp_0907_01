@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white">
+
+        <com.yiyang.cn.view.ColorFilterImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/back_black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="在线医生"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="29pt"
+            android:background="@drawable/yiyang_bg_grey_e9_radius_10"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24pt"
+                android:layout_height="24pt"
+                android:layout_marginLeft="8pt"
+                android:scaleType="fitXY"
+                android:src="@mipmap/doudaren_title_sousuo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="12pt"
+                android:layout_marginLeft="6pt"
+                android:layout_marginRight="19pt"
+                android:text="搜索医生/科室"
+                android:textColor="#A8a8a8"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="184pt"
+                    android:layout_marginHorizontal="30pt"
+                    android:layout_marginTop="18pt"
+                    android:src="@mipmap/zaixianyisheng_lunbo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30pt"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="17pt">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20pt"
+                        android:text="【就医指南】"
+                        android:textColor="#FD9322"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="一对一在线医生看病不排队看病操作手册"
+                        android:textColor="@color/color_a"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="240pt"
+                    android:layout_marginHorizontal="29pt">
+
+                    <ImageView
+                        android:id="@+id/iv_zixun_mianfei"
+                        android:layout_width="326pt"
+                        android:layout_height="115pt"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/mianfeizixun" />
+
+                    <ImageView
+                        android:id="@+id/iv_zixun_zhuanjia"
+                        android:layout_width="326pt"
+                        android:layout_height="115pt"
+                        android:layout_alignParentRight="true"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/zhuangajizixun" />
+
+                    <ImageView
+                        android:id="@+id/iv_zixun_dianhua"
+                        android:layout_width="326pt"
+                        android:layout_height="115pt"
+                        android:layout_alignParentBottom="true"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/kuaisudianhua" />
+
+                    <ImageView
+                        android:id="@+id/iv_zixun_menzhen"
+                        android:layout_width="326pt"
+                        android:layout_height="115pt"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/kaiyaomenzhen" />
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_yisheng"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="19pt" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <ImageView
+            android:id="@+id/iv_zixun_wode"
+            android:layout_width="96pt"
+            android:layout_height="96pt"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="33pt"
+            android:layout_marginBottom="263pt"
+            android:background="@color/black" />
+    </FrameLayout>
+</LinearLayout>

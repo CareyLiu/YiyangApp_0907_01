@@ -32,13 +32,7 @@ import com.yiyang.cn.model.Message;
 import com.yiyang.cn.model.ZhiNengFamilyEditBean;
 import com.yiyang.cn.model.ZhiNengHomeListBean;
 import com.yiyang.cn.util.AddShareTimeCount;
-import com.yiyang.cn.util.AlertUtil;
-import com.yiyang.cn.util.TimeCount;
-import com.tuya.smart.home.sdk.TuyaHomeSdk;
-import com.tuya.smart.home.sdk.bean.MemberBean;
-import com.tuya.smart.home.sdk.bean.MemberWrapperBean;
-import com.tuya.smart.sdk.api.IResultCallback;
-import com.tuya.smart.sdk.api.ITuyaDataCallback;
+
 
 import java.util.HashMap;
 import java.util.Map;
@@ -106,7 +100,6 @@ public class ZhiNengFamilyAddShareActivity extends BaseActivity {
                 } else if (et_code.getText().toString().isEmpty()) {
                     Toast.makeText(context, "验证码不能为空", Toast.LENGTH_SHORT).show();
                 } else {
-                    yaoqing(et_phone.getText().toString());
                 }
             }
         });
@@ -233,75 +226,8 @@ public class ZhiNengFamilyAddShareActivity extends BaseActivity {
 
                     @Override
                     public void onError(Response<AppResponse<ZhiNengFamilyEditBean>> response) {
-                        removeMember(memberId);
-                        String str = response.getException().getMessage();
-                        MyCarCaoZuoDialog_CaoZuoTIshi myCarCaoZuoDialog_caoZuoTIshi = new MyCarCaoZuoDialog_CaoZuoTIshi(context,
-                                "提示", str, "知道了", new MyCarCaoZuoDialog_CaoZuoTIshi.OnDialogItemClickListener() {
-                            @Override
-                            public void clickLeft() {
-
-                            }
-
-                            @Override
-                            public void clickRight() {
-
-                            }
-                        });
-                        myCarCaoZuoDialog_caoZuoTIshi.show();
-                    }
-                });
-    }
-
-    private void removeMember(long memberId) {
-        TuyaHomeSdk.getMemberInstance().removeMember(memberId, new IResultCallback() {
-            @Override
-            public void onSuccess() {
-
-            }
-
-            @Override
-            public void onError(String code, String error) {
-
-            }
-        });
-    }
-
-    // TODO: 2021-05-17 添加涂鸦设备  2.成员 3.二级管理员
-    private void yaoqing(String phone) {
-        long homeId = PreferenceHelper.getInstance(mContext).getLong(AppConfig.TUYA_HOME_ID, 0);
-        @SuppressLint("WrongConstant") MemberWrapperBean bean = new MemberWrapperBean.Builder()
-                .setHomeId(homeId)
-                .setNickName(phone)
-                .setAccount(phone)
-                .setCountryCode("86")
-                .setRole(memberRole)
-                .setHeadPic("")
-                .setAutoAccept(true)
-                .build();
-
-        TuyaHomeSdk.getMemberInstance().addMember(bean, new ITuyaDataCallback<MemberBean>() {
-            @Override
-            public void onSuccess(MemberBean result) {
-                long memberId = result.getMemberId();
-                bindMember(memberId);
-            }
-
-            @Override
-            public void onError(String errorCode, String errorMessage) {
-                MyCarCaoZuoDialog_CaoZuoTIshi myCarCaoZuoDialog_caoZuoTIshi = new MyCarCaoZuoDialog_CaoZuoTIshi(context,
-                        "提示", errorMessage, "知道了", new MyCarCaoZuoDialog_CaoZuoTIshi.OnDialogItemClickListener() {
-                    @Override
-                    public void clickLeft() {
-
-                    }
-
-                    @Override
-                    public void clickRight() {
 
                     }
                 });
-                myCarCaoZuoDialog_caoZuoTIshi.show();
-            }
-        });
     }
 }

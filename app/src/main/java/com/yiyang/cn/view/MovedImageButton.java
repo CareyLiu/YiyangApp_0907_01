@@ -11,7 +11,6 @@ import android.view.animation.OvershootInterpolator;
 
 import androidx.appcompat.widget.AppCompatImageButton;
 
-import com.facebook.react.views.view.MeasureUtil;
 import com.scwang.smartrefresh.layout.util.DensityUtil;
 
 public class MovedImageButton extends AppCompatImageButton {

@@ -33,8 +33,6 @@ import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
 import com.yiyang.cn.R;
 import com.yiyang.cn.activity.shuinuan.Y;
-import com.yiyang.cn.activity.tuya_device.utils.TuyaConfig;
-import com.yiyang.cn.activity.tuya_device.utils.manager.TuyaHomeManager;
 import com.yiyang.cn.adapter.ZhiNengFamilyManageDetailAdapter;
 import com.yiyang.cn.app.BaseActivity;
 import com.yiyang.cn.app.ConstanceValue;
@@ -52,10 +50,6 @@ import com.yiyang.cn.get_net.Urls;
 import com.yiyang.cn.model.ChandiModel;
 import com.yiyang.cn.model.ZhiNengFamilyEditBean;
 import com.yiyang.cn.model.ZhiNengFamilyMAnageDetailBean;
-import com.tuya.smart.home.sdk.TuyaHomeSdk;
-import com.tuya.smart.home.sdk.bean.MemberBean;
-import com.tuya.smart.home.sdk.callback.ITuyaGetMemberListCallback;
-import com.tuya.smart.sdk.api.IResultCallback;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -308,65 +302,10 @@ public class ZhiNengFamilyManageDetailActivity extends BaseActivity implements V
                         if (!TextUtils.isEmpty(province_name)) {
                             tv_family_address.setText(province_name + "-" + dataBean.getCity_name() + "-" + dataBean.getArea_name());
                         }
-
-                        initMember();
                     }
                 });
     }
 
-
-    private void initMember() {
-        TuyaHomeSdk.getMemberInstance().queryMemberList(Y.getLong(ty_family_id), new ITuyaGetMemberListCallback() {
-            @Override
-            public void onSuccess(List<MemberBean> tuyaMembers) {
-                for (int i = 0; i < tuyaMembers.size(); i++) {
-                    MemberBean tuyaMeberBean = tuyaMembers.get(i);
-                    String account = tuyaMeberBean.getAccount();
-                    long tuyaMemberId = tuyaMeberBean.getMemberId();
-                    boolean isDelete = true;
-                    for (int j = 0; j < memberBeans.size(); j++) {
-                        ZhiNengFamilyMAnageDetailBean.DataBean.MemberBean memberBean = memberBeans.get(j);
-                        String ty_member_id = memberBean.getTy_member_id();
-                        if (ty_member_id.equals(String.valueOf(tuyaMemberId))) {
-                            isDelete = false;
-                        }
-
-                        if (memberBean.getMember_type().equals("1")) {
-                            if (account.equals(memberBean.getMember_phone())) {
-                                isDelete = false;
-                            }
-                        }
-                    }
-
-                    if (isDelete) {
-                        Y.e("账号是多少啊啊啊 " + account + "   " + tuyaMemberId + "   应该被删除");
-                        removeMember(tuyaMemberId);
-                    } else {
-                        Y.e("账号是多少啊啊啊 " + account + "   " + tuyaMemberId + "   不删除");
-                    }
-                }
-            }
-
-            @Override
-            public void onError(String errorCode, String error) {
-                Y.e("我失败了么啊啊啊" + error);
-            }
-        });
-    }
-
-    private void removeMember(long memberId) {
-        TuyaHomeSdk.getMemberInstance().removeMember(memberId, new IResultCallback() {
-            @Override
-            public void onSuccess() {
-                Y.e("删除成功");
-            }
-
-            @Override
-            public void onError(String code, String error) {
-                Y.e("删除失败" + code + "   " + error);
-            }
-        });
-    }
 
     /**
      * 修改家庭名字
@@ -392,17 +331,7 @@ public class ZhiNengFamilyManageDetailActivity extends BaseActivity implements V
                             dataBean.setFamily_name(family_name);
 
                             if (TextUtils.isEmpty(province_name_pro)) {
-                                TuyaHomeSdk.newHomeInstance(Y.getLong(ty_family_id)).updateHome(family_name, 0, 0, "", new IResultCallback() {
-                                    @Override
-                                    public void onSuccess() {
-                                        Y.e("涂鸦家庭设置成功");
-                                    }
 
-                                    @Override
-                                    public void onError(String code, String error) {
-                                        Y.e("涂鸦家庭设置失败:" + error);
-                                    }
-                                });
                             } else {
                                 changeTuyaCity();
                             }
@@ -466,7 +395,6 @@ public class ZhiNengFamilyManageDetailActivity extends BaseActivity implements V
                             String title = "";
                             if (member_type.equals("1")) {
                                 title = "删除家庭";
-                                deleteTuyaJiating();
                             } else {
                                 title = "退出家庭";
                                 memberTuichu();
@@ -513,35 +441,9 @@ public class ZhiNengFamilyManageDetailActivity extends BaseActivity implements V
             ZhiNengFamilyMAnageDetailBean.DataBean.MemberBean memberBean = memberBeans.get(i);
             String member_phone = memberBean.getMember_phone();
             if (phone.equals(member_phone)) {
-                TuyaHomeSdk.getMemberInstance().removeMember(Y.getLong(memberBean.getTy_member_id()), new IResultCallback() {
-                    @Override
-                    public void onSuccess() {
-                        // do something
-                        Y.e("离开家庭成功");
-                    }
 
-                    @Override
-                    public void onError(String code, String error) {
-                        // do something
-                        Y.e("离开家庭失败  " + error);
-                    }
-                });
             }
         }
-    }
-
-    private void deleteTuyaJiating() {
-        TuyaHomeSdk.newHomeInstance(Y.getLong(ty_family_id)).dismissHome(new IResultCallback() {
-            @Override
-            public void onSuccess() {
-                Y.e("解散涂鸦家庭成功 ");
-            }
-
-            @Override
-            public void onError(String code, String error) {
-                Y.e("解散家庭失败:" + error);
-            }
-        });
     }
 
     private OptionsPickerView<Object> chandiPicker;
@@ -711,7 +613,6 @@ public class ZhiNengFamilyManageDetailActivity extends BaseActivity implements V
                         double latitude = geocodeAddress.getLatLonPoint().getLatitude();//纬度
                         double longititude = geocodeAddress.getLatLonPoint().getLongitude();//经度
                         Y.e("经纬度获取成功了 " + latitude + "  " + longititude);
-                        setTuyaCity(latitude, longititude);
                     } else {
                         Y.e("编码转换失败");
                     }
@@ -722,17 +623,4 @@ public class ZhiNengFamilyManageDetailActivity extends BaseActivity implements V
         geocodeSearch.getFromLocationNameAsyn(geocodeQuery);
     }
 
-    private void setTuyaCity(double latitude, double longititude) {
-        TuyaHomeSdk.newHomeInstance(Y.getLong(ty_family_id)).updateHome(dataBean.getFamily_name(), longititude, latitude, province_name_pro + city_name_pro + code_name, new IResultCallback() {
-            @Override
-            public void onSuccess() {
-                Y.e("涂鸦家庭设置成功");
-            }
-
-            @Override
-            public void onError(String code, String error) {
-                Y.e("涂鸦家庭设置失败:" + error);
-            }
-        });
-    }
 }

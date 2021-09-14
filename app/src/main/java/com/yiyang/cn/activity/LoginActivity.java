@@ -45,10 +45,6 @@ import com.yiyang.cn.get_net.Urls;
 import com.yiyang.cn.model.LoginUser;
 import com.yiyang.cn.model.Message;
 import com.yiyang.cn.util.TimeCount;
-import com.tuya.smart.android.user.api.ILoginCallback;
-import com.tuya.smart.android.user.bean.User;
-import com.tuya.smart.home.sdk.TuyaHomeSdk;
-import com.tuya.smart.sdk.api.IResultCallback;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -367,7 +363,7 @@ public class LoginActivity extends BaseActivity {
                         public void onSuccess(Response<AppResponse<LoginUser.DataBean>> response) {
                             userlist.clear();
                             LoginActivity.this.response = response;
-                            loginTuya(mEtPhone.getText().toString());
+                            loginXiayibu();
                         }
 
                         @Override
@@ -378,19 +374,6 @@ public class LoginActivity extends BaseActivity {
         }
     }
 
-    private void loginTuya(String phone) {
-        TuyaHomeSdk.getUserInstance().loginOrRegisterWithUid("86", phone, "123456", new ILoginCallback() {
-            @Override
-            public void onSuccess(User user) {
-                loginXiayibu();
-            }
-
-            @Override
-            public void onError(String code, String error) {
-                Y.t("登录失败:" + error);
-            }
-        });
-    }
 
     private void loginXiayibu() {
         //保存用户手机号码

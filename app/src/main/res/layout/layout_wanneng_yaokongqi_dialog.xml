@@ -24,7 +24,7 @@
             android:layout_marginTop="23pt"
             android:includeFontPadding="false"
             android:text="请将遥控器对准主机，"
-            android:textColor="@color/text_color6"
+            android:textColor="@color/color_6"
             android:textSize="31pt" />
 
         <LinearLayout
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:includeFontPadding="false"
                 android:text="按键"
-                android:textColor="@color/text_color6"
+                android:textColor="@color/color_6"
                 android:textSize="31pt" />
         </LinearLayout>
     </LinearLayout>

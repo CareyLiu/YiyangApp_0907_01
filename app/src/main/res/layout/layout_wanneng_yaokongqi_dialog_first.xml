@@ -31,7 +31,7 @@
                 android:includeFontPadding="false"
                 android:paddingHorizontal="30pt"
                 android:text="提示：点击手机屏幕上要学习的按键，将遥控器对准主机，按下要学习的按键"
-                android:textColor="@color/text_color6"
+                android:textColor="@color/color_6"
                 android:textSize="31pt" />
         </LinearLayout>
 

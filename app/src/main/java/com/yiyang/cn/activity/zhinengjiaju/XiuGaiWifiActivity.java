@@ -76,7 +76,6 @@ import com.yiyang.cn.model.ZhiNengJiaJu_0007Model;
 import com.yiyang.cn.model.ZhiNengJiaJu_0009Model;
 import com.yiyang.cn.mqtt_zhiling.NewZhiNengJiajuMqttMingLing;
 import com.yiyang.cn.mqtt_zhiling.ZnjjMqttMingLing;
-import com.tuya.smart.ipc.recognition.view.IFaceAddedServiceStatueView;
 
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
 import org.eclipse.paho.client.mqttv3.IMqttToken;
