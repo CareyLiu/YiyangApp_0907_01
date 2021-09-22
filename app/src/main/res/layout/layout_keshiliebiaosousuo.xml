@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19pt"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20pt"
+            android:src="@mipmap/backbutton">
+
+        </ImageView>
+
+        <com.flyco.roundview.RoundRelativeLayout
+            android:id="@+id/rrl_sousuo"
+            android:layout_width="match_parent"
+            android:layout_height="58pt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="20pt"
+
+            app:rv_backgroundColor="#e5e5e5"
+            app:rv_cornerRadius="10pt">
+
+            <ImageView
+
+                android:id="@+id/iv_icon_sousuo"
+                android:layout_width="24pt"
+                android:layout_height="24pt"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="11pt"
+                android:src="@mipmap/dingdan_icon_sousuo">
+
+            </ImageView>
+
+            <EditText
+                android:id="@+id/et_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10pt"
+                android:layout_toRightOf="@+id/iv_icon_sousuo"
+                android:background="@null"
+                android:hint="请输入搜索的内容"
+                android:textSize="12.5sp">
+
+            </EditText>
+        </com.flyco.roundview.RoundRelativeLayout>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rlv_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

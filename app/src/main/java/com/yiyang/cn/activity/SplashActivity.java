@@ -140,12 +140,13 @@ public class SplashActivity extends AppCompatActivity implements EasyPermissions
 
             @Override
             public void onAnimationEnd(Animation animation) { // 动画结束时执行此方法
-                String[] perms = {
-                        Manifest.permission.ACCESS_COARSE_LOCATION,
-                        Manifest.permission.ACCESS_FINE_LOCATION,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE};
-                EasyPermissions.requestPermissions(SplashActivity.this, "申请开启app需要的权限", 0, perms);
+//                String[] perms = {
+//                        Manifest.permission.ACCESS_COARSE_LOCATION,
+//                        Manifest.permission.ACCESS_FINE_LOCATION,
+//                        Manifest.permission.WRITE_EXTERNAL_STORAGE};
+//                EasyPermissions.requestPermissions(SplashActivity.this, "申请开启app需要的权限", 0, perms);
                 isAnimationEnd = true;
+                mHandler.sendEmptyMessage(UPDATE_OK);
 
             }
         });

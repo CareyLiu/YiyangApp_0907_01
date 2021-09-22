@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.flyco.roundview.RoundRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250pt"
+        android:layout_marginHorizontal="29pt"
+        android:layout_marginTop="19pt"
+        app:rv_backgroundColor="#018AFE"
+        app:rv_cornerRadius="10pt">
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="115pt"
+            android:layout_height="115pt"
+            android:layout_marginLeft="19pt"
+            android:layout_marginTop="19pt"
+            android:background="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_yisheng_ming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10pt"
+            android:layout_marginTop="19pt"
+            android:layout_toRightOf="@+id/iv_image"
+            android:text="张大为"
+            android:textColor="#ffffffff"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_yisheng_ming"
+            android:layout_marginLeft="10pt"
+            android:layout_marginTop="19pt"
+            android:layout_toRightOf="@+id/iv_image"
+            android:text="神经内科   主治医生"
+            android:textColor="#ffffffff"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="29pt"
+            android:layout_marginTop="19pt"
+            android:layout_marginRight="29pt"
+            android:layout_marginBottom="17pt"
+
+            android:text="掌握医药卫生知识，从事疾病预防和治疗的专业人员的统称。
+医生，古代称大夫或郎中。现在大夫一词在北方人中也常用，
+古代称大夫或郎中，古代称大夫..."
+            android:textColor="#ffffffff"
+            android:textSize="23sp" />
+
+    </com.flyco.roundview.RoundRelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65pt"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+
+                    android:gravity="center"
+                    android:text="挂号"
+                    android:textColor="#ff141414"
+                    android:textSize="18sp" />
+
+                <View
+
+                    android:id="@+id/view_guahao"
+                    android:layout_width="58pt"
+                    android:layout_height="5pt"
+                    android:background="#018AFE">
+
+                </View>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="介绍"
+                    android:textColor="#ffc1c1c1"
+                    android:textSize="18sp" />
+
+                <View
+                    android:id="@+id/view_jieshao"
+                    android:layout_width="58pt"
+                    android:layout_height="5pt"
+                    android:background="#018AFE">
+
+                </View>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+</LinearLayout>

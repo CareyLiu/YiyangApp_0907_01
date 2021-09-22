@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F0F0"
+    android:id="@+id/layout"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.yiyang.cn.selectcity.ClearEditText
+                android:id="@+id/sh"
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                android:layout_margin="15dip"
+                android:layout_marginTop="5dp"
+                android:background="#ffffff"
+                android:drawableLeft="@mipmap/apollo_ic_search"
+                android:drawablePadding="10dp"
+                android:hint="城市/拼音"
+                android:padding="10dip"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textCursorDrawable="@null"
+                android:textSize="16sp" />
+
+            <ListView
+                android:id="@+id/list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/sh"
+                android:layout_marginBottom="5dp"
+                android:cacheColorHint="#00000000"
+                android:divider="#00000000"
+                android:dividerHeight="0dp"
+                android:listSelector="@android:color/transparent"
+                android:scrollbars="none" />
+
+            <ListView
+                android:id="@+id/search_result"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/sh"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:cacheColorHint="#00000000"
+                android:divider="#00000000"
+                android:dividerHeight="0dp"
+                android:listSelector="@android:color/transparent"
+                android:scrollbars="none"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_noresult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sh"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="抱歉,暂时没有找到相关城市"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <com.yiyang.cn.selectcity.MyLetterListView
+                android:id="@+id/MyLetterListView01"
+                android:layout_width="25dip"
+                android:layout_height="fill_parent"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/sh"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="5dp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

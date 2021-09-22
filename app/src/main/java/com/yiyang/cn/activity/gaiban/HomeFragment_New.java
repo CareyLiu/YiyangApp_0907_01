@@ -320,6 +320,7 @@ public class HomeFragment_New extends BaseFragment implements ObservableScrollVi
 
             }
         });
+
     }
 
 

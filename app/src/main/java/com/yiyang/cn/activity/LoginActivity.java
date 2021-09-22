@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 import com.flyco.dialog.listener.OnOperItemClickL;
 import com.flyco.dialog.widget.ActionSheetDialog;
 import com.google.gson.Gson;
@@ -60,12 +62,14 @@ import butterknife.OnClick;
 import cn.jpush.android.api.JPushInterface;
 import io.rong.imkit.RongIM;
 import io.rong.imlib.RongIMClient;
+import pub.devrel.easypermissions.EasyPermissions;
 import rx.functions.Action1;
 
 import static com.yiyang.cn.get_net.Urls.SERVER_URL;
 
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity implements  EasyPermissions.PermissionCallbacks {
+
     @BindView(R.id.ed_phone)
     EditText mEtPhone;
     @BindView(R.id.ed_pwd)
@@ -535,5 +539,28 @@ public class LoginActivity extends BaseActivity {
                         finish();
                     }
                 });
+    }
+
+
+    @Override
+    public void onPermissionsGranted(int requestCode, List<String> perms) {
+        Log.i("LoginActivity_xx", "通过了......");
+        if (fuWuDialog.isShowing()) {
+            fuWuDialog.dismiss();
+        }
+    }
+
+    @Override
+    public void onPermissionsDenied(int requestCode, List<String> perms) {
+        //UIHelper.ToastMessage(mContext, "拒绝了");
+        Log.i("LoginActivity_xx", "拒绝了......");
+        fuWuDialog.show();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        // 将结果转发到EasyPermissions
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
     }
 }

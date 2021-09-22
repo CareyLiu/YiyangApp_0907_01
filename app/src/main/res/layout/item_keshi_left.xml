@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_background"
+    android:layout_width="match_parent"
+    android:layout_height="58pt">
+
+    <TextView
+        android:id="@+id/tv_left_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="29pt"
+        android:text="特色门诊"
+        android:textColor="#A8A8A8"
+        android:textSize="14.5sp" />
+
+</RelativeLayout>

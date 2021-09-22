@@ -1,5 +1,7 @@
 package com.yiyang.cn.fragment.yiyang;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -7,19 +9,24 @@ import android.widget.TextView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.gyf.barlibrary.ImmersionBar;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.smarttop.library.bean.City;
 import com.yiyang.cn.R;
 import com.yiyang.cn.activity.a_yiyang.YiyangTuTActivity;
 import com.yiyang.cn.activity.a_yiyang.ZaixianyishengActivity;
 import com.yiyang.cn.activity.tongcheng58.model.TcHomeModel;
 import com.yiyang.cn.adapter.yiyang.HomeZhylAdapter;
+import com.yiyang.cn.app.UIHelper;
 import com.yiyang.cn.basicmvp.BaseFragment;
+import com.yiyang.cn.selectcity.CityActivity;
 import com.youth.banner.Banner;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 
@@ -51,6 +58,8 @@ public class TabHomeFragment extends BaseFragment {
     @BindView(R.id.smartRefreshLayout)
     SmartRefreshLayout smartRefreshLayout;
 
+
+
     @Override
     protected void immersionInit(ImmersionBar mImmersionBar) {
         mImmersionBar
@@ -78,6 +87,7 @@ public class TabHomeFragment extends BaseFragment {
     @Override
     protected void initView(View rootView) {
         initAdapter();
+
     }
 
     private void initAdapter() {
@@ -189,7 +199,8 @@ public class TabHomeFragment extends BaseFragment {
         switch (view.getId()) {
             case R.id.iv_weizhi:
             case R.id.tv_weizhi:
-
+              //  UIHelper.ToastMessage(getActivity(),"lkdjflajfkljdsklfjs");
+                //CityActivity.actionStart(getActivity());
                 break;
             case R.id.iv_saoma:
 
